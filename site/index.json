@@ -1,0 +1,424 @@
+{
+ "packages": [
+  {
+   "package": "actual",
+   "version": "1.0.0-1",
+   "dname": "Actual Budget",
+   "desc": "Actual Budget, private envelope budgeting that syncs between your devices, in Container Manager — with your budgets kept on your Synology, and a DSM window for the server password (shown once), signing every device out, a warning when your devices stop syncing, HTTPS with DSM's certificate (Actual needs HTTPS), backups and updates.",
+   "link": "https://github.com/tombruton87/actual-dsm/releases/download/v1.0.0/actual-1.0.0-1.spk",
+   "thumbnail": [
+    "icons/actual-64.png",
+    "icons/actual-256.png"
+   ],
+   "thumbnail_retina": [
+    "icons/actual-256.png",
+    "icons/actual-256.png"
+   ],
+   "snapshot": [],
+   "qinst": false,
+   "qupgrade": true,
+   "qstart": false,
+   "deppkgs": "ContainerManager>=20.10.23-1432",
+   "download_count": 0,
+   "recent_download_count": 0,
+   "changelog": "First release. Actual Budget's server in Container Manager, on HTTPS from the start: DSM's certificate, or a self-signed one when there isn't one. Plain HTTP is allowed only behind DSM's reverse proxy. The server password is set at the first start and shown once.<br><br>The DSM window adds:<br>• <b>Budgets:</b> each budget's size, last sync, and whether it's encrypted or deleted; the devices signed in; a DSM notification when syncing goes quiet; and the upload size limit.<br>• <b>Sign-in:</b> a QR code for phones, a new password (optionally signing every device out), and sign every device out.<br><br>Also included: consistent backups, updates and removal.",
+   "maintainer": "actual-dsm",
+   "maintainer_url": "https://github.com/tombruton87/actual-dsm",
+   "distributor": "Tom Bruton",
+   "distributor_url": "https://github.com/tombruton87",
+   "support_url": "https://github.com/tombruton87/actual-dsm/issues",
+   "md5": "b3b43d5a7b5975ccbe00b592c45633cf",
+   "size": 133120
+  },
+  {
+   "package": "bookstack",
+   "version": "1.0.1-1",
+   "dname": "BookStack",
+   "desc": "BookStack, a simple wiki for documentation and how-tos, in Container Manager — with a DSM window for signing in with your Synology accounts (DSM's LDAP Server), a readable copy of the whole wiki in a shared folder, user recovery, mail settings, HTTPS with DSM's certificate, backups and updates.",
+   "link": "https://github.com/tombruton87/bookstack-dsm/releases/download/v1.0.1/bookstack-1.0.1-1.spk",
+   "thumbnail": [
+    "icons/bookstack-64.png",
+    "icons/bookstack-256.png"
+   ],
+   "thumbnail_retina": [
+    "icons/bookstack-256.png",
+    "icons/bookstack-256.png"
+   ],
+   "snapshot": [],
+   "qinst": false,
+   "qupgrade": true,
+   "qstart": false,
+   "deppkgs": "ContainerManager>=20.10.23-1432",
+   "download_count": 0,
+   "recent_download_count": 0,
+   "changelog": "• The password boxes in the window (the LDAP bind password on Sign-in, the mail server's password on Mail) look like the other fields instead of small browser-default boxes.",
+   "maintainer": "bookstack-dsm",
+   "maintainer_url": "https://github.com/tombruton87/bookstack-dsm",
+   "distributor": "Tom Bruton",
+   "distributor_url": "https://github.com/tombruton87",
+   "support_url": "https://github.com/tombruton87/bookstack-dsm/issues",
+   "md5": "8cefb33a311d48729d6e20797490dddc",
+   "size": 174080
+  },
+  {
+   "package": "docuseal",
+   "version": "1.0.0-1",
+   "dname": "DocuSeal",
+   "desc": "DocuSeal, open-source document signing, in Container Manager — with a DSM window for what's waiting to be signed, signed copies saved to a shared folder, DSM notifications, user recovery, mail checks, HTTPS with DSM's certificate, backups and updates.",
+   "link": "https://github.com/tombruton87/docuseal-dsm/releases/download/v1.0.0/docuseal-1.0.0-1.spk",
+   "thumbnail": [
+    "icons/docuseal-64.png",
+    "icons/docuseal-256.png"
+   ],
+   "thumbnail_retina": [
+    "icons/docuseal-256.png",
+    "icons/docuseal-256.png"
+   ],
+   "snapshot": [],
+   "qinst": false,
+   "qupgrade": true,
+   "qstart": false,
+   "deppkgs": "ContainerManager>=20.10.23-1432",
+   "download_count": 0,
+   "recent_download_count": 0,
+   "changelog": "First release. DocuSeal in Container Manager with SQLite behind a small nginx (HTTPS with DSM's certificate or self-signed, or plain HTTP), the administrator made at the first start through DocuSeal's own setup page (password shown once), and a DSM window: Documents (who has signed, opened or declined; filters and search), signed copies of every completed document and its audit log in the shared folder, DSM notifications for completed and declined documents, Users (new password, unlock, remove 2FA), Mail (is a mail server set up, emails sent/opened/bounced, test email), DocuSeal's own address kept in step with the Site address, consistent backups with DocuSeal's secret key, updates, storage, a redacted support report and full removal.",
+   "maintainer": "docuseal-dsm",
+   "maintainer_url": "https://github.com/tombruton87/docuseal-dsm",
+   "distributor": "Tom Bruton",
+   "distributor_url": "https://github.com/tombruton87",
+   "support_url": "https://github.com/tombruton87/docuseal-dsm/issues",
+   "md5": "9852c7d26dedd9dc4ff85132ce25cbe1",
+   "size": 143360
+  },
+  {
+   "package": "freescout",
+   "version": "1.0.2-1",
+   "dname": "FreeScout",
+   "desc": "FreeScout help desk and shared mailbox, running in Container Manager, with a DSM window for password recovery, backups, mail health, updates and maintenance.",
+   "link": "https://github.com/tombruton87/freescout-dsm/releases/download/v1.0.2/freescout-1.0.2-1.spk",
+   "thumbnail": [
+    "icons/freescout-64.png",
+    "icons/freescout-256.png"
+   ],
+   "thumbnail_retina": [
+    "icons/freescout-256.png",
+    "icons/freescout-256.png"
+   ],
+   "snapshot": [],
+   "qinst": false,
+   "qupgrade": true,
+   "qstart": false,
+   "deppkgs": "ContainerManager>=20.10.23-1432",
+   "download_count": 0,
+   "recent_download_count": 0,
+   "changelog": "• The Copy button for one-time passwords works when DSM is opened over plain HTTP (http://nas:5000), where browsers don't offer the clipboard API. If copying is refused, the password is selected with a Ctrl+C hint.",
+   "maintainer": "freescout-dsm",
+   "maintainer_url": "https://github.com/tombruton87/freescout-dsm",
+   "distributor": "Tom Bruton",
+   "distributor_url": "https://github.com/tombruton87",
+   "support_url": "https://github.com/tombruton87/freescout-dsm/issues",
+   "md5": "62233b67aae90161b32d0e079e6e4ef4",
+   "size": 163840
+  },
+  {
+   "package": "homepage",
+   "version": "1.0.1-1",
+   "dname": "Homepage",
+   "desc": "Homepage, a start page for everything on your Synology, in Container Manager — filled in for you: DSM and its live stats, every app installed from this family of packages, and your other containers, each with up/down and response time; links of your own, a look of your choosing, and YAML you can still edit in File Station.",
+   "link": "https://github.com/tombruton87/homepage-dsm/releases/download/v1.0.1/homepage-1.0.1-1.spk",
+   "thumbnail": [
+    "icons/homepage-64.png",
+    "icons/homepage-256.png"
+   ],
+   "thumbnail_retina": [
+    "icons/homepage-256.png",
+    "icons/homepage-256.png"
+   ],
+   "snapshot": [],
+   "qinst": false,
+   "qupgrade": true,
+   "qstart": false,
+   "deppkgs": "ContainerManager>=20.10.23-1432",
+   "download_count": 0,
+   "recent_download_count": 0,
+   "changelog": "• The DSM password box on the Synology stats tab looks like the other fields instead of a small browser-default box.",
+   "maintainer": "homepage-dsm",
+   "maintainer_url": "https://github.com/tombruton87/homepage-dsm",
+   "distributor": "Tom Bruton",
+   "distributor_url": "https://github.com/tombruton87",
+   "support_url": "https://github.com/tombruton87/homepage-dsm/issues",
+   "md5": "b51759ace1b5821bc65e761e6c3d4149",
+   "size": 143360
+  },
+  {
+   "package": "invoiceninja",
+   "version": "1.0.0-1",
+   "dname": "Invoice Ninja",
+   "desc": "Invoice Ninja, invoicing, quotes, expenses and payments for small businesses and freelancers, in Container Manager with MariaDB — with a DSM window for what's outstanding and overdue (and a DSM notification when an invoice goes overdue), users and their passwords, the mail server that sends your invoices, HTTPS with DSM's certificate, consistent backups and updates.",
+   "link": "https://github.com/tombruton87/invoiceninja-dsm/releases/download/v1.0.0/invoiceninja-1.0.0-1.spk",
+   "thumbnail": [
+    "icons/invoiceninja-64.png",
+    "icons/invoiceninja-256.png"
+   ],
+   "thumbnail_retina": [
+    "icons/invoiceninja-256.png",
+    "icons/invoiceninja-256.png"
+   ],
+   "snapshot": [],
+   "qinst": false,
+   "qupgrade": true,
+   "qstart": false,
+   "deppkgs": "ContainerManager>=20.10.23-1432",
+   "download_count": 0,
+   "recent_download_count": 0,
+   "changelog": "First release. Invoice Ninja with MariaDB and nginx in Container Manager. Your account is made at the first start, with the password shown once; the first-start throwaway leaves the environment.<br><br>The DSM window adds:<br>• <b>Business:</b> what's owed, what's overdue and what's been paid, in each client's currency.<br>• <b>Alerts:</b> a DSM notification when an invoice goes overdue.<br>• <b>Users:</b> new passwords, and two-step sign-in off.<br>• <b>Mail:</b> the mail server, with a test email.<br>• <b>Site address:</b> HTTPS with DSM's certificate.<br><br>Also included: consistent backups, updates and removal.",
+   "maintainer": "invoiceninja-dsm",
+   "maintainer_url": "https://github.com/tombruton87/invoiceninja-dsm",
+   "distributor": "Tom Bruton",
+   "distributor_url": "https://github.com/tombruton87",
+   "support_url": "https://github.com/tombruton87/invoiceninja-dsm/issues",
+   "md5": "9969dd863843779765abe3f7b44aa9ea",
+   "size": 122880
+  },
+  {
+   "package": "n8n",
+   "version": "1.0.0-1",
+   "dname": "n8n",
+   "desc": "n8n, workflow automation — connect apps and services, run on schedules and webhooks — in Container Manager, with a DSM window that keeps its encryption key safe (in every backup, shown once when you want it), tells DSM when a workflow fails, keeps a copy of every workflow in a shared folder, manages people and passwords, and handles webhook addresses, HTTPS, backups and updates.",
+   "link": "https://github.com/tombruton87/n8n-dsm/releases/download/v1.0.0/n8n-1.0.0-1.spk",
+   "thumbnail": [
+    "icons/n8n-64.png",
+    "icons/n8n-256.png"
+   ],
+   "thumbnail_retina": [
+    "icons/n8n-256.png",
+    "icons/n8n-256.png"
+   ],
+   "snapshot": [],
+   "qinst": false,
+   "qupgrade": true,
+   "qstart": false,
+   "deppkgs": "ContainerManager>=20.10.23-1432",
+   "download_count": 0,
+   "recent_download_count": 0,
+   "changelog": "First release. n8n in Container Manager:<br>• your owner account is made at the first start, with the password shown once;<br>• the package has a limited API key of its own;<br>• the package makes the encryption key and keeps it in every backup.<br><br>The DSM window adds:<br>• <b>Workflows:</b> list, switch on and off, and runs and failures in the last 24 hours.<br>• <b>Failures:</b> DSM notifications when a workflow fails, and how long run history is kept.<br>• <b>Webhooks:</b> the address webhook URLs start with.<br>• <b>Copies:</b> a copy of every workflow in the shared folder, every 6 hours.<br>• <b>Encryption key:</b> show it once.<br>• <b>People:</b> invitation links, new passwords, two-step sign-in off, and removal.<br>• <b>Site address:</b> HTTPS with DSM's certificate, with secure cookies.<br><br>Also included: consistent backups, updates and removal.",
+   "maintainer": "n8n-dsm",
+   "maintainer_url": "https://github.com/tombruton87/n8n-dsm",
+   "distributor": "Tom Bruton",
+   "distributor_url": "https://github.com/tombruton87",
+   "support_url": "https://github.com/tombruton87/n8n-dsm/issues",
+   "md5": "a706afce9263175df5bcf9dd39d20a19",
+   "size": 122880
+  },
+  {
+   "package": "navidrome",
+   "version": "1.0.0-1",
+   "dname": "Navidrome",
+   "desc": "Navidrome, your own music streaming server, in Container Manager — playing the music already in your shared folder to the web and to Subsonic apps on every phone, with a DSM window for the library and scans, phone setup with a QR code, users, sharing and HTTPS with DSM's certificate.",
+   "link": "https://github.com/tombruton87/navidrome-dsm/releases/download/v1.0.0/navidrome-1.0.0-1.spk",
+   "thumbnail": [
+    "icons/navidrome-64.png",
+    "icons/navidrome-256.png"
+   ],
+   "thumbnail_retina": [
+    "icons/navidrome-256.png",
+    "icons/navidrome-256.png"
+   ],
+   "snapshot": [],
+   "qinst": false,
+   "qupgrade": true,
+   "qstart": false,
+   "deppkgs": "ContainerManager>=20.10.23-1432",
+   "download_count": 0,
+   "recent_download_count": 0,
+   "changelog": "First release. Navidrome in Container Manager:<br>• it plays your music folder, read-only;<br>• your account is made at the first start, with the password shown once;<br>• a package administrator handles the window's work.<br><br>The DSM window adds:<br>• <b>Library:</b><br>• counts and the last scan;<br>• scan now or read everything again, and how often to look;<br>• change the music folder: missing folders are refused, never created;<br>• songs that left the folder are counted separately;<br>• share links on or off.<br>• <b>Phones:</b> a QR code and recommended apps.<br>• <b>Users:</b> add people, new passwords (shown once), administrator on or off, remove.<br>• <b>Site address:</b> HTTPS with DSM's certificate.<br><br>Also included: consistent backups, updates and removal. If the music folder isn't there yet, Navidrome starts on an empty placeholder and picks the folder up when it appears.",
+   "maintainer": "navidrome-dsm",
+   "maintainer_url": "https://github.com/tombruton87/navidrome-dsm",
+   "distributor": "Tom Bruton",
+   "distributor_url": "https://github.com/tombruton87",
+   "support_url": "https://github.com/tombruton87/navidrome-dsm/issues",
+   "md5": "3906eb2f88db2728c8c460b56d13e519",
+   "size": 153600
+  },
+  {
+   "package": "ntfy",
+   "version": "1.0.0-1",
+   "dname": "ntfy",
+   "desc": "ntfy, push notifications to your phone from your own server, in Container Manager — with a DSM window that sends DSM's own alerts to your phone, sets phones up with a QR code, manages users and topic access, and backs it all up.",
+   "link": "https://github.com/tombruton87/ntfy-dsm/releases/download/v1.0.0/ntfy-1.0.0-1.spk",
+   "thumbnail": [
+    "icons/ntfy-64.png",
+    "icons/ntfy-256.png"
+   ],
+   "thumbnail_retina": [
+    "icons/ntfy-256.png",
+    "icons/ntfy-256.png"
+   ],
+   "snapshot": [],
+   "qinst": false,
+   "qupgrade": true,
+   "qstart": false,
+   "deppkgs": "ContainerManager>=20.10.23-1432",
+   "download_count": 0,
+   "recent_download_count": 0,
+   "changelog": "First release. ntfy in Container Manager with sign-in required, your account made at the first start (password shown once), and a DSM window: DSM's own alerts to your phone through a dedicated write-only sender and a NAS-only webhook address (copy and test), phone setup with a QR code and iOS instant delivery, users (add, new password, tokens, topic access with wildcards, remove), topics and test messages, how long messages are kept, HTTPS with DSM's certificate or self-signed, backups, updates and removal.",
+   "maintainer": "ntfy-dsm",
+   "maintainer_url": "https://github.com/tombruton87/ntfy-dsm",
+   "distributor": "Tom Bruton",
+   "distributor_url": "https://github.com/tombruton87",
+   "support_url": "https://github.com/tombruton87/ntfy-dsm/issues",
+   "md5": "9c99bba8f54885f93c08ca41f291936b",
+   "size": 122880
+  },
+  {
+   "package": "pihole",
+   "version": "1.0.0-1",
+   "dname": "Pi-hole",
+   "desc": "Pi-hole, network-wide ad and tracker blocking, in Container Manager — answering DNS for every device on your network from your Synology. A DSM window shows what's blocked, pauses blocking for a while, manages blocklists and allowed or blocked sites, picks the upstream DNS, checks DSM isn't using port 53 already, and handles passwords, HTTPS, backups and updates.",
+   "link": "https://github.com/tombruton87/pihole-dsm/releases/download/v1.0.0/pihole-1.0.0-1.spk",
+   "thumbnail": [
+    "icons/pihole-64.png",
+    "icons/pihole-256.png"
+   ],
+   "thumbnail_retina": [
+    "icons/pihole-256.png",
+    "icons/pihole-256.png"
+   ],
+   "snapshot": [],
+   "qinst": false,
+   "qupgrade": true,
+   "qstart": false,
+   "deppkgs": "ContainerManager>=20.10.23-1432",
+   "download_count": 0,
+   "recent_download_count": 0,
+   "changelog": "First release. Pi-hole v6 in Container Manager, answering DNS on port 53. The package checks the port is free and says so if DSM's DNS Server package has it. Your password is set at the first start and shown once; the package has an app password of its own.<br><br>The DSM window adds:<br>• <b>Blocking:</b> today's figures, pause (with a timer) and resume, and the sites blocked most and just now.<br>• <b>Lists:</b> blocklists (add, remove, update), and sites always allowed or blocked.<br>• <b>Setup:</b> router steps, upstream DNS, and a new password.<br>• <b>Alerts:</b> a DSM notification when blocking is left off.<br>• <b>Site address:</b> HTTPS with DSM's certificate.<br><br>Also included: backups (with Pi-hole's own Teleporter export), updates and removal.",
+   "maintainer": "pihole-dsm",
+   "maintainer_url": "https://github.com/tombruton87/pihole-dsm",
+   "distributor": "Tom Bruton",
+   "distributor_url": "https://github.com/tombruton87",
+   "support_url": "https://github.com/tombruton87/pihole-dsm/issues",
+   "md5": "8777e649f2d6fda7ced65f39b20f8a3f",
+   "size": 122880
+  },
+  {
+   "package": "speedtest",
+   "version": "1.0.0-1",
+   "dname": "Speedtest Tracker",
+   "desc": "Speedtest Tracker, which tests your internet speed on a schedule and keeps the history, in Container Manager — with a DSM window for the latest results and averages, running a test now, the schedule and server, alerts in DSM when the line is slow or a test fails, a monthly CSV of every result in a shared folder, API tokens, HTTPS with DSM's certificate, backups and updates.",
+   "link": "https://github.com/tombruton87/speedtest-dsm/releases/download/v1.0.0/speedtest-1.0.0-1.spk",
+   "thumbnail": [
+    "icons/speedtest-64.png",
+    "icons/speedtest-256.png"
+   ],
+   "thumbnail_retina": [
+    "icons/speedtest-256.png",
+    "icons/speedtest-256.png"
+   ],
+   "snapshot": [],
+   "qinst": false,
+   "qupgrade": true,
+   "qstart": false,
+   "deppkgs": "ContainerManager>=20.10.23-1432",
+   "download_count": 0,
+   "recent_download_count": 0,
+   "changelog": "First release. Speedtest Tracker in Container Manager. Its default admin@example.com / password login is replaced by your account at the first start, with the password shown once.<br><br>The DSM window adds:<br>• <b>Speed:</b> the latest results, averages over 24 hours, 7 days and 30 days, and a test on demand.<br>• <b>History:</b> a monthly CSV of every result in the shared folder.<br>• <b>Schedule:</b> how often (at this install's own minute), which server, how long results are kept, and the public dashboard.<br>• <b>Alerts:</b> thresholds, with DSM notifications for results below them and for failed tests.<br>• <b>Account:</b> a new password, and API tokens (read-only, or able to start tests), each shown once.<br>• <b>Site address:</b> HTTPS with DSM's certificate.<br><br>Also included: consistent backups, updates and removal.",
+   "maintainer": "speedtest-dsm",
+   "maintainer_url": "https://github.com/tombruton87/speedtest-dsm",
+   "distributor": "Tom Bruton",
+   "distributor_url": "https://github.com/tombruton87",
+   "support_url": "https://github.com/tombruton87/speedtest-dsm/issues",
+   "md5": "ee839f790db9624b254caf16844404c1",
+   "size": 153600
+  },
+  {
+   "package": "stirlingpdf",
+   "version": "1.0.0-1",
+   "dname": "Stirling-PDF",
+   "desc": "Stirling-PDF, a toolbox for PDFs — merge, split, compress, OCR, convert, sign, redact — in Container Manager, with hot folders in a shared folder: drop scans into PDF inbox and searchable, compressed PDFs come out in PDF done. A DSM window sets up the folders and OCR languages, manages the accounts, tells you when a file couldn't be processed, and handles HTTPS, backups and updates.",
+   "link": "https://github.com/tombruton87/stirling-pdf-dsm/releases/download/v1.0.0/stirlingpdf-1.0.0-1.spk",
+   "thumbnail": [
+    "icons/stirlingpdf-64.png",
+    "icons/stirlingpdf-256.png"
+   ],
+   "thumbnail_retina": [
+    "icons/stirlingpdf-256.png",
+    "icons/stirlingpdf-256.png"
+   ],
+   "snapshot": [],
+   "qinst": false,
+   "qupgrade": true,
+   "qstart": false,
+   "deppkgs": "ContainerManager>=20.10.23-1432",
+   "download_count": 0,
+   "recent_download_count": 0,
+   "changelog": "First release. Stirling-PDF in Container Manager. Its default admin/stirling login becomes your account at the first start, with the password shown once.<br><br>Hot folders in the shared folder (PDF inbox → PDF done):<br>• Make searchable, Compress, Photos to PDF, and Clean for sharing;<br>• OCR in up to five languages;<br>• a file that still can't be processed after 10 minutes is moved aside, and DSM is told.<br><br>The DSM window adds:<br>• <b>Hot folders:</b> switch each folder on or off, see what's waiting, done and failed, the latest results, and Try again.<br>• <b>Users:</b> add, new passwords, administrator or user, removal, and a rescue administrator if you're locked out of your own account.<br>• <b>Site address:</b> HTTPS with DSM's certificate.<br><br>Also included: backups, updates and removal.",
+   "maintainer": "stirlingpdf-dsm",
+   "maintainer_url": "https://github.com/tombruton87/stirling-pdf-dsm",
+   "distributor": "Tom Bruton",
+   "distributor_url": "https://github.com/tombruton87",
+   "support_url": "https://github.com/tombruton87/stirling-pdf-dsm/issues",
+   "md5": "9ae17b30bb48263f3595404af51f27b2",
+   "size": 112640
+  },
+  {
+   "package": "uptimekuma",
+   "version": "1.0.1-1",
+   "dname": "Uptime Kuma",
+   "desc": "Uptime Kuma, the self-hosted status monitor, in Container Manager — with a DSM window for live monitor status, DSM notifications when something goes down, one-click monitors for this Synology, outages, admin password resets, backups and updates.",
+   "link": "https://github.com/tombruton87/uptime-kuma-dsm/releases/download/v1.0.1/uptimekuma-1.0.1-1.spk",
+   "thumbnail": [
+    "icons/uptimekuma-64.png",
+    "icons/uptimekuma-256.png"
+   ],
+   "thumbnail_retina": [
+    "icons/uptimekuma-256.png",
+    "icons/uptimekuma-256.png"
+   ],
+   "snapshot": [],
+   "qinst": false,
+   "qupgrade": true,
+   "qstart": false,
+   "deppkgs": "ContainerManager>=20.10.23-1432",
+   "download_count": 0,
+   "recent_download_count": 0,
+   "changelog": "• The Copy button for the one-time password works when DSM is opened over plain HTTP (http://nas:5000), where browsers don't offer the clipboard API. If copying is refused, the password is selected with a Ctrl+C hint.",
+   "maintainer": "uptimekuma-dsm",
+   "maintainer_url": "https://github.com/tombruton87/uptime-kuma-dsm",
+   "distributor": "Tom Bruton",
+   "distributor_url": "https://github.com/tombruton87",
+   "support_url": "https://github.com/tombruton87/uptime-kuma-dsm/issues",
+   "md5": "aa56a60f65e8656f99bcd2a482f4d552",
+   "size": 133120
+  },
+  {
+   "package": "vaultwarden",
+   "version": "1.1.3-1",
+   "dname": "Vaultwarden",
+   "desc": "Vaultwarden password manager (Bitwarden-compatible) in Container Manager, on HTTPS with DSM's certificate, with a DSM window for the admin token, users and 2FA lockouts, sign-ups, backups, mail, updates and a clean removal.",
+   "link": "https://github.com/tombruton87/vaultwarden-dsm/releases/download/v1.1.3/vaultwarden-1.1.3-1.spk",
+   "thumbnail": [
+    "icons/vaultwarden-64.png",
+    "icons/vaultwarden-256.png"
+   ],
+   "thumbnail_retina": [
+    "icons/vaultwarden-256.png",
+    "icons/vaultwarden-256.png"
+   ],
+   "snapshot": [],
+   "qinst": false,
+   "qupgrade": true,
+   "qstart": false,
+   "deppkgs": "ContainerManager>=20.10.23-1432",
+   "download_count": 0,
+   "recent_download_count": 0,
+   "changelog": "• The Copy button for the admin token works when DSM is opened over plain HTTP (http://nas:5000), where browsers don't offer the clipboard API. If copying is refused, the token is selected with a Ctrl+C hint.<br>• Built on the latest chassis (volumes made with Docker Compose's labels; shared HTTPS helpers).",
+   "maintainer": "vaultwarden-dsm",
+   "maintainer_url": "https://github.com/tombruton87/vaultwarden-dsm",
+   "distributor": "Tom Bruton",
+   "distributor_url": "https://github.com/tombruton87",
+   "support_url": "https://github.com/tombruton87/vaultwarden-dsm/issues",
+   "md5": "915ed0a092721d26d2c3eeed28ad7a01",
+   "size": 163840
+  }
+ ]
+}

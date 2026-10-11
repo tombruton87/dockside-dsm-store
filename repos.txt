@@ -1,0 +1,16 @@
+# One GitHub repo per line. Each one's latest release must carry a versioned
+# <pkg>-<version>-<build>.spk; that file is what Package Center downloads.
+tombruton87/actual-dsm
+tombruton87/bookstack-dsm
+tombruton87/docuseal-dsm
+tombruton87/freescout-dsm
+tombruton87/homepage-dsm
+tombruton87/invoiceninja-dsm
+tombruton87/n8n-dsm
+tombruton87/navidrome-dsm
+tombruton87/ntfy-dsm
+tombruton87/pihole-dsm
+tombruton87/speedtest-dsm
+tombruton87/stirling-pdf-dsm
+tombruton87/uptime-kuma-dsm
+tombruton87/vaultwarden-dsm

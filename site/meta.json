@@ -1,0 +1,72 @@
+{
+ "actual": {
+  "os_min_ver": "7.2.1-69057",
+  "repo": "tombruton87/actual-dsm",
+  "tag": "v1.0.0"
+ },
+ "bookstack": {
+  "os_min_ver": "7.2.1-69057",
+  "repo": "tombruton87/bookstack-dsm",
+  "tag": "v1.0.1"
+ },
+ "docuseal": {
+  "os_min_ver": "7.2.1-69057",
+  "repo": "tombruton87/docuseal-dsm",
+  "tag": "v1.0.0"
+ },
+ "freescout": {
+  "os_min_ver": "7.2.1-69057",
+  "repo": "tombruton87/freescout-dsm",
+  "tag": "v1.0.2"
+ },
+ "homepage": {
+  "os_min_ver": "7.2.1-69057",
+  "repo": "tombruton87/homepage-dsm",
+  "tag": "v1.0.1"
+ },
+ "invoiceninja": {
+  "os_min_ver": "7.2.1-69057",
+  "repo": "tombruton87/invoiceninja-dsm",
+  "tag": "v1.0.0"
+ },
+ "n8n": {
+  "os_min_ver": "7.2.1-69057",
+  "repo": "tombruton87/n8n-dsm",
+  "tag": "v1.0.0"
+ },
+ "navidrome": {
+  "os_min_ver": "7.2.1-69057",
+  "repo": "tombruton87/navidrome-dsm",
+  "tag": "v1.0.0"
+ },
+ "ntfy": {
+  "os_min_ver": "7.2.1-69057",
+  "repo": "tombruton87/ntfy-dsm",
+  "tag": "v1.0.0"
+ },
+ "pihole": {
+  "os_min_ver": "7.2.1-69057",
+  "repo": "tombruton87/pihole-dsm",
+  "tag": "v1.0.0"
+ },
+ "speedtest": {
+  "os_min_ver": "7.2.1-69057",
+  "repo": "tombruton87/speedtest-dsm",
+  "tag": "v1.0.0"
+ },
+ "stirlingpdf": {
+  "os_min_ver": "7.2.1-69057",
+  "repo": "tombruton87/stirling-pdf-dsm",
+  "tag": "v1.0.0"
+ },
+ "uptimekuma": {
+  "os_min_ver": "7.2.1-69057",
+  "repo": "tombruton87/uptime-kuma-dsm",
+  "tag": "v1.0.1"
+ },
+ "vaultwarden": {
+  "os_min_ver": "7.2.1-69057",
+  "repo": "tombruton87/vaultwarden-dsm",
+  "tag": "v1.1.3"
+ }
+}

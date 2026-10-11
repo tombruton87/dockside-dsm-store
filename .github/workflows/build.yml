@@ -1,0 +1,49 @@
+name: Package source
+
+# Hourly, the feed is rebuilt from each package's latest release; a new release
+# shows up in Package Center within the hour. Run it by hand after a release to
+# skip the wait.
+on:
+  schedule: [{ cron: "17 * * * *" }]
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [build.py, repos.txt, config.json, worker/**, wrangler.jsonc]
+
+permissions: { contents: write }
+concurrency: { group: package-source }
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      HAS_CLOUDFLARE: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build site/ from the latest releases
+        id: build
+        run: python3 build.py
+        env: { GITHUB_TOKEN: "${{ github.token }}" }
+        continue-on-error: true   # a failed lookup keeps that package's last good entry; the rest still ships
+
+      - name: Commit what changed
+        id: commit
+        run: |
+          git add -A site cache.json
+          if git diff --cached --quiet; then echo "changed=false" >> "$GITHUB_OUTPUT"; exit 0; fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -q -m "Package source: $(jq -r 'to_entries | map("\(.key) \(.value.tag)") | join(", ")' site/meta.json)"
+          git push -q
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Deploy to Cloudflare
+        if: env.HAS_CLOUDFLARE == 'true' && (steps.commit.outputs.changed == 'true' || github.event_name != 'schedule')
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+      - name: Fail if a package could not be read
+        if: steps.build.outcome == 'failure'
+        run: exit 1

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tom Bruton&#x27;s DSM packages</title>
+<style>
+  :root { --bg: #f5f7fa; --card: #fff; --text: #1f2933; --muted: #5f6b7a; --line: #dde3ea; --link: #0a66c2; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #14181d; --card: #1c2229; --text: #e6eaef; --muted: #9aa5b1; --line: #2c343d; --link: #6cb4ff; } }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.5 system-ui, sans-serif; }
+  main { max-width: 860px; margin: 0 auto; padding: 32px 16px 48px; }
+  h1 { font-size: 26px; margin: 0 0 6px; } a { color: var(--link); }
+  .lead { color: var(--muted); margin: 0 0 24px; }
+  .how { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 16px 20px; margin-bottom: 28px; }
+  .how ol { margin: 8px 0 0; padding-left: 20px; } code { background: var(--bg); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; word-break: break-all; }
+  ul.pk { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+  ul.pk li { display: flex; gap: 16px; background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 16px; }
+  ul.pk img { flex: none; border-radius: 12px; }
+  h2 { font-size: 17px; margin: 0 0 4px; } h2 span { color: var(--muted); font-weight: normal; font-size: 14px; }
+  ul.pk p { margin: 0 0 6px; color: var(--muted); } ul.pk p.links { margin: 0; font-size: 14px; }
+</style></head><body><main>
+<h1>Tom Bruton&#x27;s DSM packages</h1>
+<p class="lead">Self-hosted apps packaged for Synology DSM 7.2, each running in Container Manager with a DSM window of its own.</p>
+<div class="how"><b>Add these to Package Center</b><ol>
+  <li>Open <b>Package Center</b> → <b>Settings</b> → <b>Package Sources</b> → <b>Add</b>.</li>
+  <li>Name: <code>tombruton87</code> · Location: <code id="src">/</code></li>
+  <li>The packages appear under <b>Community</b>, and updates show up in Package Center.</li></ol></div>
+<ul class="pk">
+  <li><img src="icons/actual-256.png" alt="" width="56" height="56">
+    <div><h2>Actual Budget <span>1.0.0</span></h2><p>Actual Budget, private envelope budgeting that syncs between your devices, in Container Manager — with your budgets kept on your Synology, and a DSM window for the server password (shown once), signing every device out, a warning when your devices stop syncing, HTTPS with DSM&#x27;s certificate (Actual needs HTTPS), backups and updates.</p>
+    <p class="links"><a href="https://github.com/tombruton87/actual-dsm">Source and notes</a> · <a href="https://github.com/tombruton87/actual-dsm/releases/download/v1.0.0/actual-1.0.0-1.spk">Download .spk</a></p></div></li>
+  <li><img src="icons/bookstack-256.png" alt="" width="56" height="56">
+    <div><h2>BookStack <span>1.0.1</span></h2><p>BookStack, a simple wiki for documentation and how-tos, in Container Manager — with a DSM window for signing in with your Synology accounts (DSM&#x27;s LDAP Server), a readable copy of the whole wiki in a shared folder, user recovery, mail settings, HTTPS with DSM&#x27;s certificate, backups and updates.</p>
+    <p class="links"><a href="https://github.com/tombruton87/bookstack-dsm">Source and notes</a> · <a href="https://github.com/tombruton87/bookstack-dsm/releases/download/v1.0.1/bookstack-1.0.1-1.spk">Download .spk</a></p></div></li>
+  <li><img src="icons/docuseal-256.png" alt="" width="56" height="56">
+    <div><h2>DocuSeal <span>1.0.0</span></h2><p>DocuSeal, open-source document signing, in Container Manager — with a DSM window for what&#x27;s waiting to be signed, signed copies saved to a shared folder, DSM notifications, user recovery, mail checks, HTTPS with DSM&#x27;s certificate, backups and updates.</p>
+    <p class="links"><a href="https://github.com/tombruton87/docuseal-dsm">Source and notes</a> · <a href="https://github.com/tombruton87/docuseal-dsm/releases/download/v1.0.0/docuseal-1.0.0-1.spk">Download .spk</a></p></div></li>
+  <li><img src="icons/freescout-256.png" alt="" width="56" height="56">
+    <div><h2>FreeScout <span>1.0.2</span></h2><p>FreeScout help desk and shared mailbox, running in Container Manager, with a DSM window for password recovery, backups, mail health, updates and maintenance.</p>
+    <p class="links"><a href="https://github.com/tombruton87/freescout-dsm">Source and notes</a> · <a href="https://github.com/tombruton87/freescout-dsm/releases/download/v1.0.2/freescout-1.0.2-1.spk">Download .spk</a></p></div></li>
+  <li><img src="icons/homepage-256.png" alt="" width="56" height="56">
+    <div><h2>Homepage <span>1.0.1</span></h2><p>Homepage, a start page for everything on your Synology, in Container Manager — filled in for you: DSM and its live stats, every app installed from this family of packages, and your other containers, each with up/down and response time; links of your own, a look of your choosing, and YAML you can still edit in File Station.</p>
+    <p class="links"><a href="https://github.com/tombruton87/homepage-dsm">Source and notes</a> · <a href="https://github.com/tombruton87/homepage-dsm/releases/download/v1.0.1/homepage-1.0.1-1.spk">Download .spk</a></p></div></li>
+  <li><img src="icons/invoiceninja-256.png" alt="" width="56" height="56">
+    <div><h2>Invoice Ninja <span>1.0.0</span></h2><p>Invoice Ninja, invoicing, quotes, expenses and payments for small businesses and freelancers, in Container Manager with MariaDB — with a DSM window for what&#x27;s outstanding and overdue (and a DSM notification when an invoice goes overdue), users and their passwords, the mail server that sends your invoices, HTTPS with DSM&#x27;s certificate, consistent backups and updates.</p>
+    <p class="links"><a href="https://github.com/tombruton87/invoiceninja-dsm">Source and notes</a> · <a href="https://github.com/tombruton87/invoiceninja-dsm/releases/download/v1.0.0/invoiceninja-1.0.0-1.spk">Download .spk</a></p></div></li>
+  <li><img src="icons/n8n-256.png" alt="" width="56" height="56">
+    <div><h2>n8n <span>1.0.0</span></h2><p>n8n, workflow automation — connect apps and services, run on schedules and webhooks — in Container Manager, with a DSM window that keeps its encryption key safe (in every backup, shown once when you want it), tells DSM when a workflow fails, keeps a copy of every workflow in a shared folder, manages people and passwords, and handles webhook addresses, HTTPS, backups and updates.</p>
+    <p class="links"><a href="https://github.com/tombruton87/n8n-dsm">Source and notes</a> · <a href="https://github.com/tombruton87/n8n-dsm/releases/download/v1.0.0/n8n-1.0.0-1.spk">Download .spk</a></p></div></li>
+  <li><img src="icons/navidrome-256.png" alt="" width="56" height="56">
+    <div><h2>Navidrome <span>1.0.0</span></h2><p>Navidrome, your own music streaming server, in Container Manager — playing the music already in your shared folder to the web and to Subsonic apps on every phone, with a DSM window for the library and scans, phone setup with a QR code, users, sharing and HTTPS with DSM&#x27;s certificate.</p>
+    <p class="links"><a href="https://github.com/tombruton87/navidrome-dsm">Source and notes</a> · <a href="https://github.com/tombruton87/navidrome-dsm/releases/download/v1.0.0/navidrome-1.0.0-1.spk">Download .spk</a></p></div></li>
+  <li><img src="icons/ntfy-256.png" alt="" width="56" height="56">
+    <div><h2>ntfy <span>1.0.0</span></h2><p>ntfy, push notifications to your phone from your own server, in Container Manager — with a DSM window that sends DSM&#x27;s own alerts to your phone, sets phones up with a QR code, manages users and topic access, and backs it all up.</p>
+    <p class="links"><a href="https://github.com/tombruton87/ntfy-dsm">Source and notes</a> · <a href="https://github.com/tombruton87/ntfy-dsm/releases/download/v1.0.0/ntfy-1.0.0-1.spk">Download .spk</a></p></div></li>
+  <li><img src="icons/pihole-256.png" alt="" width="56" height="56">
+    <div><h2>Pi-hole <span>1.0.0</span></h2><p>Pi-hole, network-wide ad and tracker blocking, in Container Manager — answering DNS for every device on your network from your Synology. A DSM window shows what&#x27;s blocked, pauses blocking for a while, manages blocklists and allowed or blocked sites, picks the upstream DNS, checks DSM isn&#x27;t using port 53 already, and handles passwords, HTTPS, backups and updates.</p>
+    <p class="links"><a href="https://github.com/tombruton87/pihole-dsm">Source and notes</a> · <a href="https://github.com/tombruton87/pihole-dsm/releases/download/v1.0.0/pihole-1.0.0-1.spk">Download .spk</a></p></div></li>
+  <li><img src="icons/speedtest-256.png" alt="" width="56" height="56">
+    <div><h2>Speedtest Tracker <span>1.0.0</span></h2><p>Speedtest Tracker, which tests your internet speed on a schedule and keeps the history, in Container Manager — with a DSM window for the latest results and averages, running a test now, the schedule and server, alerts in DSM when the line is slow or a test fails, a monthly CSV of every result in a shared folder, API tokens, HTTPS with DSM&#x27;s certificate, backups and updates.</p>
+    <p class="links"><a href="https://github.com/tombruton87/speedtest-dsm">Source and notes</a> · <a href="https://github.com/tombruton87/speedtest-dsm/releases/download/v1.0.0/speedtest-1.0.0-1.spk">Download .spk</a></p></div></li>
+  <li><img src="icons/stirlingpdf-256.png" alt="" width="56" height="56">
+    <div><h2>Stirling-PDF <span>1.0.0</span></h2><p>Stirling-PDF, a toolbox for PDFs — merge, split, compress, OCR, convert, sign, redact — in Container Manager, with hot folders in a shared folder: drop scans into PDF inbox and searchable, compressed PDFs come out in PDF done. A DSM window sets up the folders and OCR languages, manages the accounts, tells you when a file couldn&#x27;t be processed, and handles HTTPS, backups and updates.</p>
+    <p class="links"><a href="https://github.com/tombruton87/stirling-pdf-dsm">Source and notes</a> · <a href="https://github.com/tombruton87/stirling-pdf-dsm/releases/download/v1.0.0/stirlingpdf-1.0.0-1.spk">Download .spk</a></p></div></li>
+  <li><img src="icons/uptimekuma-256.png" alt="" width="56" height="56">
+    <div><h2>Uptime Kuma <span>1.0.1</span></h2><p>Uptime Kuma, the self-hosted status monitor, in Container Manager — with a DSM window for live monitor status, DSM notifications when something goes down, one-click monitors for this Synology, outages, admin password resets, backups and updates.</p>
+    <p class="links"><a href="https://github.com/tombruton87/uptime-kuma-dsm">Source and notes</a> · <a href="https://github.com/tombruton87/uptime-kuma-dsm/releases/download/v1.0.1/uptimekuma-1.0.1-1.spk">Download .spk</a></p></div></li>
+  <li><img src="icons/vaultwarden-256.png" alt="" width="56" height="56">
+    <div><h2>Vaultwarden <span>1.1.3</span></h2><p>Vaultwarden password manager (Bitwarden-compatible) in Container Manager, on HTTPS with DSM&#x27;s certificate, with a DSM window for the admin token, users and 2FA lockouts, sign-ups, backups, mail, updates and a clean removal.</p>
+    <p class="links"><a href="https://github.com/tombruton87/vaultwarden-dsm">Source and notes</a> · <a href="https://github.com/tombruton87/vaultwarden-dsm/releases/download/v1.1.3/vaultwarden-1.1.3-1.spk">Download .spk</a></p></div></li>
+</ul></main>
+<script>var s = document.getElementById("src"); if (s.textContent === "/") s.textContent = location.origin + "/";</script>
+</body></html>
