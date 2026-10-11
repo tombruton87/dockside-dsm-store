@@ -22,7 +22,7 @@
 <footer class="wrap"><svg width="64" height="10" viewBox="0 0 64 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 5q4-4 8 0t8 0 8 0 8 0 8 0 8 0 8 0 8 0"/></svg>Each app downloads straight from its own GitHub release.</footer>
 <script>
 (function () {
-  var src = document.getElementById("src"); if (src.textContent === "/") src.textContent = new URL(".", location.href).href;
+  var src = document.getElementById("src"); if (src.textContent.charAt(0) === "/") src.textContent = new URL("." + src.textContent, location.href).href;
   var q = document.getElementById("q"), grid = document.getElementById("grid"), count = document.getElementById("count"), empty = document.getElementById("empty"), all = [], toured = {};
   function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
   function marked(text, words) {   // text with each search word highlighted, built as nodes (never innerHTML)

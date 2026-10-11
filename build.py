@@ -166,7 +166,8 @@ def render(name, **tokens):
     text = open(os.path.join(ROOT, "templates", name)).read()
     common = {"TITLE": html.escape(CONFIG["title"]), "TAGLINE": html.escape(CONFIG["tagline"]),
               "SOURCE_NAME": html.escape(CONFIG["source_name"]),
-              "SOURCE": html.escape((CONFIG.get("base_url") or "").rstrip("/") + "/"),   # "/" alone: the page fills in its own address
+              # What to type into Package Center; "/" alone: the page fills in its own address.
+              "SOURCE": html.escape((CONFIG.get("base_url") or "").rstrip("/") + "/" + (CONFIG.get("catalog_file") or "")),
               "LOGO": LOGO, "FAVICON": "data:image/svg+xml," + quote(LOGO)}
     for k, v in {**common, **tokens}.items(): text = text.replace(f"@{k}@", v)
     left = re.findall(r"@[A-Z_]+@", text)

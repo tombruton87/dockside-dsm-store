@@ -6,7 +6,7 @@ there like any other package's.
 
 **Package Center → Settings → Package Sources → Add**
 - Name: `Dockside DSM Store`
-- Location: *(the address of the deployed site)*
+- Location: `https://tombruton87.github.io/dockside-dsm-store/index.json`
 
 Every package needs Container Manager and DSM 7.2.1 or later.
 
@@ -44,23 +44,18 @@ exactly one `<pkg>-<version>-<build>.spk`, whose `INFO` agrees with that name.
 
 ## Hosting
 
-Everything is static except one thing: Package Center may ask for the catalog
-with a POST, which plain static hosts (GitHub Pages, S3) refuse with a 405.
+**GitHub Pages (now).** The Action publishes `site/` to
+`https://tombruton87.github.io/dockside-dsm-store/`. Package Center reads
+`index.json` from there directly. `base_url` in `config.json` makes the icon
+addresses absolute, and `catalog_file` is what the page tells people to type.
 
-**Cloudflare (now).** `wrangler.jsonc` deploys `site/` as static files with a
-small Worker (`worker/index.js`) in front of `/` only. It answers DSM by GET or
-POST, leaves out packages that need a newer DSM than the one asking, makes the
-icon addresses absolute, and sends browsers to the page. It logs each
-request's method and DSM build, never the model or serial, so the logs show
-what DSM actually sends. Location: `https://<worker>.workers.dev/`, or a custom
-domain.
+Pages answers only GET. If Package Center turns out to ask by POST (it then
+says the location isn't valid), put the Cloudflare Worker in front instead:
 
-Deploys need two repository secrets: `CLOUDFLARE_API_TOKEN` (the "Edit
-Cloudflare Workers" template) and `CLOUDFLARE_ACCOUNT_ID`.
-
-**A static host (S3, GitHub Pages, …).** Only if the Worker's logs show DSM
-asking by GET. Set `base_url` in `config.json` to the site's address (static
-files can't make the icon addresses absolute themselves), upload `site/`, and
-use `https://<host>/index.json` as the Location. On AWS that's an S3 bucket
-behind CloudFront. If DSM turns out to POST, CloudFront needs a small Lambda
-in front of the catalog to answer it.
+**Cloudflare Worker (ready, not deployed).** `wrangler.jsonc` deploys `site/` as
+static files with `worker/index.js` in front of `/`. It answers DSM by GET or
+POST, leaves out packages that need a newer DSM than the one asking, and logs
+each request's method and DSM build (never the model or serial). Set
+`catalog_file` to `""` and `base_url` to the Worker's address, and add the
+repository secrets `CLOUDFLARE_API_TOKEN` ("Edit Cloudflare Workers" template)
+and `CLOUDFLARE_ACCOUNT_ID`; the Action then deploys there too.

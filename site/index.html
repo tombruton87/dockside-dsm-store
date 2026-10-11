@@ -12,7 +12,7 @@
 <main class="wrap">
 <section class="how" aria-label="Add to Package Center"><h2>Moor it in Package Center</h2>
   <div class="step"><span class="ring"><span>1</span></span><div><b>Package Center</b> → <b>Settings</b> → <b>Package Sources</b> → <b>Add</b></div></div>
-  <div class="step"><span class="ring"><span>2</span></span><div>Name <code>Dockside DSM Store</code><br>Location <code id="src">/</code></div></div>
+  <div class="step"><span class="ring"><span>2</span></span><div>Name <code>Dockside DSM Store</code><br>Location <code id="src">https://tombruton87.github.io/dockside-dsm-store/index.json</code></div></div>
   <div class="step"><span class="ring"><span>3</span></span><div>The apps appear under <b>Community</b>, and their updates arrive there too.</div></div>
 </section>
 <ul class="grid" id="grid"></ul>
@@ -22,7 +22,7 @@
 <footer class="wrap"><svg width="64" height="10" viewBox="0 0 64 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 5q4-4 8 0t8 0 8 0 8 0 8 0 8 0 8 0 8 0"/></svg>Each app downloads straight from its own GitHub release.</footer>
 <script>
 (function () {
-  var src = document.getElementById("src"); if (src.textContent === "/") src.textContent = new URL(".", location.href).href;
+  var src = document.getElementById("src"); if (src.textContent.charAt(0) === "/") src.textContent = new URL("." + src.textContent, location.href).href;
   var q = document.getElementById("q"), grid = document.getElementById("grid"), count = document.getElementById("count"), empty = document.getElementById("empty"), all = [], toured = {};
   function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
   function marked(text, words) {   // text with each search word highlighted, built as nodes (never innerHTML)

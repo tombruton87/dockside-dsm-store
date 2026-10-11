@@ -2,20 +2,23 @@ name: Package source
 
 # Hourly, the feed is rebuilt from each package's latest release; a new release
 # shows up in Package Center within the hour. Run it by hand after a release to
-# skip the wait.
+# skip the wait. site/ is published to GitHub Pages (and to Cloudflare as well,
+# if its secrets are set).
 on:
   schedule: [{ cron: "17 * * * *" }]
   workflow_dispatch:
   push:
     branches: [main]
-    paths: [build.py, repos.txt, config.json, worker/**, wrangler.jsonc]
+    paths: [build.py, repos.txt, config.json, templates/**, site/art/**, worker/**, wrangler.jsonc, .github/workflows/**]
 
-permissions: { contents: write }
+permissions: { contents: write, pages: write, id-token: write }
 concurrency: { group: package-source }
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      deploy: ${{ steps.commit.outputs.changed == 'true' || github.event_name != 'schedule' }}
     env:
       HAS_CLOUDFLARE: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
     steps:
@@ -37,6 +40,11 @@ jobs:
           git push -q
           echo "changed=true" >> "$GITHUB_OUTPUT"
 
+      - name: Package site/ for GitHub Pages
+        if: steps.commit.outputs.changed == 'true' || github.event_name != 'schedule'
+        uses: actions/upload-pages-artifact@v3
+        with: { path: site }
+
       - name: Deploy to Cloudflare
         if: env.HAS_CLOUDFLARE == 'true' && (steps.commit.outputs.changed == 'true' || github.event_name != 'schedule')
         uses: cloudflare/wrangler-action@v3
@@ -47,3 +55,12 @@ jobs:
       - name: Fail if a package could not be read
         if: steps.build.outcome == 'failure'
         run: exit 1
+
+  pages:
+    needs: build
+    if: always() && needs.build.outputs.deploy == 'true'
+    runs-on: ubuntu-latest
+    environment: { name: github-pages, url: "${{ steps.deploy.outputs.page_url }}" }
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4

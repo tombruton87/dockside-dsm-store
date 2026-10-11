@@ -1,9 +1,10 @@
 {
  "title": "Dockside DSM Store",
  "source_name": "Dockside DSM Store",
- "base_url": "",
+ "base_url": "https://tombruton87.github.io/dockside-dsm-store",
  "distributor": "Tom Bruton",
  "distributor_url": "https://github.com/tombruton87",
  "tagline": "Self-hosted apps for Synology DSM 7.2, each running in Container Manager with a DSM window of its own.",
- "tour_default": "vaultwarden"
+ "tour_default": "vaultwarden",
+ "catalog_file": "index.json"
 }
