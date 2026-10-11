@@ -1,70 +1,90 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tom Bruton&#x27;s DSM packages</title>
+<title>DSM App Shelf</title>
+<meta name="description" content="Self-hosted apps for Synology DSM 7.2, each running in Container Manager with a DSM window of its own.">
+<link rel="icon" href="icons/actual-64.png">
 <style>
-  :root { --bg: #f5f7fa; --card: #fff; --text: #1f2933; --muted: #5f6b7a; --line: #dde3ea; --link: #0a66c2; }
-  @media (prefers-color-scheme: dark) { :root { --bg: #14181d; --card: #1c2229; --text: #e6eaef; --muted: #9aa5b1; --line: #2c343d; --link: #6cb4ff; } }
-  body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.5 system-ui, sans-serif; }
-  main { max-width: 860px; margin: 0 auto; padding: 32px 16px 48px; }
-  h1 { font-size: 26px; margin: 0 0 6px; } a { color: var(--link); }
-  .lead { color: var(--muted); margin: 0 0 24px; }
-  .how { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 16px 20px; margin-bottom: 28px; }
-  .how ol { margin: 8px 0 0; padding-left: 20px; } code { background: var(--bg); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; word-break: break-all; }
-  ul.pk { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
-  ul.pk li { display: flex; gap: 16px; background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 16px; }
-  ul.pk img { flex: none; border-radius: 12px; }
-  h2 { font-size: 17px; margin: 0 0 4px; } h2 span { color: var(--muted); font-weight: normal; font-size: 14px; }
-  ul.pk p { margin: 0 0 6px; color: var(--muted); } ul.pk p.links { margin: 0; font-size: 14px; }
+  :root { --bg: #f4f6f9; --card: #fff; --text: #1f2933; --muted: #5f6b7a; --line: #dde3ea; --link: #0a66c2; --accent: #0a66c2; --chip: #eef2f6; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #12161b; --card: #1b2128; --text: #e6eaef; --muted: #9aa5b1; --line: #2b333c; --link: #6cb4ff; --accent: #4c9dff; --chip: #232b34; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  a { color: var(--link); }
+  main { max-width: 1180px; margin: 0 auto; padding: 32px 16px 56px; }
+  header { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 16px 32px; margin-bottom: 20px; }
+  h1 { font-size: 28px; margin: 0; letter-spacing: -0.01em; }
+  .lead { color: var(--muted); margin: 4px 0 0; max-width: 60ch; }
+  .how { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px 18px; font-size: 14px; flex: 0 1 420px; }
+  .how b.t { display: block; margin-bottom: 4px; }
+  .how ol { margin: 0; padding-left: 18px; }
+  code { background: var(--chip); border-radius: 4px; padding: 1px 6px; word-break: break-all; font-size: 13px; }
+  .bar { display: flex; align-items: center; gap: 12px; margin: 8px 0 16px; }
+  .bar input { flex: 1; max-width: 420px; font: inherit; padding: 9px 12px 9px 36px; border: 1px solid var(--line); border-radius: 8px; background: var(--card) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%238894a2' stroke-width='2'%3E%3Ccircle cx='7' cy='7' r='5'/%3E%3Cpath d='m11 11 4 4'/%3E%3C/svg%3E") no-repeat 12px center; color: var(--text); }
+  .bar input:focus { outline: 2px solid var(--accent); outline-offset: -1px; border-color: transparent; }
+  #count { color: var(--muted); font-size: 14px; }
+  .grid { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+  .card[hidden] { display: none; }
+  .card { display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px; }
+  .card .top { display: flex; gap: 12px; align-items: center; margin-bottom: 10px; }
+  .card img { flex: none; width: 48px; height: 48px; border-radius: 11px; }
+  .card h2 { font-size: 16px; margin: 0; line-height: 1.3; }
+  .card .ver { display: inline-block; margin-top: 2px; background: var(--chip); color: var(--muted); border-radius: 999px; padding: 0 8px; font-size: 12px; }
+  .card p { margin: 0 0 12px; color: var(--muted); font-size: 14px; flex: 1; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }
+  .card .links { display: flex; gap: 14px; font-size: 14px; }
+  .card .links a { text-decoration: none; } .card .links a:hover { text-decoration: underline; }
+  mark { background: rgba(255, 196, 0, .35); color: inherit; border-radius: 2px; }
+  .empty { color: var(--muted); padding: 32px 0; text-align: center; }
 </style></head><body><main>
-<h1>Tom Bruton&#x27;s DSM packages</h1>
-<p class="lead">Self-hosted apps packaged for Synology DSM 7.2, each running in Container Manager with a DSM window of its own.</p>
-<div class="how"><b>Add these to Package Center</b><ol>
-  <li>Open <b>Package Center</b> → <b>Settings</b> → <b>Package Sources</b> → <b>Add</b>.</li>
-  <li>Name: <code>tombruton87</code> · Location: <code id="src">/</code></li>
-  <li>The packages appear under <b>Community</b>, and updates show up in Package Center.</li></ol></div>
-<ul class="pk">
-  <li><img src="icons/actual-256.png" alt="" width="56" height="56">
-    <div><h2>Actual Budget <span>1.0.0</span></h2><p>Actual Budget, private envelope budgeting that syncs between your devices, in Container Manager — with your budgets kept on your Synology, and a DSM window for the server password (shown once), signing every device out, a warning when your devices stop syncing, HTTPS with DSM&#x27;s certificate (Actual needs HTTPS), backups and updates.</p>
-    <p class="links"><a href="https://github.com/tombruton87/actual-dsm">Source and notes</a> · <a href="https://github.com/tombruton87/actual-dsm/releases/download/v1.0.0/actual-1.0.0-1.spk">Download .spk</a></p></div></li>
-  <li><img src="icons/bookstack-256.png" alt="" width="56" height="56">
-    <div><h2>BookStack <span>1.0.1</span></h2><p>BookStack, a simple wiki for documentation and how-tos, in Container Manager — with a DSM window for signing in with your Synology accounts (DSM&#x27;s LDAP Server), a readable copy of the whole wiki in a shared folder, user recovery, mail settings, HTTPS with DSM&#x27;s certificate, backups and updates.</p>
-    <p class="links"><a href="https://github.com/tombruton87/bookstack-dsm">Source and notes</a> · <a href="https://github.com/tombruton87/bookstack-dsm/releases/download/v1.0.1/bookstack-1.0.1-1.spk">Download .spk</a></p></div></li>
-  <li><img src="icons/docuseal-256.png" alt="" width="56" height="56">
-    <div><h2>DocuSeal <span>1.0.0</span></h2><p>DocuSeal, open-source document signing, in Container Manager — with a DSM window for what&#x27;s waiting to be signed, signed copies saved to a shared folder, DSM notifications, user recovery, mail checks, HTTPS with DSM&#x27;s certificate, backups and updates.</p>
-    <p class="links"><a href="https://github.com/tombruton87/docuseal-dsm">Source and notes</a> · <a href="https://github.com/tombruton87/docuseal-dsm/releases/download/v1.0.0/docuseal-1.0.0-1.spk">Download .spk</a></p></div></li>
-  <li><img src="icons/freescout-256.png" alt="" width="56" height="56">
-    <div><h2>FreeScout <span>1.0.2</span></h2><p>FreeScout help desk and shared mailbox, running in Container Manager, with a DSM window for password recovery, backups, mail health, updates and maintenance.</p>
-    <p class="links"><a href="https://github.com/tombruton87/freescout-dsm">Source and notes</a> · <a href="https://github.com/tombruton87/freescout-dsm/releases/download/v1.0.2/freescout-1.0.2-1.spk">Download .spk</a></p></div></li>
-  <li><img src="icons/homepage-256.png" alt="" width="56" height="56">
-    <div><h2>Homepage <span>1.0.1</span></h2><p>Homepage, a start page for everything on your Synology, in Container Manager — filled in for you: DSM and its live stats, every app installed from this family of packages, and your other containers, each with up/down and response time; links of your own, a look of your choosing, and YAML you can still edit in File Station.</p>
-    <p class="links"><a href="https://github.com/tombruton87/homepage-dsm">Source and notes</a> · <a href="https://github.com/tombruton87/homepage-dsm/releases/download/v1.0.1/homepage-1.0.1-1.spk">Download .spk</a></p></div></li>
-  <li><img src="icons/invoiceninja-256.png" alt="" width="56" height="56">
-    <div><h2>Invoice Ninja <span>1.0.0</span></h2><p>Invoice Ninja, invoicing, quotes, expenses and payments for small businesses and freelancers, in Container Manager with MariaDB — with a DSM window for what&#x27;s outstanding and overdue (and a DSM notification when an invoice goes overdue), users and their passwords, the mail server that sends your invoices, HTTPS with DSM&#x27;s certificate, consistent backups and updates.</p>
-    <p class="links"><a href="https://github.com/tombruton87/invoiceninja-dsm">Source and notes</a> · <a href="https://github.com/tombruton87/invoiceninja-dsm/releases/download/v1.0.0/invoiceninja-1.0.0-1.spk">Download .spk</a></p></div></li>
-  <li><img src="icons/n8n-256.png" alt="" width="56" height="56">
-    <div><h2>n8n <span>1.0.0</span></h2><p>n8n, workflow automation — connect apps and services, run on schedules and webhooks — in Container Manager, with a DSM window that keeps its encryption key safe (in every backup, shown once when you want it), tells DSM when a workflow fails, keeps a copy of every workflow in a shared folder, manages people and passwords, and handles webhook addresses, HTTPS, backups and updates.</p>
-    <p class="links"><a href="https://github.com/tombruton87/n8n-dsm">Source and notes</a> · <a href="https://github.com/tombruton87/n8n-dsm/releases/download/v1.0.0/n8n-1.0.0-1.spk">Download .spk</a></p></div></li>
-  <li><img src="icons/navidrome-256.png" alt="" width="56" height="56">
-    <div><h2>Navidrome <span>1.0.0</span></h2><p>Navidrome, your own music streaming server, in Container Manager — playing the music already in your shared folder to the web and to Subsonic apps on every phone, with a DSM window for the library and scans, phone setup with a QR code, users, sharing and HTTPS with DSM&#x27;s certificate.</p>
-    <p class="links"><a href="https://github.com/tombruton87/navidrome-dsm">Source and notes</a> · <a href="https://github.com/tombruton87/navidrome-dsm/releases/download/v1.0.0/navidrome-1.0.0-1.spk">Download .spk</a></p></div></li>
-  <li><img src="icons/ntfy-256.png" alt="" width="56" height="56">
-    <div><h2>ntfy <span>1.0.0</span></h2><p>ntfy, push notifications to your phone from your own server, in Container Manager — with a DSM window that sends DSM&#x27;s own alerts to your phone, sets phones up with a QR code, manages users and topic access, and backs it all up.</p>
-    <p class="links"><a href="https://github.com/tombruton87/ntfy-dsm">Source and notes</a> · <a href="https://github.com/tombruton87/ntfy-dsm/releases/download/v1.0.0/ntfy-1.0.0-1.spk">Download .spk</a></p></div></li>
-  <li><img src="icons/pihole-256.png" alt="" width="56" height="56">
-    <div><h2>Pi-hole <span>1.0.0</span></h2><p>Pi-hole, network-wide ad and tracker blocking, in Container Manager — answering DNS for every device on your network from your Synology. A DSM window shows what&#x27;s blocked, pauses blocking for a while, manages blocklists and allowed or blocked sites, picks the upstream DNS, checks DSM isn&#x27;t using port 53 already, and handles passwords, HTTPS, backups and updates.</p>
-    <p class="links"><a href="https://github.com/tombruton87/pihole-dsm">Source and notes</a> · <a href="https://github.com/tombruton87/pihole-dsm/releases/download/v1.0.0/pihole-1.0.0-1.spk">Download .spk</a></p></div></li>
-  <li><img src="icons/speedtest-256.png" alt="" width="56" height="56">
-    <div><h2>Speedtest Tracker <span>1.0.0</span></h2><p>Speedtest Tracker, which tests your internet speed on a schedule and keeps the history, in Container Manager — with a DSM window for the latest results and averages, running a test now, the schedule and server, alerts in DSM when the line is slow or a test fails, a monthly CSV of every result in a shared folder, API tokens, HTTPS with DSM&#x27;s certificate, backups and updates.</p>
-    <p class="links"><a href="https://github.com/tombruton87/speedtest-dsm">Source and notes</a> · <a href="https://github.com/tombruton87/speedtest-dsm/releases/download/v1.0.0/speedtest-1.0.0-1.spk">Download .spk</a></p></div></li>
-  <li><img src="icons/stirlingpdf-256.png" alt="" width="56" height="56">
-    <div><h2>Stirling-PDF <span>1.0.0</span></h2><p>Stirling-PDF, a toolbox for PDFs — merge, split, compress, OCR, convert, sign, redact — in Container Manager, with hot folders in a shared folder: drop scans into PDF inbox and searchable, compressed PDFs come out in PDF done. A DSM window sets up the folders and OCR languages, manages the accounts, tells you when a file couldn&#x27;t be processed, and handles HTTPS, backups and updates.</p>
-    <p class="links"><a href="https://github.com/tombruton87/stirling-pdf-dsm">Source and notes</a> · <a href="https://github.com/tombruton87/stirling-pdf-dsm/releases/download/v1.0.0/stirlingpdf-1.0.0-1.spk">Download .spk</a></p></div></li>
-  <li><img src="icons/uptimekuma-256.png" alt="" width="56" height="56">
-    <div><h2>Uptime Kuma <span>1.0.1</span></h2><p>Uptime Kuma, the self-hosted status monitor, in Container Manager — with a DSM window for live monitor status, DSM notifications when something goes down, one-click monitors for this Synology, outages, admin password resets, backups and updates.</p>
-    <p class="links"><a href="https://github.com/tombruton87/uptime-kuma-dsm">Source and notes</a> · <a href="https://github.com/tombruton87/uptime-kuma-dsm/releases/download/v1.0.1/uptimekuma-1.0.1-1.spk">Download .spk</a></p></div></li>
-  <li><img src="icons/vaultwarden-256.png" alt="" width="56" height="56">
-    <div><h2>Vaultwarden <span>1.1.3</span></h2><p>Vaultwarden password manager (Bitwarden-compatible) in Container Manager, on HTTPS with DSM&#x27;s certificate, with a DSM window for the admin token, users and 2FA lockouts, sign-ups, backups, mail, updates and a clean removal.</p>
-    <p class="links"><a href="https://github.com/tombruton87/vaultwarden-dsm">Source and notes</a> · <a href="https://github.com/tombruton87/vaultwarden-dsm/releases/download/v1.1.3/vaultwarden-1.1.3-1.spk">Download .spk</a></p></div></li>
-</ul></main>
-<script>var s = document.getElementById("src"); if (s.textContent === "/") s.textContent = location.origin + "/";</script>
+<header>
+  <div><h1>DSM App Shelf</h1><p class="lead">Self-hosted apps for Synology DSM 7.2, each running in Container Manager with a DSM window of its own.</p></div>
+  <div class="how"><b class="t">Add the shelf to Package Center</b><ol>
+    <li><b>Package Center</b> → <b>Settings</b> → <b>Package Sources</b> → <b>Add</b></li>
+    <li>Name <code>AppShelf</code>, Location <code id="src">/</code></li>
+    <li>The apps appear under <b>Community</b>, with their updates.</li></ol></div>
+</header>
+<div class="bar"><input id="q" type="search" placeholder="Search apps" aria-label="Search apps" autocomplete="off"><span id="count" aria-live="polite"></span></div>
+<ul class="grid" id="grid"></ul>
+<p class="empty" id="empty" hidden>No app matches that.</p>
+<noscript><ul><li><a href="https://github.com/tombruton87/actual-dsm/releases/download/v1.0.0/actual-1.0.0-1.spk">Actual Budget 1.0.0</a></li><li><a href="https://github.com/tombruton87/bookstack-dsm/releases/download/v1.0.1/bookstack-1.0.1-1.spk">BookStack 1.0.1</a></li><li><a href="https://github.com/tombruton87/docuseal-dsm/releases/download/v1.0.0/docuseal-1.0.0-1.spk">DocuSeal 1.0.0</a></li><li><a href="https://github.com/tombruton87/freescout-dsm/releases/download/v1.0.2/freescout-1.0.2-1.spk">FreeScout 1.0.2</a></li><li><a href="https://github.com/tombruton87/homepage-dsm/releases/download/v1.0.1/homepage-1.0.1-1.spk">Homepage 1.0.1</a></li><li><a href="https://github.com/tombruton87/invoiceninja-dsm/releases/download/v1.0.0/invoiceninja-1.0.0-1.spk">Invoice Ninja 1.0.0</a></li><li><a href="https://github.com/tombruton87/n8n-dsm/releases/download/v1.0.0/n8n-1.0.0-1.spk">n8n 1.0.0</a></li><li><a href="https://github.com/tombruton87/navidrome-dsm/releases/download/v1.0.0/navidrome-1.0.0-1.spk">Navidrome 1.0.0</a></li><li><a href="https://github.com/tombruton87/ntfy-dsm/releases/download/v1.0.0/ntfy-1.0.0-1.spk">ntfy 1.0.0</a></li><li><a href="https://github.com/tombruton87/pihole-dsm/releases/download/v1.0.0/pihole-1.0.0-1.spk">Pi-hole 1.0.0</a></li><li><a href="https://github.com/tombruton87/speedtest-dsm/releases/download/v1.0.0/speedtest-1.0.0-1.spk">Speedtest Tracker 1.0.0</a></li><li><a href="https://github.com/tombruton87/stirling-pdf-dsm/releases/download/v1.0.0/stirlingpdf-1.0.0-1.spk">Stirling-PDF 1.0.0</a></li><li><a href="https://github.com/tombruton87/uptime-kuma-dsm/releases/download/v1.0.1/uptimekuma-1.0.1-1.spk">Uptime Kuma 1.0.1</a></li><li><a href="https://github.com/tombruton87/vaultwarden-dsm/releases/download/v1.1.3/vaultwarden-1.1.3-1.spk">Vaultwarden 1.1.3</a></li></ul></noscript>
+</main>
+<script>
+(function () {
+  var src = document.getElementById("src"); if (src.textContent === "/") src.textContent = location.origin + "/";
+  var q = document.getElementById("q"), grid = document.getElementById("grid"), count = document.getElementById("count"), empty = document.getElementById("empty"), all = [];
+  function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
+  function marked(text, words) {   // text with each search word highlighted, built as nodes (never innerHTML)
+    var frag = document.createDocumentFragment(); if (!words.length) { frag.appendChild(document.createTextNode(text)); return frag; }
+    var re = new RegExp("(" + words.map(function (w) { return w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }).join("|") + ")", "ig");
+    text.split(re).forEach(function (part, i) { frag.appendChild(i % 2 ? el("mark", null, part) : document.createTextNode(part)); });
+    return frag;
+  }
+  function card(p) {   // made once per app; a search only hides it and re-marks its text
+    var li = el("li", "card"), top = el("div", "top"), img = el("img"), name = el("div"), h = el("h2"), d = el("p");
+    img.src = p.thumbnail[p.thumbnail.length - 1]; img.alt = ""; img.width = img.height = 48;
+    name.appendChild(h); name.appendChild(el("span", "ver", p.version.replace(/-\d+$/, "")));
+    top.appendChild(img); top.appendChild(name); li.appendChild(top); d.title = p.desc; li.appendChild(d);
+    var links = el("div", "links"), a = el("a", null, "Source and notes"), b = el("a", null, "Download .spk");
+    a.href = p.maintainer_url || "#"; b.href = p.link; links.appendChild(a); links.appendChild(b); li.appendChild(links);
+    grid.appendChild(li);
+    return { p: p, li: li, h: h, d: d, hay: (p.dname + " " + p.package + " " + p.desc).toLowerCase() };
+  }
+  function show() {
+    var words = q.value.trim().toLowerCase().split(/\s+/).filter(Boolean), hits = 0;
+    all.forEach(function (c) {
+      var hit = words.every(function (w) { return c.hay.indexOf(w) >= 0; });
+      c.li.hidden = !hit; if (!hit) return; hits++;
+      c.h.replaceChildren(marked(c.p.dname, words)); c.d.replaceChildren(marked(c.p.desc, words));
+    });
+    count.textContent = words.length ? hits + " of " + all.length + " apps" : all.length + " apps";
+    empty.hidden = hits > 0;
+    try { history.replaceState(null, "", words.length ? "?q=" + encodeURIComponent(q.value.trim()) : location.pathname); } catch (e) {}
+  }
+  q.value = new URLSearchParams(location.search).get("q") || "";
+  q.addEventListener("input", show);
+  document.addEventListener("keydown", function (ev) { if (ev.key === "/" && document.activeElement !== q) { ev.preventDefault(); q.focus(); } });
+  fetch("index.json", { headers: { Accept: "application/json" } })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (d) { all = (d.packages || []).map(card); show(); })
+    .catch(function () { count.textContent = "Couldn't load the list — try reloading."; });
+})();
+</script>
 </body></html>

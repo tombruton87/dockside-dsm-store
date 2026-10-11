@@ -1,11 +1,11 @@
-# DSM package source
+# DSM App Shelf
 
-A Package Center source for my Synology DSM 7.2 packages. Add it once and the
+A Package Center source for self-hosted apps packaged for Synology DSM 7.2. Add it once and the
 packages appear under **Community** in Package Center, and their updates arrive
 there like any other package's.
 
 **Package Center → Settings → Package Sources → Add**
-- Name: `tombruton87`
+- Name: `AppShelf`
 - Location: *(the address of the deployed site)*
 
 Every package needs Container Manager and DSM 7.2.1 or later.
@@ -20,7 +20,7 @@ its versioned `.spk`, and writes a static site:
 | `site/index.json` | the catalog Package Center reads: `{"packages": [...]}` |
 | `site/meta.json` | each package's minimum DSM and the release it came from |
 | `site/icons/` | the icons out of each `.spk` |
-| `site/index.html` | a page for people, listing the packages |
+| `site/index.html` | a page for people: loads `index.json` and lists the apps in a grid, with a search |
 
 The `.spk` downloads themselves stay on GitHub. Each catalog entry links to
 the release asset, with its md5 and size. `cache.json` remembers what came out of

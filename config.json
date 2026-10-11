@@ -1,7 +1,8 @@
 {
- "title": "Tom Bruton's DSM packages",
- "source_name": "tombruton87",
+ "title": "DSM App Shelf",
+ "source_name": "AppShelf",
  "base_url": "",
  "distributor": "Tom Bruton",
- "distributor_url": "https://github.com/tombruton87"
+ "distributor_url": "https://github.com/tombruton87",
+ "tagline": "Self-hosted apps for Synology DSM 7.2, each running in Container Manager with a DSM window of its own."
 }

@@ -139,42 +139,102 @@ def write(path, text):
 
 
 def page(packages, meta):
+    """The page for people: a shell that loads index.json and lists it, with a search.
+    The package names are also written in, for anyone without JavaScript."""
     e = html.escape
     source = (CONFIG.get("base_url") or "").rstrip("/") + "/"   # "/" alone: filled in from the page's own address
-    cards = "\n".join(f"""  <li><img src="icons/{p['package']}-256.png" alt="" width="56" height="56">
-    <div><h2>{e(p['dname'])} <span>{e(p['version'].rsplit('-', 1)[0])}</span></h2><p>{e(p['desc'])}</p>
-    <p class="links"><a href="https://github.com/{e(meta[p['package']]['repo'])}">Source and notes</a> · <a href="{e(p['link'])}">Download .spk</a></p></div></li>""" for p in packages)
+    plain = "".join(f'<li><a href="{e(p["link"])}">{e(p["dname"])} {e(p["version"].rsplit("-", 1)[0])}</a></li>' for p in packages)
     return f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{e(CONFIG['title'])}</title>
+<meta name="description" content="{e(CONFIG['tagline'])}">
+<link rel="icon" href="icons/{e(packages[0]['package'] if packages else '')}-64.png">
 <style>
-  :root {{ --bg: #f5f7fa; --card: #fff; --text: #1f2933; --muted: #5f6b7a; --line: #dde3ea; --link: #0a66c2; }}
-  @media (prefers-color-scheme: dark) {{ :root {{ --bg: #14181d; --card: #1c2229; --text: #e6eaef; --muted: #9aa5b1; --line: #2c343d; --link: #6cb4ff; }} }}
-  body {{ margin: 0; background: var(--bg); color: var(--text); font: 15px/1.5 system-ui, sans-serif; }}
-  main {{ max-width: 860px; margin: 0 auto; padding: 32px 16px 48px; }}
-  h1 {{ font-size: 26px; margin: 0 0 6px; }} a {{ color: var(--link); }}
-  .lead {{ color: var(--muted); margin: 0 0 24px; }}
-  .how {{ background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 16px 20px; margin-bottom: 28px; }}
-  .how ol {{ margin: 8px 0 0; padding-left: 20px; }} code {{ background: var(--bg); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; word-break: break-all; }}
-  ul.pk {{ list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }}
-  ul.pk li {{ display: flex; gap: 16px; background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 16px; }}
-  ul.pk img {{ flex: none; border-radius: 12px; }}
-  h2 {{ font-size: 17px; margin: 0 0 4px; }} h2 span {{ color: var(--muted); font-weight: normal; font-size: 14px; }}
-  ul.pk p {{ margin: 0 0 6px; color: var(--muted); }} ul.pk p.links {{ margin: 0; font-size: 14px; }}
+  :root {{ --bg: #f4f6f9; --card: #fff; --text: #1f2933; --muted: #5f6b7a; --line: #dde3ea; --link: #0a66c2; --accent: #0a66c2; --chip: #eef2f6; }}
+  @media (prefers-color-scheme: dark) {{ :root {{ --bg: #12161b; --card: #1b2128; --text: #e6eaef; --muted: #9aa5b1; --line: #2b333c; --link: #6cb4ff; --accent: #4c9dff; --chip: #232b34; }} }}
+  * {{ box-sizing: border-box; }}
+  body {{ margin: 0; background: var(--bg); color: var(--text); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }}
+  a {{ color: var(--link); }}
+  main {{ max-width: 1180px; margin: 0 auto; padding: 32px 16px 56px; }}
+  header {{ display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 16px 32px; margin-bottom: 20px; }}
+  h1 {{ font-size: 28px; margin: 0; letter-spacing: -0.01em; }}
+  .lead {{ color: var(--muted); margin: 4px 0 0; max-width: 60ch; }}
+  .how {{ background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px 18px; font-size: 14px; flex: 0 1 420px; }}
+  .how b.t {{ display: block; margin-bottom: 4px; }}
+  .how ol {{ margin: 0; padding-left: 18px; }}
+  code {{ background: var(--chip); border-radius: 4px; padding: 1px 6px; word-break: break-all; font-size: 13px; }}
+  .bar {{ display: flex; align-items: center; gap: 12px; margin: 8px 0 16px; }}
+  .bar input {{ flex: 1; max-width: 420px; font: inherit; padding: 9px 12px 9px 36px; border: 1px solid var(--line); border-radius: 8px; background: var(--card) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%238894a2' stroke-width='2'%3E%3Ccircle cx='7' cy='7' r='5'/%3E%3Cpath d='m11 11 4 4'/%3E%3C/svg%3E") no-repeat 12px center; color: var(--text); }}
+  .bar input:focus {{ outline: 2px solid var(--accent); outline-offset: -1px; border-color: transparent; }}
+  #count {{ color: var(--muted); font-size: 14px; }}
+  .grid {{ list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }}
+  .card[hidden] {{ display: none; }}
+  .card {{ display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px; }}
+  .card .top {{ display: flex; gap: 12px; align-items: center; margin-bottom: 10px; }}
+  .card img {{ flex: none; width: 48px; height: 48px; border-radius: 11px; }}
+  .card h2 {{ font-size: 16px; margin: 0; line-height: 1.3; }}
+  .card .ver {{ display: inline-block; margin-top: 2px; background: var(--chip); color: var(--muted); border-radius: 999px; padding: 0 8px; font-size: 12px; }}
+  .card p {{ margin: 0 0 12px; color: var(--muted); font-size: 14px; flex: 1; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }}
+  .card .links {{ display: flex; gap: 14px; font-size: 14px; }}
+  .card .links a {{ text-decoration: none; }} .card .links a:hover {{ text-decoration: underline; }}
+  mark {{ background: rgba(255, 196, 0, .35); color: inherit; border-radius: 2px; }}
+  .empty {{ color: var(--muted); padding: 32px 0; text-align: center; }}
 </style></head><body><main>
-<h1>{e(CONFIG['title'])}</h1>
-<p class="lead">Self-hosted apps packaged for Synology DSM 7.2, each running in Container Manager with a DSM window of its own.</p>
-<div class="how"><b>Add these to Package Center</b><ol>
-  <li>Open <b>Package Center</b> → <b>Settings</b> → <b>Package Sources</b> → <b>Add</b>.</li>
-  <li>Name: <code>{e(CONFIG['source_name'])}</code> · Location: <code id="src">{e(source)}</code></li>
-  <li>The packages appear under <b>Community</b>, and updates show up in Package Center.</li></ol></div>
-<ul class="pk">
-{cards}
-</ul></main>
-<script>var s = document.getElementById("src"); if (s.textContent === "/") s.textContent = location.origin + "/";</script>
+<header>
+  <div><h1>{e(CONFIG['title'])}</h1><p class="lead">{e(CONFIG['tagline'])}</p></div>
+  <div class="how"><b class="t">Add the shelf to Package Center</b><ol>
+    <li><b>Package Center</b> → <b>Settings</b> → <b>Package Sources</b> → <b>Add</b></li>
+    <li>Name <code>{e(CONFIG['source_name'])}</code>, Location <code id="src">{e(source)}</code></li>
+    <li>The apps appear under <b>Community</b>, with their updates.</li></ol></div>
+</header>
+<div class="bar"><input id="q" type="search" placeholder="Search apps" aria-label="Search apps" autocomplete="off"><span id="count" aria-live="polite"></span></div>
+<ul class="grid" id="grid"></ul>
+<p class="empty" id="empty" hidden>No app matches that.</p>
+<noscript><ul>{plain}</ul></noscript>
+</main>
+<script>
+(function () {{
+  var src = document.getElementById("src"); if (src.textContent === "/") src.textContent = location.origin + "/";
+  var q = document.getElementById("q"), grid = document.getElementById("grid"), count = document.getElementById("count"), empty = document.getElementById("empty"), all = [];
+  function el(tag, cls, text) {{ var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }}
+  function marked(text, words) {{   // text with each search word highlighted, built as nodes (never innerHTML)
+    var frag = document.createDocumentFragment(); if (!words.length) {{ frag.appendChild(document.createTextNode(text)); return frag; }}
+    var re = new RegExp("(" + words.map(function (w) {{ return w.replace(/[.*+?^${{}}()|[\\]\\\\]/g, "\\\\$&"); }}).join("|") + ")", "ig");
+    text.split(re).forEach(function (part, i) {{ frag.appendChild(i % 2 ? el("mark", null, part) : document.createTextNode(part)); }});
+    return frag;
+  }}
+  function card(p) {{   // made once per app; a search only hides it and re-marks its text
+    var li = el("li", "card"), top = el("div", "top"), img = el("img"), name = el("div"), h = el("h2"), d = el("p");
+    img.src = p.thumbnail[p.thumbnail.length - 1]; img.alt = ""; img.width = img.height = 48;
+    name.appendChild(h); name.appendChild(el("span", "ver", p.version.replace(/-\\d+$/, "")));
+    top.appendChild(img); top.appendChild(name); li.appendChild(top); d.title = p.desc; li.appendChild(d);
+    var links = el("div", "links"), a = el("a", null, "Source and notes"), b = el("a", null, "Download .spk");
+    a.href = p.maintainer_url || "#"; b.href = p.link; links.appendChild(a); links.appendChild(b); li.appendChild(links);
+    grid.appendChild(li);
+    return {{ p: p, li: li, h: h, d: d, hay: (p.dname + " " + p.package + " " + p.desc).toLowerCase() }};
+  }}
+  function show() {{
+    var words = q.value.trim().toLowerCase().split(/\\s+/).filter(Boolean), hits = 0;
+    all.forEach(function (c) {{
+      var hit = words.every(function (w) {{ return c.hay.indexOf(w) >= 0; }});
+      c.li.hidden = !hit; if (!hit) return; hits++;
+      c.h.replaceChildren(marked(c.p.dname, words)); c.d.replaceChildren(marked(c.p.desc, words));
+    }});
+    count.textContent = words.length ? hits + " of " + all.length + " apps" : all.length + " apps";
+    empty.hidden = hits > 0;
+    try {{ history.replaceState(null, "", words.length ? "?q=" + encodeURIComponent(q.value.trim()) : location.pathname); }} catch (e) {{}}
+  }}
+  q.value = new URLSearchParams(location.search).get("q") || "";
+  q.addEventListener("input", show);
+  document.addEventListener("keydown", function (ev) {{ if (ev.key === "/" && document.activeElement !== q) {{ ev.preventDefault(); q.focus(); }} }});
+  fetch("index.json", {{ headers: {{ Accept: "application/json" }} }})
+    .then(function (r) {{ if (!r.ok) throw new Error(r.status); return r.json(); }})
+    .then(function (d) {{ all = (d.packages || []).map(card); show(); }})
+    .catch(function () {{ count.textContent = "Couldn't load the list — try reloading."; }});
+}})();
+</script>
 </body></html>
 """
-
 
 if __name__ == "__main__":
     sys.exit(main())

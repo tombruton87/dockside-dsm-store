@@ -13,7 +13,8 @@ export default {
     if (!fromDsm) return env.ASSETS.fetch(new Request(new URL("/", url)));
 
     // What DSM sends, without the model or serial: enough to see GET vs POST in the logs.
-    console.log(JSON.stringify({ method: request.method, keys: [...params.keys()], build: params.get("build"), major: params.get("major"), minor: params.get("minor"), language: params.get("language") }));
+    // (The page's own fetch of /index.json carries no parameters and isn't logged.)
+    if ([...params.keys()].length) console.log(JSON.stringify({ method: request.method, keys: [...params.keys()], build: params.get("build"), major: params.get("major"), minor: params.get("minor"), language: params.get("language") }));
 
     const asset = path => env.ASSETS.fetch(new Request(new URL(path, url))).then(r => r.json());
     const [catalog, meta] = await Promise.all([asset("/index.json"), asset("/meta.json")]);
