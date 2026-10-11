@@ -1,11 +1,11 @@
-# DSM App Shelf
+# Dockside DSM Store
 
 A Package Center source for self-hosted apps packaged for Synology DSM 7.2. Add it once and the
 packages appear under **Community** in Package Center, and their updates arrive
 there like any other package's.
 
 **Package Center → Settings → Package Sources → Add**
-- Name: `AppShelf`
+- Name: `Dockside DSM Store`
 - Location: *(the address of the deployed site)*
 
 Every package needs Container Manager and DSM 7.2.1 or later.

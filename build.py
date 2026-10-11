@@ -21,7 +21,7 @@ SPK_NAME = re.compile(r"^([a-z0-9]+)-(\d+(?:\.\d+)*-\d+)\.spk$")   # bookstack-1
 
 
 def api(path):
-    req = urllib.request.Request("https://api.github.com/" + path, headers={"Accept": "application/vnd.github+json", "User-Agent": "dsm-package-source"})
+    req = urllib.request.Request("https://api.github.com/" + path, headers={"Accept": "application/vnd.github+json", "User-Agent": "dockside-dsm-store"})
     token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
     if token: req.add_header("Authorization", "Bearer " + token)
     with urllib.request.urlopen(req, timeout=30) as r: return json.load(r)
@@ -38,7 +38,7 @@ def read_info(text):
 def unpack(asset, pkg):
     """Downloads one .spk; returns what the catalog needs from it and writes its icons."""
     with tempfile.NamedTemporaryFile(suffix=".spk") as f:
-        req = urllib.request.Request(asset["browser_download_url"], headers={"User-Agent": "dsm-package-source"})
+        req = urllib.request.Request(asset["browser_download_url"], headers={"User-Agent": "dockside-dsm-store"})
         with urllib.request.urlopen(req, timeout=120) as r:
             md5 = hashlib.md5()
             for chunk in iter(lambda: r.read(1 << 16), b""): f.write(chunk); md5.update(chunk)
@@ -182,7 +182,7 @@ def page(packages, meta):
 </style></head><body><main>
 <header>
   <div><h1>{e(CONFIG['title'])}</h1><p class="lead">{e(CONFIG['tagline'])}</p></div>
-  <div class="how"><b class="t">Add the shelf to Package Center</b><ol>
+  <div class="how"><b class="t">Add {e(CONFIG['title'])} to Package Center</b><ol>
     <li><b>Package Center</b> → <b>Settings</b> → <b>Package Sources</b> → <b>Add</b></li>
     <li>Name <code>{e(CONFIG['source_name'])}</code>, Location <code id="src">{e(source)}</code></li>
     <li>The apps appear under <b>Community</b>, with their updates.</li></ol></div>

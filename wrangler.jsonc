@@ -1,6 +1,6 @@
 {
   // Cloudflare Worker with static assets: site/ is served as files, worker/index.js answers "/".
-  "name": "dsm-package-source",
+  "name": "dockside-dsm-store",
   "main": "worker/index.js",
   "compatibility_date": "2026-10-01",
   "assets": { "directory": "./site", "binding": "ASSETS", "run_worker_first": ["/", "/index.json"] },
