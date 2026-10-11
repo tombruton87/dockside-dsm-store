@@ -91,7 +91,7 @@
   .titlebar .ctl { margin-left: auto; display: flex; gap: 14px; }
   .titlebar .ctl svg { width: 12px; height: 12px; fill: none; stroke: #6b7886; stroke-width: 1.4; }
   .pane { position: relative; background: #fff; }
-  .pane img { display: block; width: 100%; height: auto; aspect-ratio: 1100 / 760; }
+  .pane img { display: block; width: 100%; height: auto; }   /* width/height attributes per screen give it its shape */
   .nav { position: absolute; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(16, 40, 60, .15);
          background: rgba(255, 255, 255, .92); color: #1d6d86; font-size: 26px; line-height: 1; cursor: pointer; box-shadow: 0 2px 8px rgba(16, 40, 60, .15);
          opacity: 0; transition: opacity .15s ease; }

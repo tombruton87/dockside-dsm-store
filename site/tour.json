@@ -9,12 +9,16 @@
    "link": "https://github.com/tombruton87/actual-dsm/releases/download/v1.0.0/actual-1.0.0-1.spk",
    "shots": [
     {
+     "title": "Budgets",
      "src": "https://raw.githubusercontent.com/tombruton87/actual-dsm/v1.0.0/docs/screenshots/budgets.png",
-     "title": "Budgets"
+     "w": 1100,
+     "h": 860
     },
     {
+     "title": "Sign-in",
      "src": "https://raw.githubusercontent.com/tombruton87/actual-dsm/v1.0.0/docs/screenshots/signin.png",
-     "title": "Sign-in"
+     "w": 1100,
+     "h": 860
     }
    ]
   },
@@ -26,20 +30,28 @@
    "link": "https://github.com/tombruton87/bookstack-dsm/releases/download/v1.0.1/bookstack-1.0.1-1.spk",
    "shots": [
     {
+     "title": "Sign-in",
      "src": "https://raw.githubusercontent.com/tombruton87/bookstack-dsm/v1.0.1/docs/screenshots/signin.png",
-     "title": "Sign-in"
+     "w": 1100,
+     "h": 1000
     },
     {
+     "title": "Wiki",
      "src": "https://raw.githubusercontent.com/tombruton87/bookstack-dsm/v1.0.1/docs/screenshots/wiki.png",
-     "title": "Wiki"
+     "w": 1100,
+     "h": 760
     },
     {
+     "title": "Users",
      "src": "https://raw.githubusercontent.com/tombruton87/bookstack-dsm/v1.0.1/docs/screenshots/users.png",
-     "title": "Users"
+     "w": 1100,
+     "h": 760
     },
     {
+     "title": "Mail",
      "src": "https://raw.githubusercontent.com/tombruton87/bookstack-dsm/v1.0.1/docs/screenshots/mail.png",
-     "title": "Mail"
+     "w": 1100,
+     "h": 760
     }
    ]
   },
@@ -51,20 +63,28 @@
    "link": "https://github.com/tombruton87/docuseal-dsm/releases/download/v1.0.0/docuseal-1.0.0-1.spk",
    "shots": [
     {
+     "title": "Documents",
      "src": "https://raw.githubusercontent.com/tombruton87/docuseal-dsm/v1.0.0/docs/screenshots/documents.png",
-     "title": "Documents"
+     "w": 1100,
+     "h": 1000
     },
     {
+     "title": "Users",
      "src": "https://raw.githubusercontent.com/tombruton87/docuseal-dsm/v1.0.0/docs/screenshots/users.png",
-     "title": "Users"
+     "w": 1100,
+     "h": 760
     },
     {
+     "title": "Mail",
      "src": "https://raw.githubusercontent.com/tombruton87/docuseal-dsm/v1.0.0/docs/screenshots/mail.png",
-     "title": "Mail"
+     "w": 1100,
+     "h": 760
     },
     {
+     "title": "Site address",
      "src": "https://raw.githubusercontent.com/tombruton87/docuseal-dsm/v1.0.0/docs/screenshots/site.png",
-     "title": "Site address"
+     "w": 1100,
+     "h": 760
     }
    ]
   },
@@ -76,48 +96,70 @@
    "link": "https://github.com/tombruton87/freescout-dsm/releases/download/v1.0.2/freescout-1.0.2-1.spk",
    "shots": [
     {
+     "title": "Overview",
      "src": "https://raw.githubusercontent.com/tombruton87/freescout-dsm/v1.0.2/docs/screenshots/overview.png",
-     "title": "Overview"
+     "w": 1180,
+     "h": 860
     },
     {
+     "title": "Access",
      "src": "https://raw.githubusercontent.com/tombruton87/freescout-dsm/v1.0.2/docs/screenshots/access.png",
-     "title": "Access"
+     "w": 1180,
+     "h": 860
     },
     {
+     "title": "Users",
      "src": "https://raw.githubusercontent.com/tombruton87/freescout-dsm/v1.0.2/docs/screenshots/users.png",
-     "title": "Users"
+     "w": 1180,
+     "h": 860
     },
     {
+     "title": "Backups",
      "src": "https://raw.githubusercontent.com/tombruton87/freescout-dsm/v1.0.2/docs/screenshots/backups.png",
-     "title": "Backups"
+     "w": 1180,
+     "h": 860
     },
     {
+     "title": "Site address",
      "src": "https://raw.githubusercontent.com/tombruton87/freescout-dsm/v1.0.2/docs/screenshots/site.png",
-     "title": "Site address"
+     "w": 1180,
+     "h": 860
     },
     {
+     "title": "Mail & queue",
      "src": "https://raw.githubusercontent.com/tombruton87/freescout-dsm/v1.0.2/docs/screenshots/mail.png",
-     "title": "Mail & queue"
+     "w": 1180,
+     "h": 860
     },
     {
+     "title": "Modules",
      "src": "https://raw.githubusercontent.com/tombruton87/freescout-dsm/v1.0.2/docs/screenshots/modules.png",
-     "title": "Modules"
+     "w": 1180,
+     "h": 860
     },
     {
+     "title": "Updates",
      "src": "https://raw.githubusercontent.com/tombruton87/freescout-dsm/v1.0.2/docs/screenshots/updates.png",
-     "title": "Updates"
+     "w": 1180,
+     "h": 860
     },
     {
+     "title": "Storage",
      "src": "https://raw.githubusercontent.com/tombruton87/freescout-dsm/v1.0.2/docs/screenshots/storage.png",
-     "title": "Storage"
+     "w": 1180,
+     "h": 860
     },
     {
+     "title": "Activity",
      "src": "https://raw.githubusercontent.com/tombruton87/freescout-dsm/v1.0.2/docs/screenshots/activity.png",
-     "title": "Activity"
+     "w": 1180,
+     "h": 860
     },
     {
+     "title": "Maintenance",
      "src": "https://raw.githubusercontent.com/tombruton87/freescout-dsm/v1.0.2/docs/screenshots/maintenance.png",
-     "title": "Maintenance"
+     "w": 1180,
+     "h": 860
     }
    ]
   },
@@ -129,20 +171,28 @@
    "link": "https://github.com/tombruton87/homepage-dsm/releases/download/v1.0.1/homepage-1.0.1-1.spk",
    "shots": [
     {
+     "title": "Dashboard",
      "src": "https://raw.githubusercontent.com/tombruton87/homepage-dsm/v1.0.1/docs/screenshots/dashboard.png",
-     "title": "Dashboard"
+     "w": 1100,
+     "h": 1080
     },
     {
+     "title": "Homepage",
      "src": "https://raw.githubusercontent.com/tombruton87/homepage-dsm/v1.0.1/docs/screenshots/homepage.png",
-     "title": "Homepage"
+     "w": 1280,
+     "h": 820
     },
     {
+     "title": "Look",
      "src": "https://raw.githubusercontent.com/tombruton87/homepage-dsm/v1.0.1/docs/screenshots/look.png",
-     "title": "Look"
+     "w": 1100,
+     "h": 760
     },
     {
+     "title": "Edit by hand",
      "src": "https://raw.githubusercontent.com/tombruton87/homepage-dsm/v1.0.1/docs/screenshots/byhand.png",
-     "title": "Edit by hand"
+     "w": 1100,
+     "h": 760
     }
    ]
   },
@@ -154,16 +204,22 @@
    "link": "https://github.com/tombruton87/invoiceninja-dsm/releases/download/v1.0.0/invoiceninja-1.0.0-1.spk",
    "shots": [
     {
+     "title": "Business",
      "src": "https://raw.githubusercontent.com/tombruton87/invoiceninja-dsm/v1.0.0/docs/screenshots/business.png",
-     "title": "Business"
+     "w": 1100,
+     "h": 860
     },
     {
+     "title": "Mail",
      "src": "https://raw.githubusercontent.com/tombruton87/invoiceninja-dsm/v1.0.0/docs/screenshots/mail.png",
-     "title": "Mail"
+     "w": 1100,
+     "h": 860
     },
     {
+     "title": "Users",
      "src": "https://raw.githubusercontent.com/tombruton87/invoiceninja-dsm/v1.0.0/docs/screenshots/users.png",
-     "title": "Users"
+     "w": 1100,
+     "h": 860
     }
    ]
   },
@@ -175,12 +231,16 @@
    "link": "https://github.com/tombruton87/n8n-dsm/releases/download/v1.0.0/n8n-1.0.0-1.spk",
    "shots": [
     {
+     "title": "Workflows",
      "src": "https://raw.githubusercontent.com/tombruton87/n8n-dsm/v1.0.0/docs/screenshots/workflows.png",
-     "title": "Workflows"
+     "w": 1100,
+     "h": 1300
     },
     {
+     "title": "People",
      "src": "https://raw.githubusercontent.com/tombruton87/n8n-dsm/v1.0.0/docs/screenshots/people.png",
-     "title": "People"
+     "w": 1100,
+     "h": 760
     }
    ]
   },
@@ -192,16 +252,22 @@
    "link": "https://github.com/tombruton87/navidrome-dsm/releases/download/v1.0.0/navidrome-1.0.0-1.spk",
    "shots": [
     {
+     "title": "Library",
      "src": "https://raw.githubusercontent.com/tombruton87/navidrome-dsm/v1.0.0/docs/screenshots/library.png",
-     "title": "Library"
+     "w": 1100,
+     "h": 760
     },
     {
+     "title": "Phones",
      "src": "https://raw.githubusercontent.com/tombruton87/navidrome-dsm/v1.0.0/docs/screenshots/phones.png",
-     "title": "Phones"
+     "w": 1100,
+     "h": 760
     },
     {
+     "title": "Users",
      "src": "https://raw.githubusercontent.com/tombruton87/navidrome-dsm/v1.0.0/docs/screenshots/users.png",
-     "title": "Users"
+     "w": 1100,
+     "h": 760
     }
    ]
   },
@@ -213,20 +279,28 @@
    "link": "https://github.com/tombruton87/ntfy-dsm/releases/download/v1.0.0/ntfy-1.0.0-1.spk",
    "shots": [
     {
+     "title": "DSM alerts",
      "src": "https://raw.githubusercontent.com/tombruton87/ntfy-dsm/v1.0.0/docs/screenshots/dsmalerts.png",
-     "title": "DSM alerts"
+     "w": 1100,
+     "h": 760
     },
     {
+     "title": "Phones",
      "src": "https://raw.githubusercontent.com/tombruton87/ntfy-dsm/v1.0.0/docs/screenshots/phones.png",
-     "title": "Phones"
+     "w": 1100,
+     "h": 760
     },
     {
+     "title": "Users",
      "src": "https://raw.githubusercontent.com/tombruton87/ntfy-dsm/v1.0.0/docs/screenshots/users.png",
-     "title": "Users"
+     "w": 1100,
+     "h": 900
     },
     {
+     "title": "Topics",
      "src": "https://raw.githubusercontent.com/tombruton87/ntfy-dsm/v1.0.0/docs/screenshots/topics.png",
-     "title": "Topics"
+     "w": 1100,
+     "h": 760
     }
    ]
   },
@@ -238,16 +312,22 @@
    "link": "https://github.com/tombruton87/pihole-dsm/releases/download/v1.0.0/pihole-1.0.0-1.spk",
    "shots": [
     {
+     "title": "Blocking",
      "src": "https://raw.githubusercontent.com/tombruton87/pihole-dsm/v1.0.0/docs/screenshots/blocking.png",
-     "title": "Blocking"
+     "w": 1100,
+     "h": 1060
     },
     {
+     "title": "Lists",
      "src": "https://raw.githubusercontent.com/tombruton87/pihole-dsm/v1.0.0/docs/screenshots/lists.png",
-     "title": "Lists"
+     "w": 1100,
+     "h": 860
     },
     {
+     "title": "Setup",
      "src": "https://raw.githubusercontent.com/tombruton87/pihole-dsm/v1.0.0/docs/screenshots/setup.png",
-     "title": "Setup"
+     "w": 1100,
+     "h": 860
     }
    ]
   },
@@ -259,20 +339,28 @@
    "link": "https://github.com/tombruton87/speedtest-dsm/releases/download/v1.0.0/speedtest-1.0.0-1.spk",
    "shots": [
     {
+     "title": "Speed",
      "src": "https://raw.githubusercontent.com/tombruton87/speedtest-dsm/v1.0.0/docs/screenshots/speed.png",
-     "title": "Speed"
+     "w": 1100,
+     "h": 1250
     },
     {
+     "title": "Schedule",
      "src": "https://raw.githubusercontent.com/tombruton87/speedtest-dsm/v1.0.0/docs/screenshots/schedule.png",
-     "title": "Schedule"
+     "w": 1100,
+     "h": 760
     },
     {
+     "title": "Alerts",
      "src": "https://raw.githubusercontent.com/tombruton87/speedtest-dsm/v1.0.0/docs/screenshots/alerts.png",
-     "title": "Alerts"
+     "w": 1100,
+     "h": 760
     },
     {
+     "title": "Account",
      "src": "https://raw.githubusercontent.com/tombruton87/speedtest-dsm/v1.0.0/docs/screenshots/account.png",
-     "title": "Account"
+     "w": 1100,
+     "h": 760
     }
    ]
   },
@@ -284,12 +372,16 @@
    "link": "https://github.com/tombruton87/stirling-pdf-dsm/releases/download/v1.0.0/stirlingpdf-1.0.0-1.spk",
    "shots": [
     {
+     "title": "Hot folders",
      "src": "https://raw.githubusercontent.com/tombruton87/stirling-pdf-dsm/v1.0.0/docs/screenshots/folders.png",
-     "title": "Hot folders"
+     "w": 1100,
+     "h": 1250
     },
     {
+     "title": "Users",
      "src": "https://raw.githubusercontent.com/tombruton87/stirling-pdf-dsm/v1.0.0/docs/screenshots/users.png",
-     "title": "Users"
+     "w": 1100,
+     "h": 760
     }
    ]
   },
@@ -301,24 +393,34 @@
    "link": "https://github.com/tombruton87/uptime-kuma-dsm/releases/download/v1.0.1/uptimekuma-1.0.1-1.spk",
    "shots": [
     {
+     "title": "Monitors",
      "src": "https://raw.githubusercontent.com/tombruton87/uptime-kuma-dsm/v1.0.1/docs/screenshots/monitors.png",
-     "title": "Monitors"
+     "w": 1100,
+     "h": 1000
     },
     {
+     "title": "Incidents",
      "src": "https://raw.githubusercontent.com/tombruton87/uptime-kuma-dsm/v1.0.1/docs/screenshots/incidents.png",
-     "title": "Incidents"
+     "w": 1100,
+     "h": 760
     },
     {
+     "title": "Access",
      "src": "https://raw.githubusercontent.com/tombruton87/uptime-kuma-dsm/v1.0.1/docs/screenshots/access.png",
-     "title": "Access"
+     "w": 1100,
+     "h": 760
     },
     {
+     "title": "Site address",
      "src": "https://raw.githubusercontent.com/tombruton87/uptime-kuma-dsm/v1.0.1/docs/screenshots/site.png",
-     "title": "Site address"
+     "w": 1100,
+     "h": 760
     },
     {
+     "title": "Backups",
      "src": "https://raw.githubusercontent.com/tombruton87/uptime-kuma-dsm/v1.0.1/docs/screenshots/backups.png",
-     "title": "Backups"
+     "w": 1100,
+     "h": 760
     }
    ]
   },
@@ -330,44 +432,64 @@
    "link": "https://github.com/tombruton87/vaultwarden-dsm/releases/download/v1.1.3/vaultwarden-1.1.3-1.spk",
    "shots": [
     {
+     "title": "Overview",
      "src": "https://raw.githubusercontent.com/tombruton87/vaultwarden-dsm/v1.1.3/docs/screenshots/overview.png",
-     "title": "Overview"
+     "w": 1100,
+     "h": 760
     },
     {
+     "title": "Admin",
      "src": "https://raw.githubusercontent.com/tombruton87/vaultwarden-dsm/v1.1.3/docs/screenshots/admin.png",
-     "title": "Admin"
+     "w": 1100,
+     "h": 760
     },
     {
+     "title": "Users",
      "src": "https://raw.githubusercontent.com/tombruton87/vaultwarden-dsm/v1.1.3/docs/screenshots/users.png",
-     "title": "Users"
+     "w": 1100,
+     "h": 760
     },
     {
+     "title": "Backups",
      "src": "https://raw.githubusercontent.com/tombruton87/vaultwarden-dsm/v1.1.3/docs/screenshots/backups.png",
-     "title": "Backups"
+     "w": 1100,
+     "h": 760
     },
     {
+     "title": "Site address",
      "src": "https://raw.githubusercontent.com/tombruton87/vaultwarden-dsm/v1.1.3/docs/screenshots/site.png",
-     "title": "Site address"
+     "w": 1100,
+     "h": 760
     },
     {
+     "title": "Mail",
      "src": "https://raw.githubusercontent.com/tombruton87/vaultwarden-dsm/v1.1.3/docs/screenshots/mail.png",
-     "title": "Mail"
+     "w": 1100,
+     "h": 760
     },
     {
+     "title": "Activity",
      "src": "https://raw.githubusercontent.com/tombruton87/vaultwarden-dsm/v1.1.3/docs/screenshots/activity.png",
-     "title": "Activity"
+     "w": 1100,
+     "h": 760
     },
     {
+     "title": "Updates",
      "src": "https://raw.githubusercontent.com/tombruton87/vaultwarden-dsm/v1.1.3/docs/screenshots/updates.png",
-     "title": "Updates"
+     "w": 1100,
+     "h": 760
     },
     {
+     "title": "Storage",
      "src": "https://raw.githubusercontent.com/tombruton87/vaultwarden-dsm/v1.1.3/docs/screenshots/storage.png",
-     "title": "Storage"
+     "w": 1100,
+     "h": 760
     },
     {
+     "title": "Maintenance",
      "src": "https://raw.githubusercontent.com/tombruton87/vaultwarden-dsm/v1.1.3/docs/screenshots/maintenance.png",
-     "title": "Maintenance"
+     "w": 1100,
+     "h": 760
     }
    ]
   }

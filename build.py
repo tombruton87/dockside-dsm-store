@@ -116,7 +116,7 @@ def main():
             }
             packages.append({k: v for k, v in entry.items() if v is not None and v != ""})
             meta[pkg] = {"os_min_ver": info.get("os_min_ver", ""), "repo": repo, "tag": rel["tag_name"]}
-            if got.get("shots_tag") != rel["tag_name"]:
+            if got.get("shots_tag") != rel["tag_name"] or any("w" not in x for x in got.get("shots", [])):
                 try: got["shots"], got["shots_tag"] = screenshots(repo, rel["tag_name"]), rel["tag_name"]
                 except Exception as e: warn(f"{repo}: screenshots — {e}")   # keeps the ones it had
             tour.append({"package": pkg, "dname": entry["dname"], "icon": icon(256), "repo": repo,
@@ -175,11 +175,26 @@ def render(name, **tokens):
 
 
 def screenshots(repo, tag):
-    """The window's screenshots as the package's README shows them at that release: [{title, src}]."""
+    """The window's screenshots as the package's README shows them at that release: [{title, src, w, h}]."""
     req = urllib.request.Request(f"https://raw.githubusercontent.com/{repo}/{tag}/README.md", headers={"User-Agent": "dockside-dsm-store"})
     with urllib.request.urlopen(req, timeout=30) as r: readme = r.read().decode()
-    return [{"title": alt.strip() or os.path.basename(path).rsplit(".", 1)[0].title(), "src": f"https://raw.githubusercontent.com/{repo}/{tag}/{path}"}
-            for alt, path in re.findall(r"!\[([^\]]*)\]\((docs/screenshots/[^)\s]+\.(?:png|jpg|jpeg|webp))\)", readme)]
+    shots = []
+    for alt, path in re.findall(r"!\[([^\]]*)\]\((docs/screenshots/[^)\s]+\.(?:png|jpg|jpeg|webp))\)", readme):
+        src = f"https://raw.githubusercontent.com/{repo}/{tag}/{path}"
+        shot = {"title": alt.strip() or os.path.basename(path).rsplit(".", 1)[0].title(), "src": src}
+        shot.update(png_size(src))   # each screen keeps its own shape on the page
+        shots.append(shot)
+    return shots
+
+
+def png_size(url):
+    """{w, h} from a PNG's header, fetched as its first 32 bytes; {} for anything else."""
+    req = urllib.request.Request(url, headers={"User-Agent": "dockside-dsm-store", "Range": "bytes=0-31"})
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r: head = r.read(32)
+    except OSError: return {}
+    if head[:8] != b"\x89PNG\r\n\x1a\n" or head[12:16] != b"IHDR": return {}
+    return {"w": int.from_bytes(head[16:20], "big"), "h": int.from_bytes(head[20:24], "big")}
 
 if __name__ == "__main__":
     sys.exit(main())
