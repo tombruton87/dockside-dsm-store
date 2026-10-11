@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inside the DSM window · @TITLE@</title>
+<meta name="description" content="What the DSM window that comes with each app looks like: status, users, backups, HTTPS, mail and updates.">
+<link rel="icon" href="@FAVICON@">
+<link rel="stylesheet" href="style.css"></head><body>
+<header class="hero hero-small"><div class="wrap">
+  <a class="brand brand-link" href="./">@LOGO@<span class="name">@TITLE@</span></a>
+  <h1>Inside the DSM window</h1>
+  <p class="lead">Every app on the shelf adds a window to DSM's main menu. Open it with your usual DSM sign-in and look after the app from there: whether it's up, its users, backups, HTTPS, mail and updates. No terminal, no Docker commands.</p>
+</div></header>
+<main class="wrap">
+<nav class="apps" id="apps" aria-label="Choose an app"></nav>
+<div class="tabs" id="tabs" role="tablist" aria-label="Parts of the window"></div>
+<figure class="window" id="window" hidden>
+  <div class="titlebar"><img id="wicon" alt="" width="18" height="18"><span id="wname"></span>
+    <span class="ctl" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2 6h8"/></svg><svg viewBox="0 0 12 12"><rect x="2" y="2" width="8" height="8"/></svg><svg viewBox="0 0 12 12"><path d="M2.5 2.5l7 7M9.5 2.5l-7 7"/></svg></span></div>
+  <div class="pane"><img id="shot" alt="" width="1100" height="760">
+    <button class="nav prev" id="prev" type="button" aria-label="Previous screen">‹</button>
+    <button class="nav next" id="next" type="button" aria-label="Next screen">›</button></div>
+  <figcaption><span><b id="ctitle"></b> <span id="cblurb"></span></span><span class="pos" id="pos"></span></figcaption>
+</figure>
+<p class="empty" id="empty" hidden>The tour couldn't load — try reloading.</p>
+<p class="after" id="after" hidden><a href="./">← All apps</a><span><a id="repo" href="#">Source and notes</a> · <a id="get" href="#">Download .spk</a></span></p>
+</main>
+<footer class="wrap"><svg width="64" height="10" viewBox="0 0 64 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 5q4-4 8 0t8 0 8 0 8 0 8 0 8 0 8 0 8 0"/></svg>Screens from each app's own README, at its latest release.</footer>
+<script>
+(function () {
+  // A line for the parts most windows share; an app's own tabs show just their name.
+  var BLURBS = {
+    "overview": "Whether the app is up, the last backup, free space, its containers and the setup log.",
+    "users": "The app's accounts, looked after from DSM: new passwords, two-step sign-in off and more, depending on the app.",
+    "people": "The app's accounts, looked after from DSM.",
+    "backups": "Backups of the app's data into its shared folder, and putting one back.",
+    "site address": "The address the app answers on, and HTTPS with DSM's own certificate.",
+    "site": "The address the app answers on, and HTTPS with DSM's own certificate.",
+    "mail": "The mail server the app sends from, with a test email.",
+    "updates": "New versions of the package and of the app itself.",
+    "storage": "Where the app's data lives and how much room it takes.",
+    "maintenance": "Restarts and other upkeep, and a support report.",
+    "activity": "What's been happening in the app."
+  };
+  var $ = function (id) { return document.getElementById(id); };
+  var apps = [], app = null, i = 0, chips = {}, tabs = [];
+  function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
+
+  function pick(pkg, shot) {
+    app = apps.filter(function (a) { return a.package === pkg; })[0] || apps[0];
+    Object.keys(chips).forEach(function (k) { chips[k].setAttribute("aria-current", k === app.package ? "true" : "false"); });
+    $("wicon").src = app.icon; $("wname").textContent = app.dname;
+    $("repo").href = "https://github.com/" + app.repo; $("get").href = app.link;
+    tabs = app.shots.map(function (s, n) {
+      var b = el("button", "tab", s.title); b.type = "button"; b.setAttribute("role", "tab");
+      b.onclick = function () { show(n); }; return b;
+    });
+    $("tabs").replaceChildren.apply($("tabs"), tabs);
+    var at = app.shots.map(function (s) { return s.title.toLowerCase(); }).indexOf((shot || "").toLowerCase());
+    show(at < 0 ? 0 : at);
+    if (chips[app.package]) chips[app.package].scrollIntoView({ block: "nearest", inline: "nearest" });
+  }
+
+  function show(n) {
+    var shots = app.shots; i = (n + shots.length) % shots.length; var s = shots[i];
+    $("shot").src = s.src; $("shot").alt = app.dname + "'s DSM window: " + s.title;
+    $("ctitle").textContent = s.title;
+    $("cblurb").textContent = BLURBS[s.title.toLowerCase()] || "";
+    $("pos").textContent = (i + 1) + " of " + shots.length;
+    tabs.forEach(function (t, k) { t.setAttribute("aria-selected", k === i ? "true" : "false"); });
+    if (tabs[i]) tabs[i].scrollIntoView({ block: "nearest", inline: "nearest" });
+    new Image().src = shots[(i + 1) % shots.length].src;   // the next one, ready before it's asked for
+    try { history.replaceState(null, "", "?app=" + encodeURIComponent(app.package) + (i ? "&screen=" + encodeURIComponent(s.title) : "")); } catch (e) {}
+  }
+
+  $("prev").onclick = function () { show(i - 1); };
+  $("next").onclick = function () { show(i + 1); };
+  document.addEventListener("keydown", function (ev) {
+    if (!app || ev.target.tagName === "INPUT") return;
+    if (ev.key === "ArrowLeft") show(i - 1); else if (ev.key === "ArrowRight") show(i + 1);
+  });
+
+  fetch("tour.json", { headers: { Accept: "application/json" } })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (t) {
+      apps = (t.apps || []).filter(function (a) { return a.shots && a.shots.length; });
+      if (!apps.length) throw new Error("empty");
+      apps.forEach(function (a) {
+        var c = el("button", "chip"), img = el("img"); c.type = "button";
+        img.src = a.icon; img.alt = ""; img.width = img.height = 22;
+        c.appendChild(img); c.appendChild(el("span", null, a.dname));
+        c.onclick = function () { pick(a.package); }; chips[a.package] = c; $("apps").appendChild(c);
+      });
+      var qs = new URLSearchParams(location.search);
+      $("window").hidden = false; $("after").hidden = false;
+      pick(qs.get("app") || t.default, qs.get("screen"));
+    })
+    .catch(function () { $("empty").hidden = false; });
+})();
+</script>
+</body></html>

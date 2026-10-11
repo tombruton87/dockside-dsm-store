@@ -21,9 +21,12 @@ its versioned `.spk`, and writes a static site:
 | `site/meta.json` | each package's minimum DSM and the release it came from |
 | `site/icons/` | the icons out of each `.spk` |
 | `site/index.html` | a page for people: loads `index.json` and lists the apps in a grid, with a search |
+| `site/tour.html`, `site/tour.json` | a tour of each app's DSM window, from the screenshots in its README at that release |
+| `site/style.css`, `site/art/` | the look: a harbour, made with Higgsfield |
 
 The `.spk` downloads themselves stay on GitHub. Each catalog entry links to
-the release asset, with its md5 and size. `cache.json` remembers what came out of
+the release asset, with its md5 and size. The pages are built from `templates/` (`@TOKEN@` slots, filled from `config.json`).
+`cache.json` remembers what came out of
 each release asset so an unchanged package isn't downloaded again. If one
 lookup fails, that package keeps its last good entry rather than dropping off
 the feed.

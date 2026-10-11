@@ -4,5 +4,6 @@
  "base_url": "",
  "distributor": "Tom Bruton",
  "distributor_url": "https://github.com/tombruton87",
- "tagline": "Self-hosted apps for Synology DSM 7.2, each running in Container Manager with a DSM window of its own."
+ "tagline": "Self-hosted apps for Synology DSM 7.2, each running in Container Manager with a DSM window of its own.",
+ "tour_default": "vaultwarden"
 }

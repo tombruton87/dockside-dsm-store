@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>@TITLE@</title>
+<meta name="description" content="@TAGLINE@">
+<link rel="icon" href="@FAVICON@">
+<link rel="stylesheet" href="style.css"></head><body>
+<header class="hero"><div class="wrap">
+  <div class="brand">@LOGO@<h1>@TITLE@</h1></div>
+  <p class="lead">@TAGLINE@ <a class="tourlink" href="tour.html">See inside a DSM window&nbsp;→</a></p>
+  <div class="bar"><input id="q" type="search" placeholder="Search apps" aria-label="Search apps" autocomplete="off"><span id="count" aria-live="polite"></span></div>
+</div></header>
+<main class="wrap">
+<section class="how" aria-label="Add to Package Center"><h2>Moor it in Package Center</h2>
+  <div class="step"><span class="ring"><span>1</span></span><div><b>Package Center</b> → <b>Settings</b> → <b>Package Sources</b> → <b>Add</b></div></div>
+  <div class="step"><span class="ring"><span>2</span></span><div>Name <code>@SOURCE_NAME@</code><br>Location <code id="src">@SOURCE@</code></div></div>
+  <div class="step"><span class="ring"><span>3</span></span><div>The apps appear under <b>Community</b>, and their updates arrive there too.</div></div>
+</section>
+<ul class="grid" id="grid"></ul>
+<p class="empty" id="empty" hidden>Nothing in the harbour matches that.</p>
+<noscript><ul>@NOSCRIPT@</ul></noscript>
+</main>
+<footer class="wrap"><svg width="64" height="10" viewBox="0 0 64 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 5q4-4 8 0t8 0 8 0 8 0 8 0 8 0 8 0 8 0"/></svg>Each app downloads straight from its own GitHub release.</footer>
+<script>
+(function () {
+  var src = document.getElementById("src"); if (src.textContent === "/") src.textContent = new URL(".", location.href).href;
+  var q = document.getElementById("q"), grid = document.getElementById("grid"), count = document.getElementById("count"), empty = document.getElementById("empty"), all = [], toured = {};
+  function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
+  function marked(text, words) {   // text with each search word highlighted, built as nodes (never innerHTML)
+    var frag = document.createDocumentFragment(); if (!words.length) { frag.appendChild(document.createTextNode(text)); return frag; }
+    var re = new RegExp("(" + words.map(function (w) { return w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }).join("|") + ")", "ig");
+    text.split(re).forEach(function (part, i) { frag.appendChild(i % 2 ? el("mark", null, part) : document.createTextNode(part)); });
+    return frag;
+  }
+  function card(p) {   // made once per app; a search only hides it and re-marks its text
+    var li = el("li", "card"), top = el("div", "top"), img = el("img"), name = el("div"), h = el("h2"), d = el("p");
+    img.src = p.thumbnail[p.thumbnail.length - 1]; img.alt = ""; img.width = img.height = 48;
+    name.appendChild(h); name.appendChild(el("span", "ver", p.version.replace(/-\d+$/, "")));
+    top.appendChild(img); top.appendChild(name); li.appendChild(top); d.title = p.desc; li.appendChild(d);
+    var links = el("div", "links"), a = el("a", null, "Source"), b = el("a", null, "Download .spk");
+    a.href = p.maintainer_url || "#"; b.href = p.link;
+    if (toured[p.package]) { var w = el("a", null, "Window tour"); w.href = "tour.html?app=" + encodeURIComponent(p.package); links.appendChild(w); }
+    links.appendChild(a); links.appendChild(b); li.appendChild(links);
+    grid.appendChild(li);
+    return { p: p, li: li, h: h, d: d, hay: (p.dname + " " + p.package + " " + p.desc).toLowerCase() };
+  }
+  function show() {
+    var words = q.value.trim().toLowerCase().split(/\s+/).filter(Boolean), hits = 0;
+    all.forEach(function (c) {
+      var hit = words.every(function (w) { return c.hay.indexOf(w) >= 0; });
+      c.li.hidden = !hit; if (!hit) return; hits++;
+      c.h.replaceChildren(marked(c.p.dname, words)); c.d.replaceChildren(marked(c.p.desc, words));
+    });
+    count.textContent = words.length ? hits + " of " + all.length + " apps" : all.length + " apps";
+    empty.hidden = hits > 0;
+    try { history.replaceState(null, "", words.length ? "?q=" + encodeURIComponent(q.value.trim()) : location.pathname); } catch (e) {}
+  }
+  q.value = new URLSearchParams(location.search).get("q") || "";
+  q.addEventListener("input", show);
+  document.addEventListener("keydown", function (ev) { if (ev.key === "/" && document.activeElement !== q) { ev.preventDefault(); q.focus(); } });
+  function json(u) { return fetch(u, { headers: { Accept: "application/json" } }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }); }
+  var tour = json("tour.json").then(function (t) { (t.apps || []).forEach(function (a) { toured[a.package] = true; }); }, function () {});   // the tour links are a bonus
+  Promise.all([json("index.json"), tour])
+    .then(function (r) { all = (r[0].packages || []).map(card); show(); })
+    .catch(function () { count.textContent = "Couldn't load the list — try reloading."; });
+})();
+</script>
+</body></html>
