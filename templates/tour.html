@@ -80,7 +80,7 @@
     if (ev.key === "ArrowLeft") show(i - 1); else if (ev.key === "ArrowRight") show(i + 1);
   });
 
-  fetch("tour.json", { headers: { Accept: "application/json" } })
+  fetch("tour.json", { cache: "no-cache", headers: { Accept: "application/json" } })
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(function (t) {
       apps = (t.apps || []).filter(function (a) { return a.shots && a.shots.length; });

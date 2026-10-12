@@ -33,7 +33,7 @@
   }
   function card(p) {   // made once per app; a search only hides it and re-marks its text
     var li = el("li", "card"), top = el("div", "top"), img = el("img"), name = el("div"), h = el("h2"), d = el("p");
-    img.src = p.thumbnail[p.thumbnail.length - 1]; img.alt = ""; img.width = img.height = 48;
+    img.src = "icons/" + p.package + "-256.png";   // the page's own copy, wherever the site is served img.alt = ""; img.width = img.height = 48;
     name.appendChild(h); name.appendChild(el("span", "ver", p.version.replace(/-\d+$/, "")));
     top.appendChild(img); top.appendChild(name); li.appendChild(top); d.title = p.desc; li.appendChild(d);
     var links = el("div", "links"), a = el("a", null, "Source"), b = el("a", null, "Download .spk");
@@ -57,7 +57,7 @@
   q.value = new URLSearchParams(location.search).get("q") || "";
   q.addEventListener("input", show);
   document.addEventListener("keydown", function (ev) { if (ev.key === "/" && document.activeElement !== q) { ev.preventDefault(); q.focus(); } });
-  function json(u) { return fetch(u, { headers: { Accept: "application/json" } }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }); }
+  function json(u) { return fetch(u, { cache: "no-cache", headers: { Accept: "application/json" } }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }); }
   var tour = json("tour.json").then(function (t) { (t.apps || []).forEach(function (a) { toured[a.package] = true; }); }, function () {});   // the tour links are a bonus
   Promise.all([json("index.json"), tour])
     .then(function (r) { all = (r[0].packages || []).map(card); show(); })

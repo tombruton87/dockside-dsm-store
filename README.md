@@ -39,6 +39,11 @@ the workflow by hand to skip the wait.
 GH_TOKEN=$(gh auth token) python3 build.py
 ```
 
+To see packages that aren't released yet, list them in `pending.txt` and run
+`python3 build.py --preview`. It writes `preview/` (never published) with
+everything relative, taking those packages from their folders here: the built
+`.spk`, icons, screenshots and changelog.
+
 Adding a package: put its repo in `repos.txt`. Its latest release must carry
 exactly one `<pkg>-<version>-<build>.spk`, whose `INFO` agrees with that name.
 

@@ -1,0 +1,7 @@
+# Packages built but not released yet: build.py --preview shows them from their
+# folders here. Move a line to repos.txt once its v1.0.0 release exists.
+tombruton87/paperless-ngx-dsm
+tombruton87/immich-dsm
+tombruton87/changedetection-dsm
+tombruton87/gitea-dsm
+tombruton87/linkwarden-dsm

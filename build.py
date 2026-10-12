@@ -10,14 +10,22 @@ site/index.html  a page for people, with how to add the source
 cache.json       what came out of each .spk, by release asset id, so an unchanged
                  package is not downloaded again
 
+    build.py --preview  # the same into preview/ (never published), with relative
+                        # addresses, plus the packages in pending.txt read from
+                        # their folders here (/docker/<repo name>): their built
+                        # .spk, icons, screenshots and changelog
+
 Only the standard library, so it runs the same here and in GitHub Actions."""
-import hashlib, html, json, os, re, sys, tarfile, tempfile, urllib.request
+import hashlib, html, json, os, re, shutil, sys, tarfile, tempfile, urllib.request
 from urllib.parse import quote
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-SITE, ICONS = os.path.join(ROOT, "site"), os.path.join(ROOT, "site", "icons")
+PREVIEW = "--preview" in sys.argv[1:]
+SITE = os.path.join(ROOT, "preview" if PREVIEW else "site")
+ICONS = os.path.join(SITE, "icons")
 CONFIG = json.load(open(os.path.join(ROOT, "config.json")))
-CACHE_FILE = os.path.join(ROOT, "cache.json")
+if PREVIEW: CONFIG.update(base_url="", catalog_file="")   # everything relative: it works wherever it's served
+CACHE_FILE = os.path.join(SITE if PREVIEW else ROOT, "cache.json")
 # The mark: three containers stacked on the quay, over two waves. Page header and favicon.
 LOGO = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" aria-hidden="true">'
         '<rect x="12.5" y="5" width="15" height="8.5" rx="1.2" fill="#d6b479"/>'
@@ -49,17 +57,25 @@ def unpack(asset, pkg):
     with tempfile.NamedTemporaryFile(suffix=".spk") as f:
         req = urllib.request.Request(asset["browser_download_url"], headers={"User-Agent": "dockside-dsm-store"})
         with urllib.request.urlopen(req, timeout=120) as r:
-            md5 = hashlib.md5()
-            for chunk in iter(lambda: r.read(1 << 16), b""): f.write(chunk); md5.update(chunk)
-        f.flush(); size = f.tell()
-        with tarfile.open(f.name) as t:
-            names = t.getnames()
-            info = read_info(t.extractfile("INFO").read().decode())
-            for member, out in (("PACKAGE_ICON.PNG", "64"), ("PACKAGE_ICON_256.PNG", "256")):
-                if member in names:
-                    with open(os.path.join(ICONS, f"{pkg}-{out}.png"), "wb") as o: o.write(t.extractfile(member).read())
+            for chunk in iter(lambda: r.read(1 << 16), b""): f.write(chunk)
+        f.flush()
+        return {"asset_id": asset["id"], **read_spk(f.name, pkg)}
+
+
+def read_spk(path, pkg):
+    """INFO, md5, size and wizard flags of one .spk file; writes its icons."""
+    md5 = hashlib.md5()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(1 << 16), b""): md5.update(chunk)
+    size = os.path.getsize(path)
+    with tarfile.open(path) as t:
+        names = t.getnames()
+        info = read_info(t.extractfile("INFO").read().decode())
+        for member, out in (("PACKAGE_ICON.PNG", "64"), ("PACKAGE_ICON_256.PNG", "256")):
+            if member in names:
+                with open(os.path.join(ICONS, f"{pkg}-{out}.png"), "wb") as o: o.write(t.extractfile(member).read())
     wiz = [n.split("/", 1)[1] for n in names if n.startswith("WIZARD_UIFILES/")]
-    return {"asset_id": asset["id"], "md5": md5.hexdigest(), "size": size, "info": info,
+    return {"md5": md5.hexdigest(), "size": size, "info": info,
             "install_wizard": any(n.startswith("install_uifile") for n in wiz),
             "upgrade_wizard": any(n.startswith("upgrade_uifile") for n in wiz)}
 
@@ -81,7 +97,8 @@ def changelog_html(body):
 def main():
     os.makedirs(ICONS, exist_ok=True)
     cache = json.load(open(CACHE_FILE)) if os.path.exists(CACHE_FILE) else {}
-    repos = [l.strip() for l in open(os.path.join(ROOT, "repos.txt")) if l.strip() and not l.startswith("#")]
+    lines = lambda name: [l.strip() for l in open(os.path.join(ROOT, name)) if l.strip() and not l.startswith("#")] if os.path.exists(os.path.join(ROOT, name)) else []
+    repos = lines("repos.txt") + (lines("pending.txt") if PREVIEW else [])
     base = CONFIG.get("base_url", "").rstrip("/")
     packages, meta, failed, tour = [], {}, [], []
     old = load(os.path.join(SITE, "index.json"), {"packages": []})["packages"]; old_meta = load(os.path.join(SITE, "meta.json"), {})
@@ -98,30 +115,21 @@ def main():
             info = got["info"]
             if info.get("package") != pkg or info.get("version") != version:
                 raise ValueError(f"{asset['name']} says package={info.get('package')} version={info.get('version')}")
-            icon = lambda s: f"{base}/icons/{pkg}-{s}.png" if base else f"icons/{pkg}-{s}.png"
-            entry = {
-                "package": pkg, "version": version,
-                "dname": info.get("displayname", pkg), "desc": info.get("description", ""),
-                "link": asset["browser_download_url"],
-                "thumbnail": [icon(64), icon(256)], "thumbnail_retina": [icon(256), icon(256)], "snapshot": [],
-                # Quick install/upgrade only without a wizard, as SynoCommunity's spkrepo does it.
-                "qinst": not got["install_wizard"], "qupgrade": not got["upgrade_wizard"], "qstart": not got["install_wizard"],
-                "deppkgs": info.get("install_dep_packages") or None, "conflictpkgs": info.get("install_conflict_packages") or None,
-                "download_count": 0, "recent_download_count": 0,   # counts would make every hourly build a new commit
-                "changelog": changelog_html(rel.get("body")),
-                "maintainer": info.get("maintainer"), "maintainer_url": info.get("maintainer_url"),
-                "distributor": CONFIG.get("distributor"), "distributor_url": CONFIG.get("distributor_url"),
-                "support_url": info.get("support_url"),
-                "md5": got["md5"], "size": got["size"],
-            }
-            packages.append({k: v for k, v in entry.items() if v is not None and v != ""})
+            entry, tour_app = make_entry(repo, pkg, version, got, asset["browser_download_url"], rel.get("body"), rel["tag_name"], base)
+            packages.append(entry)
             meta[pkg] = {"os_min_ver": info.get("os_min_ver", ""), "repo": repo, "tag": rel["tag_name"]}
             if got.get("shots_tag") != rel["tag_name"] or any("w" not in x for x in got.get("shots", [])):
                 try: got["shots"], got["shots_tag"] = screenshots(repo, rel["tag_name"]), rel["tag_name"]
                 except Exception as e: warn(f"{repo}: screenshots — {e}")   # keeps the ones it had
-            tour.append({"package": pkg, "dname": entry["dname"], "icon": icon(256), "repo": repo,
-                         "link": entry["link"], "shots": got.get("shots", [])})
-        except Exception as e:   # a failed lookup keeps the package's last good entry; it never drops off the feed
+            tour.append({**tour_app, "shots": got.get("shots", [])})
+        except Exception as e:
+            if PREVIEW and os.path.isdir(local_dir(repo)):   # not released yet: the preview shows the local build
+                try:
+                    entry, tour_app, m = local_package(repo, base)
+                    packages.append(entry); meta[entry["package"]] = m; tour.append(tour_app)
+                    continue
+                except Exception as e2: e = e2
+            # a failed lookup keeps the package's last good entry; it never drops off the feed
             prev = [k for k, v in old_meta.items() if v.get("repo") == repo]
             packages += [p for p in old if p["package"] in prev]; meta.update({k: old_meta[k] for k in prev})
             warn(f"{repo}: {e} — " + ("kept the previous entry" if prev else "not listed"))
@@ -139,11 +147,64 @@ def main():
     write(os.path.join(SITE, "index.html"), render("index.html", NOSCRIPT=noscript))
     write(os.path.join(SITE, "tour.html"), render("tour.html"))
     write(os.path.join(SITE, "style.css"), open(os.path.join(ROOT, "templates", "style.css")).read())
+    if PREVIEW: shutil.copytree(os.path.join(ROOT, "site", "art"), os.path.join(SITE, "art"), dirs_exist_ok=True)
     json.dump({r: cache[r] for r in repos if r in cache}, open(CACHE_FILE, "w"), indent=1, sort_keys=True)
     for name in os.listdir(ICONS):   # icons of packages no longer listed
         if name.rsplit("-", 1)[0] not in meta: os.remove(os.path.join(ICONS, name))
     print(f"{len(packages)} packages" + (f", {len(failed)} skipped: {' '.join(failed)}" if failed else ""), file=sys.stderr)
-    return 1 if failed else 0
+    return 1 if failed and not PREVIEW else 0
+
+
+def make_entry(repo, pkg, version, got, link, notes, tag, base):
+    """The catalog entry for one package, and its line in the tour (without screenshots)."""
+    info = got["info"]
+    icon = lambda s: f"{base}/icons/{pkg}-{s}.png" if base else f"icons/{pkg}-{s}.png"
+    entry = {
+        "package": pkg, "version": version,
+        "dname": info.get("displayname", pkg), "desc": info.get("description", ""),
+        "link": link,
+        "thumbnail": [icon(64), icon(256)], "thumbnail_retina": [icon(256), icon(256)], "snapshot": [],
+        # Quick install/upgrade only without a wizard, as SynoCommunity's spkrepo does it.
+        "qinst": not got["install_wizard"], "qupgrade": not got["upgrade_wizard"], "qstart": not got["install_wizard"],
+        "deppkgs": info.get("install_dep_packages") or None, "conflictpkgs": info.get("install_conflict_packages") or None,
+        "download_count": 0, "recent_download_count": 0,   # counts would make every hourly build a new commit
+        "changelog": changelog_html(notes),
+        "maintainer": info.get("maintainer"), "maintainer_url": info.get("maintainer_url"),
+        "distributor": CONFIG.get("distributor"), "distributor_url": CONFIG.get("distributor_url"),
+        "support_url": info.get("support_url"),
+        "md5": got["md5"], "size": got["size"],
+    }
+    entry = {k: v for k, v in entry.items() if v is not None and v != ""}
+    # The pages are only ever opened from the site itself, so their icons stay relative.
+    return entry, {"package": pkg, "dname": entry["dname"], "icon": f"icons/{pkg}-256.png", "repo": repo, "link": link}
+
+
+def local_dir(repo):
+    return os.path.join("/docker", repo.split("/", 1)[1])
+
+
+def local_package(repo, base):
+    """A package not released yet, for the preview: from its folder's dist/, README and CHANGELOG."""
+    d = local_dir(repo)
+    conf = dict(re.findall(r'^([A-Z_]+)=["\']?([^"\'\n]*)', open(os.path.join(d, "package.conf")).read(), re.M))
+    pkg, ver = conf["PKG_NAME"], open(os.path.join(d, "VERSION")).read().strip()
+    spk = os.path.join(d, "dist", f"{pkg}-{ver}-1.spk")
+    if not os.path.exists(spk): raise ValueError(f"no {os.path.relpath(spk, d)} — build it first")
+    os.makedirs(os.path.join(SITE, "spk"), exist_ok=True)
+    shutil.copy(spk, os.path.join(SITE, "spk", os.path.basename(spk)))
+    got = read_spk(spk, pkg)
+    log = open(os.path.join(d, "CHANGELOG.md")).read()
+    m = re.search(r"^## " + re.escape(ver) + r"\b.*?\n(.*?)(?=^## |\Z)", log, re.S | re.M)
+    entry, tour_app = make_entry(repo, pkg, f"{ver}-1", got, f"spk/{os.path.basename(spk)}", m.group(1) if m else "", "local", base)
+    shots = []
+    for alt, path in re.findall(r"!\[([^\]]*)\]\((docs/screenshots/[^)\s]+\.png)\)", open(os.path.join(d, "README.md")).read()):
+        out = os.path.join(SITE, "shots", pkg, os.path.basename(path)); os.makedirs(os.path.dirname(out), exist_ok=True)
+        shutil.copy(os.path.join(d, path), out)
+        with open(out, "rb") as f: head = f.read(24)
+        shots.append({"title": alt.strip() or os.path.basename(path)[:-4].title(), "src": os.path.relpath(out, SITE),
+                      "w": int.from_bytes(head[16:20], "big"), "h": int.from_bytes(head[20:24], "big")})
+    warn(f"{repo}: not released — preview uses the local build {os.path.basename(spk)}")
+    return entry, {**tour_app, "shots": shots}, {"os_min_ver": got["info"].get("os_min_ver", ""), "repo": repo, "tag": "local"}
 
 
 def load(path, default):
