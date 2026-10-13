@@ -14,7 +14,3 @@ tombruton87/speedtest-dsm
 tombruton87/stirling-pdf-dsm
 tombruton87/uptime-kuma-dsm
 tombruton87/vaultwarden-dsm
-tombruton87/audiobookshelf-dsm
-tombruton87/homebox-dsm
-tombruton87/memos-dsm
-tombruton87/snipe-it-dsm
