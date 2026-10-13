@@ -11,3 +11,4 @@ tombruton87/memos-dsm
 tombruton87/paperless-ngx-dsm
 tombruton87/snipe-it-dsm
 tombruton87/unifi-dsm
+tombruton87/technitium-dsm
