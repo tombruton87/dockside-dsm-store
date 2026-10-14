@@ -107,7 +107,7 @@
  "technitium": {
   "os_min_ver": "7.2.1-69057",
   "repo": "tombruton87/technitium-dsm",
-  "tag": "v1.0.2"
+  "tag": "v1.1.0"
  },
  "unifi": {
   "os_min_ver": "7.2.1-69057",

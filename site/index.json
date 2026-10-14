@@ -632,10 +632,10 @@
   },
   {
    "package": "technitium",
-   "version": "1.0.2-1",
+   "version": "1.1.0-1",
    "dname": "Technitium DNS Server",
    "desc": "Technitium DNS Server in Container Manager: your own DNS server for the whole network, on your Synology. It blocks ads and trackers, answers names you give your own devices (like nas.home), and can encrypt lookups to the internet. A DSM window turns blocking on and off, manages blocklists, local names and upstream DNS, checks DSM isn't using port 53 already, and handles the password, HTTPS, backups and updates.",
-   "link": "https://github.com/tombruton87/technitium-dsm/releases/download/v1.0.2/technitium-1.0.2-1.spk",
+   "link": "https://github.com/tombruton87/technitium-dsm/releases/download/v1.1.0/technitium-1.1.0-1.spk",
    "thumbnail": [
     "https://tombruton87.github.io/dockside-dsm-store/icons/technitium-64.png",
     "https://tombruton87.github.io/dockside-dsm-store/icons/technitium-256.png"
@@ -651,14 +651,14 @@
    "deppkgs": "ContainerManager>=20.10.23-1432",
    "download_count": 0,
    "recent_download_count": 0,
-   "changelog": "• The Network and HTTPS settings on the Site address tab no longer jump back to the saved value a moment after you change them, before you can press Save.<br>• <b>Show password</b> on the Setup tab: the package keeps the admin password it last made (in its own folder, for DSM administrators only) and shows it again with a Copy button. Installs from earlier versions have nothing kept until New password makes one.",
+   "changelog": "• A <b>Categories</b> tab: what each device on your network looks up over the last 24 hours, sorted into ten categories (ads &amp; tracking, malware &amp; phishing, scams, adult, gambling, social media, YouTube, piracy, drugs, VPN &amp; DNS bypass), with the most looked-up sites in each. One button turns it on: it installs Technitium's query log (Sqlite, up to 500,000 lookups for 7 days) and fetches the category lists once a day.<br>• <b>Groups and blocking:</b> put devices in groups by address or subnet and tick the categories to block for each, plus a choice for everyone else. Saving sets up Technitium's Advanced Blocking app (installing it if needed) and replaces whatever it had.<br>• Category lists from HaGeZi and the Block List Project.",
    "maintainer": "technitium-dsm",
    "maintainer_url": "https://github.com/tombruton87/technitium-dsm",
    "distributor": "Tom Bruton",
    "distributor_url": "https://github.com/tombruton87",
    "support_url": "https://github.com/tombruton87/technitium-dsm/issues",
-   "md5": "9186d386c52b8273e02d089636f0cb2e",
-   "size": 122880
+   "md5": "02dff81f11a55bb6ff04bface833ee73",
+   "size": 133120
   },
   {
    "package": "unifi",
