@@ -1074,16 +1074,16 @@
   "upgrade_wizard": false
  },
  "tombruton87/technitium-dsm": {
-  "asset_id": 639512540,
+  "asset_id": 641307890,
   "info": {
    "arch": "noarch",
    "beta": "yes",
-   "checksum": "32e07e3f8e30bb96b5efc08fe67b4a3a",
+   "checksum": "34ea71a6c4c66c92e8f5fc15b6676de5",
    "description": "Technitium DNS Server in Container Manager: your own DNS server for the whole network, on your Synology. It blocks ads and trackers, answers names you give your own devices (like nas.home), and can encrypt lookups to the internet. A DSM window turns blocking on and off, manages blocklists, local names and upstream DNS, checks DSM isn't using port 53 already, and handles the password, HTTPS, backups and updates.",
    "displayname": "Technitium DNS Server",
    "dsmappname": "Technitium.AppInstance",
    "dsmuidir": "ui",
-   "extractsize": "248",
+   "extractsize": "256",
    "install_dep_packages": "ContainerManager>=20.10.23-1432",
    "maintainer": "technitium-dsm",
    "maintainer_url": "https://github.com/tombruton87/technitium-dsm",
@@ -1091,37 +1091,37 @@
    "package": "technitium",
    "support_url": "https://github.com/tombruton87/technitium-dsm/issues",
    "thirdparty": "yes",
-   "version": "1.0.0-1"
+   "version": "1.0.1-1"
   },
   "install_wizard": true,
-  "md5": "9478358789b617206302cc03204ef3c0",
+  "md5": "4c8ff2b520b4f66de484dd8b8ce8d132",
   "shots": [
    {
     "h": 980,
-    "src": "https://raw.githubusercontent.com/tombruton87/technitium-dsm/v1.0.0/docs/screenshots/blocking.png",
+    "src": "https://raw.githubusercontent.com/tombruton87/technitium-dsm/v1.0.1/docs/screenshots/blocking.png",
     "title": "Blocking",
     "w": 1100
    },
    {
     "h": 980,
-    "src": "https://raw.githubusercontent.com/tombruton87/technitium-dsm/v1.0.0/docs/screenshots/zones.png",
+    "src": "https://raw.githubusercontent.com/tombruton87/technitium-dsm/v1.0.1/docs/screenshots/zones.png",
     "title": "Zones",
     "w": 1100
    },
    {
     "h": 980,
-    "src": "https://raw.githubusercontent.com/tombruton87/technitium-dsm/v1.0.0/docs/screenshots/resolvers.png",
+    "src": "https://raw.githubusercontent.com/tombruton87/technitium-dsm/v1.0.1/docs/screenshots/resolvers.png",
     "title": "Resolvers",
     "w": 1100
    },
    {
     "h": 980,
-    "src": "https://raw.githubusercontent.com/tombruton87/technitium-dsm/v1.0.0/docs/screenshots/setup.png",
+    "src": "https://raw.githubusercontent.com/tombruton87/technitium-dsm/v1.0.1/docs/screenshots/setup.png",
     "title": "Setup",
     "w": 1100
    }
   ],
-  "shots_tag": "v1.0.0",
+  "shots_tag": "v1.0.1",
   "size": 122880,
   "upgrade_wizard": false
  },

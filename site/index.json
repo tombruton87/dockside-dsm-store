@@ -632,10 +632,10 @@
   },
   {
    "package": "technitium",
-   "version": "1.0.0-1",
+   "version": "1.0.1-1",
    "dname": "Technitium DNS Server",
    "desc": "Technitium DNS Server in Container Manager: your own DNS server for the whole network, on your Synology. It blocks ads and trackers, answers names you give your own devices (like nas.home), and can encrypt lookups to the internet. A DSM window turns blocking on and off, manages blocklists, local names and upstream DNS, checks DSM isn't using port 53 already, and handles the password, HTTPS, backups and updates.",
-   "link": "https://github.com/tombruton87/technitium-dsm/releases/download/v1.0.0/technitium-1.0.0-1.spk",
+   "link": "https://github.com/tombruton87/technitium-dsm/releases/download/v1.0.1/technitium-1.0.1-1.spk",
    "thumbnail": [
     "https://tombruton87.github.io/dockside-dsm-store/icons/technitium-64.png",
     "https://tombruton87.github.io/dockside-dsm-store/icons/technitium-256.png"
@@ -651,13 +651,13 @@
    "deppkgs": "ContainerManager>=20.10.23-1432",
    "download_count": 0,
    "recent_download_count": 0,
-   "changelog": "First release. Technitium DNS Server 15.6.1 in Container Manager, answering DNS on port 53 (TCP and UDP). The installer warns if port 53 is already taken on the Synology, and the log says so plainly if DSM's DNS Server package has it. Your admin password is set at the first start and shown once; the package has an API token of its own.<br><br>The DSM window adds:<br>• <b>Blocking:</b> the last 24 hours' figures, blocking on and off, pause with a timer, blocklists (add, remove, fetch now), sites always allowed or blocked, and the sites blocked most.<br>• <b>Zones:</b> local names for your own devices (nas.home → the NAS), A, AAAA and CNAME, with the zone made for you.<br>• <b>Resolvers:</b> forward to Cloudflare, Quad9, Google or your own servers, encrypted (DNS-over-HTTPS or DNS-over-TLS) or plain, or resolve recursively.<br>• <b>Setup:</b> router and DHCP steps, a note on encrypted DNS, and a new password.<br>• <b>Site address:</b> HTTPS for the web console with DSM's certificate.<br><br>Also included: backups (the whole config folder, copied with Technitium stopped cleanly for a few seconds), restore, pinned-image updates and removal.",
+   "changelog": "• DNS listens on the NAS's LAN address instead of every address. Many Synology models keep `127.0.0.1:53` for DSM itself, and 1.0.0 couldn't start alongside it (\"address already in use\").<br>• If port 53 is taken on that address, the package stops with one sentence naming what holds it, instead of retrying. The support report lists what listens on port 53.<br>• A <b>Network</b> setting on the Site address tab: the NAS's own network (new installs), where Technitium's logs show each device's address, or Docker's network, where every device shows as Docker's gateway. Changing it makes the container again. Installs from 1.0.0 stay on Docker's network until changed.",
    "maintainer": "technitium-dsm",
    "maintainer_url": "https://github.com/tombruton87/technitium-dsm",
    "distributor": "Tom Bruton",
    "distributor_url": "https://github.com/tombruton87",
    "support_url": "https://github.com/tombruton87/technitium-dsm/issues",
-   "md5": "9478358789b617206302cc03204ef3c0",
+   "md5": "4c8ff2b520b4f66de484dd8b8ce8d132",
    "size": 122880
   },
   {

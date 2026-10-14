@@ -681,31 +681,31 @@
    "dname": "Technitium DNS Server",
    "icon": "icons/technitium-256.png",
    "repo": "tombruton87/technitium-dsm",
-   "link": "https://github.com/tombruton87/technitium-dsm/releases/download/v1.0.0/technitium-1.0.0-1.spk",
+   "link": "https://github.com/tombruton87/technitium-dsm/releases/download/v1.0.1/technitium-1.0.1-1.spk",
    "shots": [
     {
-     "h": 980,
-     "src": "https://raw.githubusercontent.com/tombruton87/technitium-dsm/v1.0.0/docs/screenshots/blocking.png",
      "title": "Blocking",
-     "w": 1100
+     "src": "https://raw.githubusercontent.com/tombruton87/technitium-dsm/v1.0.1/docs/screenshots/blocking.png",
+     "w": 1100,
+     "h": 980
     },
     {
-     "h": 980,
-     "src": "https://raw.githubusercontent.com/tombruton87/technitium-dsm/v1.0.0/docs/screenshots/zones.png",
      "title": "Zones",
-     "w": 1100
+     "src": "https://raw.githubusercontent.com/tombruton87/technitium-dsm/v1.0.1/docs/screenshots/zones.png",
+     "w": 1100,
+     "h": 980
     },
     {
-     "h": 980,
-     "src": "https://raw.githubusercontent.com/tombruton87/technitium-dsm/v1.0.0/docs/screenshots/resolvers.png",
      "title": "Resolvers",
-     "w": 1100
+     "src": "https://raw.githubusercontent.com/tombruton87/technitium-dsm/v1.0.1/docs/screenshots/resolvers.png",
+     "w": 1100,
+     "h": 980
     },
     {
-     "h": 980,
-     "src": "https://raw.githubusercontent.com/tombruton87/technitium-dsm/v1.0.0/docs/screenshots/setup.png",
      "title": "Setup",
-     "w": 1100
+     "src": "https://raw.githubusercontent.com/tombruton87/technitium-dsm/v1.0.1/docs/screenshots/setup.png",
+     "w": 1100,
+     "h": 980
     }
    ]
   },
