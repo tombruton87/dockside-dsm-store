@@ -1,14 +1,3 @@
 # Packages built but not released yet: build.py --preview shows them from their
 # folders here. publish.sh moves each line to repos.txt when it releases it.
-tombruton87/audiobookshelf-dsm
-tombruton87/changedetection-dsm
 tombruton87/gitea-dsm
-tombruton87/homebox-dsm
-tombruton87/immich-dsm
-tombruton87/lanspeed-dsm
-tombruton87/linkwarden-dsm
-tombruton87/memos-dsm
-tombruton87/paperless-ngx-dsm
-tombruton87/snipe-it-dsm
-tombruton87/unifi-dsm
-tombruton87/technitium-dsm

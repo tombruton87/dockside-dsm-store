@@ -14,3 +14,14 @@ tombruton87/speedtest-dsm
 tombruton87/stirling-pdf-dsm
 tombruton87/uptime-kuma-dsm
 tombruton87/vaultwarden-dsm
+tombruton87/homebox-dsm
+tombruton87/audiobookshelf-dsm
+tombruton87/memos-dsm
+tombruton87/snipe-it-dsm
+tombruton87/paperless-ngx-dsm
+tombruton87/immich-dsm
+tombruton87/changedetection-dsm
+tombruton87/linkwarden-dsm
+tombruton87/lanspeed-dsm
+tombruton87/unifi-dsm
+tombruton87/technitium-dsm
