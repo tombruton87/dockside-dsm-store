@@ -684,28 +684,28 @@
    "link": "https://github.com/tombruton87/technitium-dsm/releases/download/v1.0.2/technitium-1.0.2-1.spk",
    "shots": [
     {
-     "title": "Blocking",
+     "h": 980,
      "src": "https://raw.githubusercontent.com/tombruton87/technitium-dsm/v1.0.2/docs/screenshots/blocking.png",
-     "w": 1100,
-     "h": 980
+     "title": "Blocking",
+     "w": 1100
     },
     {
-     "title": "Zones",
+     "h": 980,
      "src": "https://raw.githubusercontent.com/tombruton87/technitium-dsm/v1.0.2/docs/screenshots/zones.png",
-     "w": 1100,
-     "h": 980
+     "title": "Zones",
+     "w": 1100
     },
     {
-     "title": "Resolvers",
+     "h": 980,
      "src": "https://raw.githubusercontent.com/tombruton87/technitium-dsm/v1.0.2/docs/screenshots/resolvers.png",
-     "w": 1100,
-     "h": 980
+     "title": "Resolvers",
+     "w": 1100
     },
     {
-     "title": "Setup",
+     "h": 980,
      "src": "https://raw.githubusercontent.com/tombruton87/technitium-dsm/v1.0.2/docs/screenshots/setup.png",
-     "w": 1100,
-     "h": 980
+     "title": "Setup",
+     "w": 1100
     }
    ]
   },
