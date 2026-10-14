@@ -31,6 +31,36 @@
    "size": 133120
   },
   {
+   "package": "audiobookshelf",
+   "version": "1.0.0-1",
+   "dname": "Audiobookshelf",
+   "desc": "Audiobookshelf, your own audiobook and podcast server, in Container Manager — streaming the books and podcasts in your shared folders to the web and to its phone apps, with listening progress kept in sync, and a DSM window for libraries and scans, users, phone setup with a QR code, backups and updates.",
+   "link": "https://github.com/tombruton87/audiobookshelf-dsm/releases/download/v1.0.0/audiobookshelf-1.0.0-1.spk",
+   "thumbnail": [
+    "https://tombruton87.github.io/dockside-dsm-store/icons/audiobookshelf-64.png",
+    "https://tombruton87.github.io/dockside-dsm-store/icons/audiobookshelf-256.png"
+   ],
+   "thumbnail_retina": [
+    "https://tombruton87.github.io/dockside-dsm-store/icons/audiobookshelf-256.png",
+    "https://tombruton87.github.io/dockside-dsm-store/icons/audiobookshelf-256.png"
+   ],
+   "snapshot": [],
+   "qinst": false,
+   "qupgrade": true,
+   "qstart": false,
+   "deppkgs": "ContainerManager>=20.10.23-1432",
+   "download_count": 0,
+   "recent_download_count": 0,
+   "changelog": "First release. Audiobookshelf 2.37.1 in Container Manager:<br>• your audiobooks and podcasts from your shared folders: audiobooks read-only, podcasts writable for new episodes;<br>• your account is made at the first start, with the password shown once;<br>• the window works through an API key of the package's own, which it makes again by itself if it's removed in Audiobookshelf.<br><br>The DSM window adds:<br>• <b>Libraries:</b><br>• books, podcasts, episodes and hours, per library and in all;<br>• scan one library or all, or read one again from scratch;<br>• add a library from a shared folder: missing folders are refused, never created;<br>• remove a library (its files stay);<br>• a folder that goes away (a USB disk, a renamed share) shows as waiting and is read again when it's back.<br>• <b>Phones:</b> a QR code, the address, and the official apps.<br>• <b>Users:</b> add people, new passwords (shown once), administrator on or off, remove; listening and finished counts for each.<br>• <b>Updates:</b> Audiobookshelf's newer releases, installed after a backup.<br><br>Also included: consistent backups that keep everyone's listening progress (Audiobookshelf's own backups are left alone), updates and removal.",
+   "maintainer": "audiobookshelf-dsm",
+   "maintainer_url": "https://github.com/tombruton87/audiobookshelf-dsm",
+   "distributor": "Tom Bruton",
+   "distributor_url": "https://github.com/tombruton87",
+   "support_url": "https://github.com/tombruton87/audiobookshelf-dsm/issues",
+   "md5": "604c565657257926ce4265ec23ef9f5d",
+   "size": 133120
+  },
+  {
    "package": "bookstack",
    "version": "1.0.1-1",
    "dname": "BookStack",
@@ -59,6 +89,36 @@
    "support_url": "https://github.com/tombruton87/bookstack-dsm/issues",
    "md5": "8cefb33a311d48729d6e20797490dddc",
    "size": 174080
+  },
+  {
+   "package": "changedetection",
+   "version": "1.0.0-1",
+   "dname": "Changedetection.io",
+   "desc": "Changedetection.io, the self-hosted website change monitor, in Container Manager — with a DSM window for your watches, DSM notifications and ntfy alerts when a page changes, password protection, an optional browser for JavaScript-heavy pages, backups and updates.",
+   "link": "https://github.com/tombruton87/changedetection-dsm/releases/download/v1.0.0/changedetection-1.0.0-1.spk",
+   "thumbnail": [
+    "https://tombruton87.github.io/dockside-dsm-store/icons/changedetection-64.png",
+    "https://tombruton87.github.io/dockside-dsm-store/icons/changedetection-256.png"
+   ],
+   "thumbnail_retina": [
+    "https://tombruton87.github.io/dockside-dsm-store/icons/changedetection-256.png",
+    "https://tombruton87.github.io/dockside-dsm-store/icons/changedetection-256.png"
+   ],
+   "snapshot": [],
+   "qinst": false,
+   "qupgrade": true,
+   "qstart": false,
+   "deppkgs": "ContainerManager>=20.10.23-1432",
+   "download_count": 0,
+   "recent_download_count": 0,
+   "changelog": "First release. Changedetection.io 0.60.9 in Container Manager, password protection from the first start (password shown once), no example watches, and a DSM window: Watches (last change, last check and errors, with search; add a page by its address, check now, check all, pause and resume; pages on your own network on or off; the optional Chrome browser for JavaScript pages on or off), Alerts (DSM notifications for changes and failed checks, with a test; the ntfy package on this NAS connected in one click through a write-only sender; Changedetection.io's Apprise addresses listed without their secrets, added, tested and removed), Access (a new password, your own, or none), backups with restore, updates that move the pinned release on, storage, a redacted support report, and full removal.",
+   "maintainer": "changedetection-dsm",
+   "maintainer_url": "https://github.com/tombruton87/changedetection-dsm",
+   "distributor": "Tom Bruton",
+   "distributor_url": "https://github.com/tombruton87",
+   "support_url": "https://github.com/tombruton87/changedetection-dsm/issues",
+   "md5": "3d93d1a8c107c2959b437277181d2444",
+   "size": 153600
   },
   {
    "package": "docuseal",
@@ -121,6 +181,36 @@
    "size": 163840
   },
   {
+   "package": "homebox",
+   "version": "1.0.0-1",
+   "dname": "Homebox",
+   "desc": "Homebox, the home inventory for everything you own — where it is, what it cost, its receipts, manuals and warranty — in Container Manager, with a DSM window for the people who use it (sign-ups off by default, a new password shown once), what your things are worth, a DSM notification before a warranty ends, consistent backups with every photo and receipt, and updates.",
+   "link": "https://github.com/tombruton87/homebox-dsm/releases/download/v1.0.0/homebox-1.0.0-1.spk",
+   "thumbnail": [
+    "https://tombruton87.github.io/dockside-dsm-store/icons/homebox-64.png",
+    "https://tombruton87.github.io/dockside-dsm-store/icons/homebox-256.png"
+   ],
+   "thumbnail_retina": [
+    "https://tombruton87.github.io/dockside-dsm-store/icons/homebox-256.png",
+    "https://tombruton87.github.io/dockside-dsm-store/icons/homebox-256.png"
+   ],
+   "snapshot": [],
+   "qinst": false,
+   "qupgrade": true,
+   "qstart": false,
+   "deppkgs": "ContainerManager>=20.10.23-1432",
+   "download_count": 0,
+   "recent_download_count": 0,
+   "changelog": "First release. Homebox 0.26.2 (the maintained sysadminsmedia fork) in Container Manager. Your account is made at the first start, with the password shown once; until it exists, Homebox answers only on the Synology itself, and sign-ups are closed afterwards.<br><br>The DSM window adds:<br>• <b>Inventory:</b> items, what they're worth, locations, attached files and warranties for every collection; the warranties ending soon; and a DSM notification a week to three months before one ends, once per item.<br>• <b>Users:</b> everyone with an account and their collections, sign-ups open or closed, and a new password (shown once) through Homebox's own password reset, which signs that person out everywhere.<br>• <b>Updates:</b> Homebox stays at a tested release; the window finds newer ones on GitHub and ghcr.io and moves to them after a backup.<br><br>Also included: consistent backups with every photo, receipt and manual, restore and removal.",
+   "maintainer": "homebox-dsm",
+   "maintainer_url": "https://github.com/tombruton87/homebox-dsm",
+   "distributor": "Tom Bruton",
+   "distributor_url": "https://github.com/tombruton87",
+   "support_url": "https://github.com/tombruton87/homebox-dsm/issues",
+   "md5": "87b15435632a9c1a058a5c3945341bbd",
+   "size": 143360
+  },
+  {
    "package": "homepage",
    "version": "1.0.1-1",
    "dname": "Homepage",
@@ -148,6 +238,36 @@
    "distributor_url": "https://github.com/tombruton87",
    "support_url": "https://github.com/tombruton87/homepage-dsm/issues",
    "md5": "b51759ace1b5821bc65e761e6c3d4149",
+   "size": 143360
+  },
+  {
+   "package": "immich",
+   "version": "1.0.0-1",
+   "dname": "Immich",
+   "desc": "Immich, your own photo and video library with phone backup, in Container Manager with Postgres and Valkey — with a DSM window for photo libraries from your shared folders (read-only, scanned on demand), machine learning on or off for smaller Synologys, users and the administrator's password, phone setup with a QR code, database backups and careful updates.",
+   "link": "https://github.com/tombruton87/immich-dsm/releases/download/v1.0.0/immich-1.0.0-1.spk",
+   "thumbnail": [
+    "https://tombruton87.github.io/dockside-dsm-store/icons/immich-64.png",
+    "https://tombruton87.github.io/dockside-dsm-store/icons/immich-256.png"
+   ],
+   "thumbnail_retina": [
+    "https://tombruton87.github.io/dockside-dsm-store/icons/immich-256.png",
+    "https://tombruton87.github.io/dockside-dsm-store/icons/immich-256.png"
+   ],
+   "snapshot": [],
+   "qinst": false,
+   "qupgrade": true,
+   "qstart": false,
+   "deppkgs": "ContainerManager>=20.10.23-1432",
+   "download_count": 0,
+   "recent_download_count": 0,
+   "changelog": "First release. Immich v3.3.1 with Postgres (VectorChord) and Valkey in Container Manager, the images and versions of that release's own compose file:<br>• uploads go to the photos folder of the immich shared folder;<br>• your administrator account is made at the first start, with the password shown once;<br>• the package works through an API key of its own, never your password.<br><br>The DSM window adds:<br>• <b>Photo libraries:</b><br>• up to five folders already on the Synology, read-only, as Immich external libraries, each in someone's timeline;<br>• scan one or all now; counts and the last scan;<br>• missing folders are refused, never created; DSM's @eaDir thumbnails are skipped;<br>• what's in the photos folder, and what Immich is still working on.<br>• <b>Machine learning:</b> on or off. Off frees 1–2 GB of memory on smaller Synologys; smart search and faces follow the switch. Memory in use, per container.<br>• <b>Users:</b> add people (a password shown once, their own chosen at the first sign-in), and reset the administrator's password with immich-admin.<br>• <b>Phones:</b> a QR code, the server address and the apps.<br><br>Also included: database backups as Immich documents them (pg_dump), with restore; updates that move to a newer Immich only with a package update, after backing up the database; and removal.",
+   "maintainer": "immich-dsm",
+   "maintainer_url": "https://github.com/tombruton87/immich-dsm",
+   "distributor": "Tom Bruton",
+   "distributor_url": "https://github.com/tombruton87",
+   "support_url": "https://github.com/tombruton87/immich-dsm/issues",
+   "md5": "61aabffef90afea8101602fd85626ae7",
    "size": 143360
   },
   {
@@ -179,6 +299,96 @@
    "support_url": "https://github.com/tombruton87/invoiceninja-dsm/issues",
    "md5": "9969dd863843779765abe3f7b44aa9ea",
    "size": 122880
+  },
+  {
+   "package": "lanspeed",
+   "version": "1.0.0-1",
+   "dname": "LAN Speed",
+   "desc": "A web-based iperf for your home network, in Container Manager: an iperf3 server on the Synology for PCs, a LibreSpeed browser test for phones and laptops, and a DSM window that runs iperf3 tests from the Synology to any device, keeps every result with a chart per device, tests on a schedule and tells DSM when the network is slower than it should be.",
+   "link": "https://github.com/tombruton87/lanspeed-dsm/releases/download/v1.0.0/lanspeed-1.0.0-1.spk",
+   "thumbnail": [
+    "https://tombruton87.github.io/dockside-dsm-store/icons/lanspeed-64.png",
+    "https://tombruton87.github.io/dockside-dsm-store/icons/lanspeed-256.png"
+   ],
+   "thumbnail_retina": [
+    "https://tombruton87.github.io/dockside-dsm-store/icons/lanspeed-256.png",
+    "https://tombruton87.github.io/dockside-dsm-store/icons/lanspeed-256.png"
+   ],
+   "snapshot": [],
+   "qinst": false,
+   "qupgrade": true,
+   "qstart": false,
+   "deppkgs": "ContainerManager>=20.10.23-1432",
+   "download_count": 0,
+   "recent_download_count": 0,
+   "changelog": "First release. A web-based iperf for the home network, in Container Manager: iperf3 3.20 (Alpine's, built on the Synology) as a server on port 5201, TCP and UDP, always on, and LibreSpeed 6.3.0, the browser speed test, on port 8790 — LAN only, nothing goes to the internet. The wizard suggests other ports when those are taken, and both are in DSM's firewall list.<br><br>The DSM window adds:<br>• <b>Run a test:</b> iperf3 from the Synology to any device on the network — TCP or UDP, upload, download (-R) or both, how long, parallel streams — with Mbit/s, retransmits, and jitter and packet loss for UDP. Devices can be saved with a name.<br>• <b>History:</b> every test — run here, on the schedule, from other devices against the iperf3 server, and in the browser — with a chart over time, filters per device and kind of test, and every result as a CSV.<br>• <b>Schedule:</b> an iperf3 test to one device every 15 minutes to once a day, what counts as slow, and a DSM notification when a scheduled test is slow or fails.<br>• <b>How to test:</b> the browser test's address with a QR code for phones, iperf3 commands to copy for Windows, macOS and Linux, and what limits the results.<br>• <b>Site address:</b> the iperf3 port, beside the web port.<br><br>Also included: consistent backups of the history, restore, updates (a newer LibreSpeed release, or Alpine's newer iperf3) and removal.",
+   "maintainer": "lanspeed-dsm",
+   "maintainer_url": "https://github.com/tombruton87/lanspeed-dsm",
+   "distributor": "Tom Bruton",
+   "distributor_url": "https://github.com/tombruton87",
+   "support_url": "https://github.com/tombruton87/lanspeed-dsm/issues",
+   "md5": "5884afaa3b4223922b587494faddcad9",
+   "size": 143360
+  },
+  {
+   "package": "linkwarden",
+   "version": "1.0.0-1",
+   "dname": "Linkwarden",
+   "desc": "Linkwarden, bookmarks that keep a copy of each page (a screenshot, a PDF and the page itself), in Container Manager with PostgreSQL — with a DSM window for its users (new passwords, sign-ups, the administrator), the page copies kept in a shared folder and the room they take, consistent backups and updates.",
+   "link": "https://github.com/tombruton87/linkwarden-dsm/releases/download/v1.0.0/linkwarden-1.0.0-1.spk",
+   "thumbnail": [
+    "https://tombruton87.github.io/dockside-dsm-store/icons/linkwarden-64.png",
+    "https://tombruton87.github.io/dockside-dsm-store/icons/linkwarden-256.png"
+   ],
+   "thumbnail_retina": [
+    "https://tombruton87.github.io/dockside-dsm-store/icons/linkwarden-256.png",
+    "https://tombruton87.github.io/dockside-dsm-store/icons/linkwarden-256.png"
+   ],
+   "snapshot": [],
+   "qinst": false,
+   "qupgrade": true,
+   "qstart": false,
+   "deppkgs": "ContainerManager>=20.10.23-1432",
+   "download_count": 0,
+   "recent_download_count": 0,
+   "changelog": "First release. Linkwarden 2.16.3 with PostgreSQL 16 in Container Manager. Your account is made at the first start, with the password shown once; sign-ups are then off, and Linkwarden only listens beyond the NAS once your account exists. Linkwarden's secret is made at install and kept in the settings.<br><br>The DSM window adds:<br>• <b>Users:</b> a new password (shown once, and their old sessions signed out), sign-ups on or off, and which user is Linkwarden's administrator.<br>• <b>Archive:</b> the page copies (screenshots, PDFs, the pages themselves and their readable text) kept in the shared folder's Archive folder, how much room each kind takes, copies on or off, copies of pages on your own network, and trying the failed ones again.<br><br>Also included: consistent backups (a PostgreSQL dump and the Archive folder), updates to newer Linkwarden releases, storage, a redacted support report and full removal.",
+   "maintainer": "linkwarden-dsm",
+   "maintainer_url": "https://github.com/tombruton87/linkwarden-dsm",
+   "distributor": "Tom Bruton",
+   "distributor_url": "https://github.com/tombruton87",
+   "support_url": "https://github.com/tombruton87/linkwarden-dsm/issues",
+   "md5": "8da03f01c6ca72d55101d48326230b93",
+   "size": 112640
+  },
+  {
+   "package": "memos",
+   "version": "1.0.0-1",
+   "dname": "Memos",
+   "desc": "Memos, quick private notes you jot from any browser or phone, in Container Manager — with your notes kept on your Synology, attachments as plain files in the memos shared folder, and a DSM window for people and passwords (shown once), sign-ups, phone setup with a QR code, backups and updates.",
+   "link": "https://github.com/tombruton87/memos-dsm/releases/download/v1.0.0/memos-1.0.0-1.spk",
+   "thumbnail": [
+    "https://tombruton87.github.io/dockside-dsm-store/icons/memos-64.png",
+    "https://tombruton87.github.io/dockside-dsm-store/icons/memos-256.png"
+   ],
+   "thumbnail_retina": [
+    "https://tombruton87.github.io/dockside-dsm-store/icons/memos-256.png",
+    "https://tombruton87.github.io/dockside-dsm-store/icons/memos-256.png"
+   ],
+   "snapshot": [],
+   "qinst": false,
+   "qupgrade": true,
+   "qstart": false,
+   "deppkgs": "ContainerManager>=20.10.23-1432",
+   "download_count": 0,
+   "recent_download_count": 0,
+   "changelog": "First release. Memos 0.31 in Container Manager:<br>• your account is made at the first start as Memos's administrator, with the password shown once;<br>• sign-ups start off: only an administrator adds people;<br>• attached files are ordinary files in the memos shared folder, in `attachments/`;<br>• a package administrator handles the window's work through Memos's own API.<br><br>The DSM window adds:<br>• <b>Users:</b> everyone's memo count and last memo; add people, new passwords (shown once), administrator on or off, remove; sign-ups on or off.<br>• <b>Attachments:</b> how many files there are and how much room they take, by person; where new files go; the biggest file allowed.<br>• <b>Phones:</b> a QR code of the address, and how to put Memos on the home screen.<br><br>Also included: backups that copy the database consistently (`sqlite3 .backup`) together with `attachments/`, restore, updates and removal.",
+   "maintainer": "memos-dsm",
+   "maintainer_url": "https://github.com/tombruton87/memos-dsm",
+   "distributor": "Tom Bruton",
+   "distributor_url": "https://github.com/tombruton87",
+   "support_url": "https://github.com/tombruton87/memos-dsm/issues",
+   "md5": "0c8fd62a27b1cd5cef467591f1a20e51",
+   "size": 174080
   },
   {
    "package": "n8n",
@@ -271,6 +481,36 @@
    "size": 122880
   },
   {
+   "package": "paperless",
+   "version": "1.0.0-1",
+   "dname": "Paperless-ngx",
+   "desc": "Paperless-ngx, a searchable archive for your paper — scans and PDFs are read (OCR), tagged and filed — in Container Manager with PostgreSQL, with an inbox folder in a shared folder: drop scans into paperless → Inbox. A DSM window shows what's waiting, filed and failed (and DSM tells you when a document couldn't be added), picks the OCR languages, resets passwords, adds people, keeps a readable export beside the backups, and handles updates.",
+   "link": "https://github.com/tombruton87/paperless-ngx-dsm/releases/download/v1.0.0/paperless-1.0.0-1.spk",
+   "thumbnail": [
+    "https://tombruton87.github.io/dockside-dsm-store/icons/paperless-64.png",
+    "https://tombruton87.github.io/dockside-dsm-store/icons/paperless-256.png"
+   ],
+   "thumbnail_retina": [
+    "https://tombruton87.github.io/dockside-dsm-store/icons/paperless-256.png",
+    "https://tombruton87.github.io/dockside-dsm-store/icons/paperless-256.png"
+   ],
+   "snapshot": [],
+   "qinst": false,
+   "qupgrade": true,
+   "qstart": false,
+   "deppkgs": "ContainerManager>=20.10.23-1432",
+   "download_count": 0,
+   "recent_download_count": 0,
+   "changelog": "First release. Paperless-ngx 3.3.0 with PostgreSQL 18 and Valkey in Container Manager. Your account, an administrator, is made at the first start, with the password shown once.<br><br>The inbox is a folder in the shared folder (paperless → Inbox):<br>• drop scans and PDFs in, and they're read, filed and taken out of the folder;<br>• a file Paperless-ngx can't add (damaged, or password-protected) is moved to Couldn't process with the reason, and DSM is told;<br>• Office documents and emails, through Gotenberg and Tika, when switched on (off by default, to save memory).<br><br>The DSM window adds:<br>• <b>Inbox:</b> what's waiting, what was filed, what couldn't be added, and Try again.<br>• <b>OCR languages:</b> the main language and up to five more; any of 25, the ones Paperless-ngx doesn't include installed as it starts.<br>• <b>Users:</b> add someone, new passwords (an administrator's too), two-step sign-in off, removal.<br>• <b>Backups:</b> a readable export to paperless → Export every night, beside the backups.<br>• <b>Maintenance:</b> rebuild the search index, and the sanity checker.<br><br>Also included: consistent backups, updates and removal.",
+   "maintainer": "paperless-dsm",
+   "maintainer_url": "https://github.com/tombruton87/paperless-ngx-dsm",
+   "distributor": "Tom Bruton",
+   "distributor_url": "https://github.com/tombruton87",
+   "support_url": "https://github.com/tombruton87/paperless-ngx-dsm/issues",
+   "md5": "09457854c510d143d90cc96dc68dee76",
+   "size": 133120
+  },
+  {
    "package": "pihole",
    "version": "1.0.0-1",
    "dname": "Pi-hole",
@@ -299,6 +539,36 @@
    "support_url": "https://github.com/tombruton87/pihole-dsm/issues",
    "md5": "8777e649f2d6fda7ced65f39b20f8a3f",
    "size": 122880
+  },
+  {
+   "package": "snipeit",
+   "version": "1.0.0-1",
+   "dname": "Snipe-IT",
+   "desc": "Snipe-IT, IT asset management for laptops, phones, licences and accessories, in Container Manager with MariaDB — with a DSM window for what's checked out and which warranties and licences end soon (and a DSM notification when one does), signing in with your Synology accounts (DSM's LDAP Server), users and their passwords, the mail server, HTTPS with DSM's certificate, consistent backups and updates.",
+   "link": "https://github.com/tombruton87/snipe-it-dsm/releases/download/v1.0.0/snipeit-1.0.0-1.spk",
+   "thumbnail": [
+    "https://tombruton87.github.io/dockside-dsm-store/icons/snipeit-64.png",
+    "https://tombruton87.github.io/dockside-dsm-store/icons/snipeit-256.png"
+   ],
+   "thumbnail_retina": [
+    "https://tombruton87.github.io/dockside-dsm-store/icons/snipeit-256.png",
+    "https://tombruton87.github.io/dockside-dsm-store/icons/snipeit-256.png"
+   ],
+   "snapshot": [],
+   "qinst": false,
+   "qupgrade": true,
+   "qstart": false,
+   "deppkgs": "ContainerManager>=20.10.23-1432",
+   "download_count": 0,
+   "recent_download_count": 0,
+   "changelog": "First release. Snipe-IT 8.8 with MariaDB in Container Manager. Snipe-IT's web setup is done at the first start instead: its settings, the keys its API signs tokens with, and your administrator account, with the password shown once. The app key is made at install and kept in every backup.<br><br>The DSM window adds:<br>• <b>Assets:</b> how many there are, what's checked out and what's ready, licence seats in use, and which warranties, ends of life and licences end in the next 7 to 90 days.<br>• <b>Alerts:</b> a DSM notification when a warranty or licence comes that close to its end.<br>• <b>Users:</b> new passwords, two-step sign-in off, and administrator on and off (never the last one).<br>• <b>Sign-in:</b> Synology accounts through DSM's LDAP Server — a test, one switch, your account kept as administrator, and the group new people join.<br>• <b>Mail:</b> the mail server, with Snipe-IT's own test email.<br>• <b>Site address:</b> HTTPS with DSM's certificate.<br><br>Also included: consistent backups (a MariaDB dump and Snipe-IT's files), updates and removal.",
+   "maintainer": "snipeit-dsm",
+   "maintainer_url": "https://github.com/tombruton87/snipe-it-dsm",
+   "distributor": "Tom Bruton",
+   "distributor_url": "https://github.com/tombruton87",
+   "support_url": "https://github.com/tombruton87/snipe-it-dsm/issues",
+   "md5": "c3b179d2870d227911de601e8ae12b89",
+   "size": 194560
   },
   {
    "package": "speedtest",
@@ -359,6 +629,66 @@
    "support_url": "https://github.com/tombruton87/stirling-pdf-dsm/issues",
    "md5": "9ae17b30bb48263f3595404af51f27b2",
    "size": 112640
+  },
+  {
+   "package": "technitium",
+   "version": "1.0.0-1",
+   "dname": "Technitium DNS Server",
+   "desc": "Technitium DNS Server in Container Manager: your own DNS server for the whole network, on your Synology. It blocks ads and trackers, answers names you give your own devices (like nas.home), and can encrypt lookups to the internet. A DSM window turns blocking on and off, manages blocklists, local names and upstream DNS, checks DSM isn't using port 53 already, and handles the password, HTTPS, backups and updates.",
+   "link": "https://github.com/tombruton87/technitium-dsm/releases/download/v1.0.0/technitium-1.0.0-1.spk",
+   "thumbnail": [
+    "https://tombruton87.github.io/dockside-dsm-store/icons/technitium-64.png",
+    "https://tombruton87.github.io/dockside-dsm-store/icons/technitium-256.png"
+   ],
+   "thumbnail_retina": [
+    "https://tombruton87.github.io/dockside-dsm-store/icons/technitium-256.png",
+    "https://tombruton87.github.io/dockside-dsm-store/icons/technitium-256.png"
+   ],
+   "snapshot": [],
+   "qinst": false,
+   "qupgrade": true,
+   "qstart": false,
+   "deppkgs": "ContainerManager>=20.10.23-1432",
+   "download_count": 0,
+   "recent_download_count": 0,
+   "changelog": "First release. Technitium DNS Server 15.6.1 in Container Manager, answering DNS on port 53 (TCP and UDP). The installer warns if port 53 is already taken on the Synology, and the log says so plainly if DSM's DNS Server package has it. Your admin password is set at the first start and shown once; the package has an API token of its own.<br><br>The DSM window adds:<br>• <b>Blocking:</b> the last 24 hours' figures, blocking on and off, pause with a timer, blocklists (add, remove, fetch now), sites always allowed or blocked, and the sites blocked most.<br>• <b>Zones:</b> local names for your own devices (nas.home → the NAS), A, AAAA and CNAME, with the zone made for you.<br>• <b>Resolvers:</b> forward to Cloudflare, Quad9, Google or your own servers, encrypted (DNS-over-HTTPS or DNS-over-TLS) or plain, or resolve recursively.<br>• <b>Setup:</b> router and DHCP steps, a note on encrypted DNS, and a new password.<br>• <b>Site address:</b> HTTPS for the web console with DSM's certificate.<br><br>Also included: backups (the whole config folder, copied with Technitium stopped cleanly for a few seconds), restore, pinned-image updates and removal.",
+   "maintainer": "technitium-dsm",
+   "maintainer_url": "https://github.com/tombruton87/technitium-dsm",
+   "distributor": "Tom Bruton",
+   "distributor_url": "https://github.com/tombruton87",
+   "support_url": "https://github.com/tombruton87/technitium-dsm/issues",
+   "md5": "9478358789b617206302cc03204ef3c0",
+   "size": 122880
+  },
+  {
+   "package": "unifi",
+   "version": "1.0.0-1",
+   "dname": "UniFi Network",
+   "desc": "The UniFi Network Application, the controller for UniFi access points, switches and gateways, in Container Manager with MongoDB — a community package, not made by Ubiquiti or Synology. A DSM window shows your devices, their firmware and clients, the address devices inform to and how to adopt them, which ports are used, UniFi's own backups beside consistent package backups, and memory settings for small NASes.",
+   "link": "https://github.com/tombruton87/unifi-dsm/releases/download/v1.0.0/unifi-1.0.0-1.spk",
+   "thumbnail": [
+    "https://tombruton87.github.io/dockside-dsm-store/icons/unifi-64.png",
+    "https://tombruton87.github.io/dockside-dsm-store/icons/unifi-256.png"
+   ],
+   "thumbnail_retina": [
+    "https://tombruton87.github.io/dockside-dsm-store/icons/unifi-256.png",
+    "https://tombruton87.github.io/dockside-dsm-store/icons/unifi-256.png"
+   ],
+   "snapshot": [],
+   "qinst": false,
+   "qupgrade": true,
+   "qstart": false,
+   "deppkgs": "ContainerManager>=20.10.23-1432",
+   "download_count": 0,
+   "recent_download_count": 0,
+   "changelog": "First release. The UniFi Network Application 10.6.106 (linuxserver.io's image) with MongoDB in Container Manager — MongoDB 8.0 on processors with AVX, 4.4 on those without (many Synology Celerons), 7.0 on Linux kernels MongoDB 8.0 refuses to start on. UniFi's first-run wizard is done for you: your administrator is made at the first start with the password shown once, the country and time zone are set, autobackups are on, and UniFi is told the address your devices should inform to. A community package, not made by Ubiquiti or Synology.<br><br>The DSM window adds:<br>• <b>Devices:</b> every adopted access point, switch and gateway with its model, state, firmware (and whether an update is waiting) and clients, read by a read-only UniFi account the package makes; a DSM notification when one has been offline for 10 minutes, and when a new one waits to be adopted.<br>• <b>Adopt:</b> the inform address with a copy button, `set-inform` and the `unifi` name explained, the devices waiting, the inform host, and the ports (inform, STUN, discovery, the guest portal) — each checked against what this Synology already uses.<br>• <b>Backups:</b> UniFi's own autobackups, copied daily into the shared folder for Hyper Backup and File Station, beside the package's backups — a MongoDB dump and UniFi's data folder, taken with UniFi paused for a moment so the two match — with restore.<br>• <b>Memory:</b> Java's heap and MongoDB's cache, with suggestions for this NAS's memory and what each uses now.<br>• <b>Updates:</b> UniFi stays at a tested release; the window finds newer ones and moves to them after a backup.<br><br>Also included: HTTPS with DSM's certificate, a new password for any UniFi administrator, a redacted support report and removal.",
+   "maintainer": "unifi-dsm",
+   "maintainer_url": "https://github.com/tombruton87/unifi-dsm",
+   "distributor": "Tom Bruton",
+   "distributor_url": "https://github.com/tombruton87",
+   "support_url": "https://github.com/tombruton87/unifi-dsm/issues",
+   "md5": "40c854bb87178f8841b6cc32df95a96a",
+   "size": 133120
   },
   {
    "package": "uptimekuma",

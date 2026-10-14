@@ -4,10 +4,20 @@
   "repo": "tombruton87/actual-dsm",
   "tag": "v1.0.0"
  },
+ "audiobookshelf": {
+  "os_min_ver": "7.2.1-69057",
+  "repo": "tombruton87/audiobookshelf-dsm",
+  "tag": "v1.0.0"
+ },
  "bookstack": {
   "os_min_ver": "7.2.1-69057",
   "repo": "tombruton87/bookstack-dsm",
   "tag": "v1.0.1"
+ },
+ "changedetection": {
+  "os_min_ver": "7.2.1-69057",
+  "repo": "tombruton87/changedetection-dsm",
+  "tag": "v1.0.0"
  },
  "docuseal": {
   "os_min_ver": "7.2.1-69057",
@@ -19,14 +29,39 @@
   "repo": "tombruton87/freescout-dsm",
   "tag": "v1.0.2"
  },
+ "homebox": {
+  "os_min_ver": "7.2.1-69057",
+  "repo": "tombruton87/homebox-dsm",
+  "tag": "v1.0.0"
+ },
  "homepage": {
   "os_min_ver": "7.2.1-69057",
   "repo": "tombruton87/homepage-dsm",
   "tag": "v1.0.1"
  },
+ "immich": {
+  "os_min_ver": "7.2.1-69057",
+  "repo": "tombruton87/immich-dsm",
+  "tag": "v1.0.0"
+ },
  "invoiceninja": {
   "os_min_ver": "7.2.1-69057",
   "repo": "tombruton87/invoiceninja-dsm",
+  "tag": "v1.0.0"
+ },
+ "lanspeed": {
+  "os_min_ver": "7.2.1-69057",
+  "repo": "tombruton87/lanspeed-dsm",
+  "tag": "v1.0.0"
+ },
+ "linkwarden": {
+  "os_min_ver": "7.2.1-69057",
+  "repo": "tombruton87/linkwarden-dsm",
+  "tag": "v1.0.0"
+ },
+ "memos": {
+  "os_min_ver": "7.2.1-69057",
+  "repo": "tombruton87/memos-dsm",
   "tag": "v1.0.0"
  },
  "n8n": {
@@ -44,9 +79,19 @@
   "repo": "tombruton87/ntfy-dsm",
   "tag": "v1.0.0"
  },
+ "paperless": {
+  "os_min_ver": "7.2.1-69057",
+  "repo": "tombruton87/paperless-ngx-dsm",
+  "tag": "v1.0.0"
+ },
  "pihole": {
   "os_min_ver": "7.2.1-69057",
   "repo": "tombruton87/pihole-dsm",
+  "tag": "v1.0.0"
+ },
+ "snipeit": {
+  "os_min_ver": "7.2.1-69057",
+  "repo": "tombruton87/snipe-it-dsm",
   "tag": "v1.0.0"
  },
  "speedtest": {
@@ -57,6 +102,16 @@
  "stirlingpdf": {
   "os_min_ver": "7.2.1-69057",
   "repo": "tombruton87/stirling-pdf-dsm",
+  "tag": "v1.0.0"
+ },
+ "technitium": {
+  "os_min_ver": "7.2.1-69057",
+  "repo": "tombruton87/technitium-dsm",
+  "tag": "v1.0.0"
+ },
+ "unifi": {
+  "os_min_ver": "7.2.1-69057",
+  "repo": "tombruton87/unifi-dsm",
   "tag": "v1.0.0"
  },
  "uptimekuma": {

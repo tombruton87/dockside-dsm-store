@@ -39,6 +39,52 @@
   "size": 133120,
   "upgrade_wizard": false
  },
+ "tombruton87/audiobookshelf-dsm": {
+  "asset_id": 638653689,
+  "info": {
+   "arch": "noarch",
+   "beta": "yes",
+   "checksum": "8d280fa00c10e78a07a70f16fb911c47",
+   "description": "Audiobookshelf, your own audiobook and podcast server, in Container Manager \u2014 streaming the books and podcasts in your shared folders to the web and to its phone apps, with listening progress kept in sync, and a DSM window for libraries and scans, users, phone setup with a QR code, backups and updates.",
+   "displayname": "Audiobookshelf",
+   "dsmappname": "Audiobookshelf.AppInstance",
+   "dsmuidir": "ui",
+   "extractsize": "248",
+   "install_dep_packages": "ContainerManager>=20.10.23-1432",
+   "maintainer": "audiobookshelf-dsm",
+   "maintainer_url": "https://github.com/tombruton87/audiobookshelf-dsm",
+   "os_min_ver": "7.2.1-69057",
+   "package": "audiobookshelf",
+   "support_url": "https://github.com/tombruton87/audiobookshelf-dsm/issues",
+   "thirdparty": "yes",
+   "version": "1.0.0-1"
+  },
+  "install_wizard": true,
+  "md5": "604c565657257926ce4265ec23ef9f5d",
+  "shots": [
+   {
+    "h": 760,
+    "src": "https://raw.githubusercontent.com/tombruton87/audiobookshelf-dsm/v1.0.0/docs/screenshots/libraries.png",
+    "title": "Libraries",
+    "w": 1100
+   },
+   {
+    "h": 760,
+    "src": "https://raw.githubusercontent.com/tombruton87/audiobookshelf-dsm/v1.0.0/docs/screenshots/phones.png",
+    "title": "Phones",
+    "w": 1100
+   },
+   {
+    "h": 760,
+    "src": "https://raw.githubusercontent.com/tombruton87/audiobookshelf-dsm/v1.0.0/docs/screenshots/users.png",
+    "title": "Users",
+    "w": 1100
+   }
+  ],
+  "shots_tag": "v1.0.0",
+  "size": 133120,
+  "upgrade_wizard": false
+ },
  "tombruton87/bookstack-dsm": {
   "asset_id": 630738563,
   "info": {
@@ -89,6 +135,58 @@
   ],
   "shots_tag": "v1.0.1",
   "size": 174080,
+  "upgrade_wizard": false
+ },
+ "tombruton87/changedetection-dsm": {
+  "asset_id": 638656317,
+  "info": {
+   "arch": "noarch",
+   "beta": "yes",
+   "checksum": "573d281c76d3db9f08039c538839642a",
+   "description": "Changedetection.io, the self-hosted website change monitor, in Container Manager \u2014 with a DSM window for your watches, DSM notifications and ntfy alerts when a page changes, password protection, an optional browser for JavaScript-heavy pages, backups and updates.",
+   "displayname": "Changedetection.io",
+   "dsmappname": "Changedetection.AppInstance",
+   "dsmuidir": "ui",
+   "extractsize": "272",
+   "install_dep_packages": "ContainerManager>=20.10.23-1432",
+   "maintainer": "changedetection-dsm",
+   "maintainer_url": "https://github.com/tombruton87/changedetection-dsm",
+   "os_min_ver": "7.2.1-69057",
+   "package": "changedetection",
+   "support_url": "https://github.com/tombruton87/changedetection-dsm/issues",
+   "thirdparty": "yes",
+   "version": "1.0.0-1"
+  },
+  "install_wizard": true,
+  "md5": "3d93d1a8c107c2959b437277181d2444",
+  "shots": [
+   {
+    "h": 1000,
+    "src": "https://raw.githubusercontent.com/tombruton87/changedetection-dsm/v1.0.0/docs/screenshots/watches.png",
+    "title": "Watches",
+    "w": 1100
+   },
+   {
+    "h": 860,
+    "src": "https://raw.githubusercontent.com/tombruton87/changedetection-dsm/v1.0.0/docs/screenshots/alerts.png",
+    "title": "Alerts",
+    "w": 1100
+   },
+   {
+    "h": 760,
+    "src": "https://raw.githubusercontent.com/tombruton87/changedetection-dsm/v1.0.0/docs/screenshots/access.png",
+    "title": "Access",
+    "w": 1100
+   },
+   {
+    "h": 860,
+    "src": "https://raw.githubusercontent.com/tombruton87/changedetection-dsm/v1.0.0/docs/screenshots/overview.png",
+    "title": "Overview",
+    "w": 1100
+   }
+  ],
+  "shots_tag": "v1.0.0",
+  "size": 153600,
   "upgrade_wizard": false
  },
  "tombruton87/docuseal-dsm": {
@@ -237,6 +335,58 @@
   "size": 163840,
   "upgrade_wizard": false
  },
+ "tombruton87/homebox-dsm": {
+  "asset_id": 638653129,
+  "info": {
+   "arch": "noarch",
+   "beta": "yes",
+   "checksum": "50892cf6946431f0969eda46f4bbc579",
+   "description": "Homebox, the home inventory for everything you own \u2014 where it is, what it cost, its receipts, manuals and warranty \u2014 in Container Manager, with a DSM window for the people who use it (sign-ups off by default, a new password shown once), what your things are worth, a DSM notification before a warranty ends, consistent backups with every photo and receipt, and updates.",
+   "displayname": "Homebox",
+   "dsmappname": "Homebox.AppInstance",
+   "dsmuidir": "ui",
+   "extractsize": "248",
+   "install_dep_packages": "ContainerManager>=20.10.23-1432",
+   "maintainer": "homebox-dsm",
+   "maintainer_url": "https://github.com/tombruton87/homebox-dsm",
+   "os_min_ver": "7.2.1-69057",
+   "package": "homebox",
+   "support_url": "https://github.com/tombruton87/homebox-dsm/issues",
+   "thirdparty": "yes",
+   "version": "1.0.0-1"
+  },
+  "install_wizard": true,
+  "md5": "87b15435632a9c1a058a5c3945341bbd",
+  "shots": [
+   {
+    "h": 860,
+    "src": "https://raw.githubusercontent.com/tombruton87/homebox-dsm/v1.0.0/docs/screenshots/inventory.png",
+    "title": "Inventory",
+    "w": 1100
+   },
+   {
+    "h": 860,
+    "src": "https://raw.githubusercontent.com/tombruton87/homebox-dsm/v1.0.0/docs/screenshots/users.png",
+    "title": "Users",
+    "w": 1100
+   },
+   {
+    "h": 860,
+    "src": "https://raw.githubusercontent.com/tombruton87/homebox-dsm/v1.0.0/docs/screenshots/overview.png",
+    "title": "Overview",
+    "w": 1100
+   },
+   {
+    "h": 860,
+    "src": "https://raw.githubusercontent.com/tombruton87/homebox-dsm/v1.0.0/docs/screenshots/updates.png",
+    "title": "Updates",
+    "w": 1100
+   }
+  ],
+  "shots_tag": "v1.0.0",
+  "size": 143360,
+  "upgrade_wizard": false
+ },
  "tombruton87/homepage-dsm": {
   "asset_id": 630738657,
   "info": {
@@ -289,6 +439,58 @@
   "size": 143360,
   "upgrade_wizard": false
  },
+ "tombruton87/immich-dsm": {
+  "asset_id": 638655890,
+  "info": {
+   "arch": "noarch",
+   "beta": "yes",
+   "checksum": "fab07de9f60ba8f3fb359dea6c08ada0",
+   "description": "Immich, your own photo and video library with phone backup, in Container Manager with Postgres and Valkey \u2014 with a DSM window for photo libraries from your shared folders (read-only, scanned on demand), machine learning on or off for smaller Synologys, users and the administrator's password, phone setup with a QR code, database backups and careful updates.",
+   "displayname": "Immich",
+   "dsmappname": "Immich.AppInstance",
+   "dsmuidir": "ui",
+   "extractsize": "268",
+   "install_dep_packages": "ContainerManager>=20.10.23-1432",
+   "maintainer": "immich-dsm",
+   "maintainer_url": "https://github.com/tombruton87/immich-dsm",
+   "os_min_ver": "7.2.1-69057",
+   "package": "immich",
+   "support_url": "https://github.com/tombruton87/immich-dsm/issues",
+   "thirdparty": "yes",
+   "version": "1.0.0-1"
+  },
+  "install_wizard": true,
+  "md5": "61aabffef90afea8101602fd85626ae7",
+  "shots": [
+   {
+    "h": 1000,
+    "src": "https://raw.githubusercontent.com/tombruton87/immich-dsm/v1.0.0/docs/screenshots/libraries.png",
+    "title": "Photo libraries",
+    "w": 1100
+   },
+   {
+    "h": 860,
+    "src": "https://raw.githubusercontent.com/tombruton87/immich-dsm/v1.0.0/docs/screenshots/ml.png",
+    "title": "Machine learning",
+    "w": 1100
+   },
+   {
+    "h": 880,
+    "src": "https://raw.githubusercontent.com/tombruton87/immich-dsm/v1.0.0/docs/screenshots/users.png",
+    "title": "Users",
+    "w": 1100
+   },
+   {
+    "h": 540,
+    "src": "https://raw.githubusercontent.com/tombruton87/immich-dsm/v1.0.0/docs/screenshots/phones.png",
+    "title": "Phones",
+    "w": 1100
+   }
+  ],
+  "shots_tag": "v1.0.0",
+  "size": 143360,
+  "upgrade_wizard": false
+ },
  "tombruton87/invoiceninja-dsm": {
   "asset_id": 630434585,
   "info": {
@@ -333,6 +535,156 @@
   ],
   "shots_tag": "v1.0.0",
   "size": 122880,
+  "upgrade_wizard": false
+ },
+ "tombruton87/lanspeed-dsm": {
+  "asset_id": 638657075,
+  "info": {
+   "arch": "noarch",
+   "beta": "yes",
+   "checksum": "969864bef38433ee3af0664259e27695",
+   "description": "A web-based iperf for your home network, in Container Manager: an iperf3 server on the Synology for PCs, a LibreSpeed browser test for phones and laptops, and a DSM window that runs iperf3 tests from the Synology to any device, keeps every result with a chart per device, tests on a schedule and tells DSM when the network is slower than it should be.",
+   "displayname": "LAN Speed",
+   "dsmappname": "LanSpeed.AppInstance",
+   "dsmuidir": "ui",
+   "extractsize": "312",
+   "install_dep_packages": "ContainerManager>=20.10.23-1432",
+   "maintainer": "lanspeed-dsm",
+   "maintainer_url": "https://github.com/tombruton87/lanspeed-dsm",
+   "os_min_ver": "7.2.1-69057",
+   "package": "lanspeed",
+   "support_url": "https://github.com/tombruton87/lanspeed-dsm/issues",
+   "thirdparty": "yes",
+   "version": "1.0.0-1"
+  },
+  "install_wizard": true,
+  "md5": "5884afaa3b4223922b587494faddcad9",
+  "shots": [
+   {
+    "h": 780,
+    "src": "https://raw.githubusercontent.com/tombruton87/lanspeed-dsm/v1.0.0/docs/screenshots/run.png",
+    "title": "Run a test",
+    "w": 1100
+   },
+   {
+    "h": 780,
+    "src": "https://raw.githubusercontent.com/tombruton87/lanspeed-dsm/v1.0.0/docs/screenshots/history.png",
+    "title": "History",
+    "w": 1100
+   },
+   {
+    "h": 780,
+    "src": "https://raw.githubusercontent.com/tombruton87/lanspeed-dsm/v1.0.0/docs/screenshots/howto.png",
+    "title": "How to test",
+    "w": 1100
+   },
+   {
+    "h": 780,
+    "src": "https://raw.githubusercontent.com/tombruton87/lanspeed-dsm/v1.0.0/docs/screenshots/schedule.png",
+    "title": "Schedule",
+    "w": 1100
+   }
+  ],
+  "shots_tag": "v1.0.0",
+  "size": 143360,
+  "upgrade_wizard": false
+ },
+ "tombruton87/linkwarden-dsm": {
+  "asset_id": 638656671,
+  "info": {
+   "arch": "noarch",
+   "beta": "yes",
+   "checksum": "6ea3e83f5ae60639796195910cda53d9",
+   "description": "Linkwarden, bookmarks that keep a copy of each page (a screenshot, a PDF and the page itself), in Container Manager with PostgreSQL \u2014 with a DSM window for its users (new passwords, sign-ups, the administrator), the page copies kept in a shared folder and the room they take, consistent backups and updates.",
+   "displayname": "Linkwarden",
+   "dsmappname": "Linkwarden.AppInstance",
+   "dsmuidir": "ui",
+   "extractsize": "220",
+   "install_dep_packages": "ContainerManager>=20.10.23-1432",
+   "maintainer": "linkwarden-dsm",
+   "maintainer_url": "https://github.com/tombruton87/linkwarden-dsm",
+   "os_min_ver": "7.2.1-69057",
+   "package": "linkwarden",
+   "support_url": "https://github.com/tombruton87/linkwarden-dsm/issues",
+   "thirdparty": "yes",
+   "version": "1.0.0-1"
+  },
+  "install_wizard": true,
+  "md5": "8da03f01c6ca72d55101d48326230b93",
+  "shots": [
+   {
+    "h": 860,
+    "src": "https://raw.githubusercontent.com/tombruton87/linkwarden-dsm/v1.0.0/docs/screenshots/users.png",
+    "title": "Users",
+    "w": 1100
+   },
+   {
+    "h": 860,
+    "src": "https://raw.githubusercontent.com/tombruton87/linkwarden-dsm/v1.0.0/docs/screenshots/archive.png",
+    "title": "Archive",
+    "w": 1100
+   },
+   {
+    "h": 860,
+    "src": "https://raw.githubusercontent.com/tombruton87/linkwarden-dsm/v1.0.0/docs/screenshots/overview.png",
+    "title": "Overview",
+    "w": 1100
+   }
+  ],
+  "shots_tag": "v1.0.0",
+  "size": 112640,
+  "upgrade_wizard": false
+ },
+ "tombruton87/memos-dsm": {
+  "asset_id": 638654200,
+  "info": {
+   "arch": "noarch",
+   "beta": "yes",
+   "checksum": "0b4fe0dbc43dafddeb6e8e159a288a8c",
+   "description": "Memos, quick private notes you jot from any browser or phone, in Container Manager \u2014 with your notes kept on your Synology, attachments as plain files in the memos shared folder, and a DSM window for people and passwords (shown once), sign-ups, phone setup with a QR code, backups and updates.",
+   "displayname": "Memos",
+   "dsmappname": "Memos.AppInstance",
+   "dsmuidir": "ui",
+   "extractsize": "260",
+   "install_dep_packages": "ContainerManager>=20.10.23-1432",
+   "maintainer": "memos-dsm",
+   "maintainer_url": "https://github.com/tombruton87/memos-dsm",
+   "os_min_ver": "7.2.1-69057",
+   "package": "memos",
+   "support_url": "https://github.com/tombruton87/memos-dsm/issues",
+   "thirdparty": "yes",
+   "version": "1.0.0-1"
+  },
+  "install_wizard": true,
+  "md5": "0c8fd62a27b1cd5cef467591f1a20e51",
+  "shots": [
+   {
+    "h": 860,
+    "src": "https://raw.githubusercontent.com/tombruton87/memos-dsm/v1.0.0/docs/screenshots/users.png",
+    "title": "Users",
+    "w": 1100
+   },
+   {
+    "h": 860,
+    "src": "https://raw.githubusercontent.com/tombruton87/memos-dsm/v1.0.0/docs/screenshots/attachments.png",
+    "title": "Attachments",
+    "w": 1100
+   },
+   {
+    "h": 860,
+    "src": "https://raw.githubusercontent.com/tombruton87/memos-dsm/v1.0.0/docs/screenshots/phones.png",
+    "title": "Phones",
+    "w": 1100
+   },
+   {
+    "h": 860,
+    "src": "https://raw.githubusercontent.com/tombruton87/memos-dsm/v1.0.0/docs/screenshots/overview.png",
+    "title": "Overview",
+    "w": 1100
+   }
+  ],
+  "shots_tag": "v1.0.0",
+  "size": 174080,
   "upgrade_wizard": false
  },
  "tombruton87/n8n-dsm": {
@@ -473,6 +825,64 @@
   "size": 122880,
   "upgrade_wizard": false
  },
+ "tombruton87/paperless-ngx-dsm": {
+  "asset_id": 638655373,
+  "info": {
+   "arch": "noarch",
+   "beta": "yes",
+   "checksum": "20d801cc11da46dfdc33e80fe09aa7ee",
+   "description": "Paperless-ngx, a searchable archive for your paper \u2014 scans and PDFs are read (OCR), tagged and filed \u2014 in Container Manager with PostgreSQL, with an inbox folder in a shared folder: drop scans into paperless \u2192 Inbox. A DSM window shows what's waiting, filed and failed (and DSM tells you when a document couldn't be added), picks the OCR languages, resets passwords, adds people, keeps a readable export beside the backups, and handles updates.",
+   "displayname": "Paperless-ngx",
+   "dsmappname": "PaperlessNgx.AppInstance",
+   "dsmuidir": "ui",
+   "extractsize": "252",
+   "install_dep_packages": "ContainerManager>=20.10.23-1432",
+   "maintainer": "paperless-dsm",
+   "maintainer_url": "https://github.com/tombruton87/paperless-ngx-dsm",
+   "os_min_ver": "7.2.1-69057",
+   "package": "paperless",
+   "support_url": "https://github.com/tombruton87/paperless-ngx-dsm/issues",
+   "thirdparty": "yes",
+   "version": "1.0.0-1"
+  },
+  "install_wizard": true,
+  "md5": "09457854c510d143d90cc96dc68dee76",
+  "shots": [
+   {
+    "h": 1000,
+    "src": "https://raw.githubusercontent.com/tombruton87/paperless-ngx-dsm/v1.0.0/docs/screenshots/inbox.png",
+    "title": "Inbox",
+    "w": 1100
+   },
+   {
+    "h": 1000,
+    "src": "https://raw.githubusercontent.com/tombruton87/paperless-ngx-dsm/v1.0.0/docs/screenshots/ocr.png",
+    "title": "OCR languages",
+    "w": 1100
+   },
+   {
+    "h": 1000,
+    "src": "https://raw.githubusercontent.com/tombruton87/paperless-ngx-dsm/v1.0.0/docs/screenshots/users.png",
+    "title": "Users",
+    "w": 1100
+   },
+   {
+    "h": 1000,
+    "src": "https://raw.githubusercontent.com/tombruton87/paperless-ngx-dsm/v1.0.0/docs/screenshots/backups.png",
+    "title": "Backups",
+    "w": 1100
+   },
+   {
+    "h": 1000,
+    "src": "https://raw.githubusercontent.com/tombruton87/paperless-ngx-dsm/v1.0.0/docs/screenshots/maintenance.png",
+    "title": "Maintenance",
+    "w": 1100
+   }
+  ],
+  "shots_tag": "v1.0.0",
+  "size": 133120,
+  "upgrade_wizard": false
+ },
  "tombruton87/pihole-dsm": {
   "asset_id": 630397836,
   "info": {
@@ -517,6 +927,58 @@
   ],
   "shots_tag": "v1.0.0",
   "size": 122880,
+  "upgrade_wizard": false
+ },
+ "tombruton87/snipe-it-dsm": {
+  "asset_id": 638654833,
+  "info": {
+   "arch": "noarch",
+   "beta": "yes",
+   "checksum": "4a76a573c9bb85338a7022ef73d76499",
+   "description": "Snipe-IT, IT asset management for laptops, phones, licences and accessories, in Container Manager with MariaDB \u2014 with a DSM window for what's checked out and which warranties and licences end soon (and a DSM notification when one does), signing in with your Synology accounts (DSM's LDAP Server), users and their passwords, the mail server, HTTPS with DSM's certificate, consistent backups and updates.",
+   "displayname": "Snipe-IT",
+   "dsmappname": "SnipeIT.AppInstance",
+   "dsmuidir": "ui",
+   "extractsize": "304",
+   "install_dep_packages": "ContainerManager>=20.10.23-1432",
+   "maintainer": "snipeit-dsm",
+   "maintainer_url": "https://github.com/tombruton87/snipe-it-dsm",
+   "os_min_ver": "7.2.1-69057",
+   "package": "snipeit",
+   "support_url": "https://github.com/tombruton87/snipe-it-dsm/issues",
+   "thirdparty": "yes",
+   "version": "1.0.0-1"
+  },
+  "install_wizard": true,
+  "md5": "c3b179d2870d227911de601e8ae12b89",
+  "shots": [
+   {
+    "h": 760,
+    "src": "https://raw.githubusercontent.com/tombruton87/snipe-it-dsm/v1.0.0/docs/screenshots/assets.png",
+    "title": "Assets",
+    "w": 1100
+   },
+   {
+    "h": 1080,
+    "src": "https://raw.githubusercontent.com/tombruton87/snipe-it-dsm/v1.0.0/docs/screenshots/signin.png",
+    "title": "Sign-in",
+    "w": 1100
+   },
+   {
+    "h": 760,
+    "src": "https://raw.githubusercontent.com/tombruton87/snipe-it-dsm/v1.0.0/docs/screenshots/users.png",
+    "title": "Users",
+    "w": 1100
+   },
+   {
+    "h": 860,
+    "src": "https://raw.githubusercontent.com/tombruton87/snipe-it-dsm/v1.0.0/docs/screenshots/mail.png",
+    "title": "Mail",
+    "w": 1100
+   }
+  ],
+  "shots_tag": "v1.0.0",
+  "size": 194560,
   "upgrade_wizard": false
  },
  "tombruton87/speedtest-dsm": {
@@ -609,6 +1071,110 @@
   ],
   "shots_tag": "v1.0.0",
   "size": 112640,
+  "upgrade_wizard": false
+ },
+ "tombruton87/technitium-dsm": {
+  "asset_id": 639512540,
+  "info": {
+   "arch": "noarch",
+   "beta": "yes",
+   "checksum": "32e07e3f8e30bb96b5efc08fe67b4a3a",
+   "description": "Technitium DNS Server in Container Manager: your own DNS server for the whole network, on your Synology. It blocks ads and trackers, answers names you give your own devices (like nas.home), and can encrypt lookups to the internet. A DSM window turns blocking on and off, manages blocklists, local names and upstream DNS, checks DSM isn't using port 53 already, and handles the password, HTTPS, backups and updates.",
+   "displayname": "Technitium DNS Server",
+   "dsmappname": "Technitium.AppInstance",
+   "dsmuidir": "ui",
+   "extractsize": "248",
+   "install_dep_packages": "ContainerManager>=20.10.23-1432",
+   "maintainer": "technitium-dsm",
+   "maintainer_url": "https://github.com/tombruton87/technitium-dsm",
+   "os_min_ver": "7.2.1-69057",
+   "package": "technitium",
+   "support_url": "https://github.com/tombruton87/technitium-dsm/issues",
+   "thirdparty": "yes",
+   "version": "1.0.0-1"
+  },
+  "install_wizard": true,
+  "md5": "9478358789b617206302cc03204ef3c0",
+  "shots": [
+   {
+    "h": 980,
+    "src": "https://raw.githubusercontent.com/tombruton87/technitium-dsm/v1.0.0/docs/screenshots/blocking.png",
+    "title": "Blocking",
+    "w": 1100
+   },
+   {
+    "h": 980,
+    "src": "https://raw.githubusercontent.com/tombruton87/technitium-dsm/v1.0.0/docs/screenshots/zones.png",
+    "title": "Zones",
+    "w": 1100
+   },
+   {
+    "h": 980,
+    "src": "https://raw.githubusercontent.com/tombruton87/technitium-dsm/v1.0.0/docs/screenshots/resolvers.png",
+    "title": "Resolvers",
+    "w": 1100
+   },
+   {
+    "h": 980,
+    "src": "https://raw.githubusercontent.com/tombruton87/technitium-dsm/v1.0.0/docs/screenshots/setup.png",
+    "title": "Setup",
+    "w": 1100
+   }
+  ],
+  "shots_tag": "v1.0.0",
+  "size": 122880,
+  "upgrade_wizard": false
+ },
+ "tombruton87/unifi-dsm": {
+  "asset_id": 638657599,
+  "info": {
+   "arch": "noarch",
+   "beta": "yes",
+   "checksum": "b439dfa8d37293327b387228a01654ec",
+   "description": "The UniFi Network Application, the controller for UniFi access points, switches and gateways, in Container Manager with MongoDB \u2014 a community package, not made by Ubiquiti or Synology. A DSM window shows your devices, their firmware and clients, the address devices inform to and how to adopt them, which ports are used, UniFi's own backups beside consistent package backups, and memory settings for small NASes.",
+   "displayname": "UniFi Network",
+   "dsmappname": "UniFiNetwork.AppInstance",
+   "dsmuidir": "ui",
+   "extractsize": "264",
+   "install_dep_packages": "ContainerManager>=20.10.23-1432",
+   "maintainer": "unifi-dsm",
+   "maintainer_url": "https://github.com/tombruton87/unifi-dsm",
+   "os_min_ver": "7.2.1-69057",
+   "package": "unifi",
+   "support_url": "https://github.com/tombruton87/unifi-dsm/issues",
+   "thirdparty": "yes",
+   "version": "1.0.0-1"
+  },
+  "install_wizard": true,
+  "md5": "40c854bb87178f8841b6cc32df95a96a",
+  "shots": [
+   {
+    "h": 760,
+    "src": "https://raw.githubusercontent.com/tombruton87/unifi-dsm/v1.0.0/docs/screenshots/devices.png",
+    "title": "Devices",
+    "w": 1100
+   },
+   {
+    "h": 760,
+    "src": "https://raw.githubusercontent.com/tombruton87/unifi-dsm/v1.0.0/docs/screenshots/adopt.png",
+    "title": "Adopt",
+    "w": 1100
+   },
+   {
+    "h": 760,
+    "src": "https://raw.githubusercontent.com/tombruton87/unifi-dsm/v1.0.0/docs/screenshots/backups.png",
+    "title": "Backups",
+    "w": 1100
+   },
+   {
+    "h": 760,
+    "src": "https://raw.githubusercontent.com/tombruton87/unifi-dsm/v1.0.0/docs/screenshots/memory.png",
+    "title": "Memory",
+    "w": 1100
+   }
+  ],
+  "shots_tag": "v1.0.0",
+  "size": 133120,
   "upgrade_wizard": false
  },
  "tombruton87/uptime-kuma-dsm": {

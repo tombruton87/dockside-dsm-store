@@ -23,6 +23,33 @@
    ]
   },
   {
+   "package": "audiobookshelf",
+   "dname": "Audiobookshelf",
+   "icon": "icons/audiobookshelf-256.png",
+   "repo": "tombruton87/audiobookshelf-dsm",
+   "link": "https://github.com/tombruton87/audiobookshelf-dsm/releases/download/v1.0.0/audiobookshelf-1.0.0-1.spk",
+   "shots": [
+    {
+     "title": "Libraries",
+     "src": "https://raw.githubusercontent.com/tombruton87/audiobookshelf-dsm/v1.0.0/docs/screenshots/libraries.png",
+     "w": 1100,
+     "h": 760
+    },
+    {
+     "title": "Phones",
+     "src": "https://raw.githubusercontent.com/tombruton87/audiobookshelf-dsm/v1.0.0/docs/screenshots/phones.png",
+     "w": 1100,
+     "h": 760
+    },
+    {
+     "title": "Users",
+     "src": "https://raw.githubusercontent.com/tombruton87/audiobookshelf-dsm/v1.0.0/docs/screenshots/users.png",
+     "w": 1100,
+     "h": 760
+    }
+   ]
+  },
+  {
    "package": "bookstack",
    "dname": "BookStack",
    "icon": "icons/bookstack-256.png",
@@ -52,6 +79,39 @@
      "src": "https://raw.githubusercontent.com/tombruton87/bookstack-dsm/v1.0.1/docs/screenshots/mail.png",
      "title": "Mail",
      "w": 1100
+    }
+   ]
+  },
+  {
+   "package": "changedetection",
+   "dname": "Changedetection.io",
+   "icon": "icons/changedetection-256.png",
+   "repo": "tombruton87/changedetection-dsm",
+   "link": "https://github.com/tombruton87/changedetection-dsm/releases/download/v1.0.0/changedetection-1.0.0-1.spk",
+   "shots": [
+    {
+     "title": "Watches",
+     "src": "https://raw.githubusercontent.com/tombruton87/changedetection-dsm/v1.0.0/docs/screenshots/watches.png",
+     "w": 1100,
+     "h": 1000
+    },
+    {
+     "title": "Alerts",
+     "src": "https://raw.githubusercontent.com/tombruton87/changedetection-dsm/v1.0.0/docs/screenshots/alerts.png",
+     "w": 1100,
+     "h": 860
+    },
+    {
+     "title": "Access",
+     "src": "https://raw.githubusercontent.com/tombruton87/changedetection-dsm/v1.0.0/docs/screenshots/access.png",
+     "w": 1100,
+     "h": 760
+    },
+    {
+     "title": "Overview",
+     "src": "https://raw.githubusercontent.com/tombruton87/changedetection-dsm/v1.0.0/docs/screenshots/overview.png",
+     "w": 1100,
+     "h": 860
     }
    ]
   },
@@ -164,6 +224,39 @@
    ]
   },
   {
+   "package": "homebox",
+   "dname": "Homebox",
+   "icon": "icons/homebox-256.png",
+   "repo": "tombruton87/homebox-dsm",
+   "link": "https://github.com/tombruton87/homebox-dsm/releases/download/v1.0.0/homebox-1.0.0-1.spk",
+   "shots": [
+    {
+     "title": "Inventory",
+     "src": "https://raw.githubusercontent.com/tombruton87/homebox-dsm/v1.0.0/docs/screenshots/inventory.png",
+     "w": 1100,
+     "h": 860
+    },
+    {
+     "title": "Users",
+     "src": "https://raw.githubusercontent.com/tombruton87/homebox-dsm/v1.0.0/docs/screenshots/users.png",
+     "w": 1100,
+     "h": 860
+    },
+    {
+     "title": "Overview",
+     "src": "https://raw.githubusercontent.com/tombruton87/homebox-dsm/v1.0.0/docs/screenshots/overview.png",
+     "w": 1100,
+     "h": 860
+    },
+    {
+     "title": "Updates",
+     "src": "https://raw.githubusercontent.com/tombruton87/homebox-dsm/v1.0.0/docs/screenshots/updates.png",
+     "w": 1100,
+     "h": 860
+    }
+   ]
+  },
+  {
    "package": "homepage",
    "dname": "Homepage",
    "icon": "icons/homepage-256.png",
@@ -197,6 +290,39 @@
    ]
   },
   {
+   "package": "immich",
+   "dname": "Immich",
+   "icon": "icons/immich-256.png",
+   "repo": "tombruton87/immich-dsm",
+   "link": "https://github.com/tombruton87/immich-dsm/releases/download/v1.0.0/immich-1.0.0-1.spk",
+   "shots": [
+    {
+     "title": "Photo libraries",
+     "src": "https://raw.githubusercontent.com/tombruton87/immich-dsm/v1.0.0/docs/screenshots/libraries.png",
+     "w": 1100,
+     "h": 1000
+    },
+    {
+     "title": "Machine learning",
+     "src": "https://raw.githubusercontent.com/tombruton87/immich-dsm/v1.0.0/docs/screenshots/ml.png",
+     "w": 1100,
+     "h": 860
+    },
+    {
+     "title": "Users",
+     "src": "https://raw.githubusercontent.com/tombruton87/immich-dsm/v1.0.0/docs/screenshots/users.png",
+     "w": 1100,
+     "h": 880
+    },
+    {
+     "title": "Phones",
+     "src": "https://raw.githubusercontent.com/tombruton87/immich-dsm/v1.0.0/docs/screenshots/phones.png",
+     "w": 1100,
+     "h": 540
+    }
+   ]
+  },
+  {
    "package": "invoiceninja",
    "dname": "Invoice Ninja",
    "icon": "icons/invoiceninja-256.png",
@@ -220,6 +346,99 @@
      "src": "https://raw.githubusercontent.com/tombruton87/invoiceninja-dsm/v1.0.0/docs/screenshots/users.png",
      "title": "Users",
      "w": 1100
+    }
+   ]
+  },
+  {
+   "package": "lanspeed",
+   "dname": "LAN Speed",
+   "icon": "icons/lanspeed-256.png",
+   "repo": "tombruton87/lanspeed-dsm",
+   "link": "https://github.com/tombruton87/lanspeed-dsm/releases/download/v1.0.0/lanspeed-1.0.0-1.spk",
+   "shots": [
+    {
+     "title": "Run a test",
+     "src": "https://raw.githubusercontent.com/tombruton87/lanspeed-dsm/v1.0.0/docs/screenshots/run.png",
+     "w": 1100,
+     "h": 780
+    },
+    {
+     "title": "History",
+     "src": "https://raw.githubusercontent.com/tombruton87/lanspeed-dsm/v1.0.0/docs/screenshots/history.png",
+     "w": 1100,
+     "h": 780
+    },
+    {
+     "title": "How to test",
+     "src": "https://raw.githubusercontent.com/tombruton87/lanspeed-dsm/v1.0.0/docs/screenshots/howto.png",
+     "w": 1100,
+     "h": 780
+    },
+    {
+     "title": "Schedule",
+     "src": "https://raw.githubusercontent.com/tombruton87/lanspeed-dsm/v1.0.0/docs/screenshots/schedule.png",
+     "w": 1100,
+     "h": 780
+    }
+   ]
+  },
+  {
+   "package": "linkwarden",
+   "dname": "Linkwarden",
+   "icon": "icons/linkwarden-256.png",
+   "repo": "tombruton87/linkwarden-dsm",
+   "link": "https://github.com/tombruton87/linkwarden-dsm/releases/download/v1.0.0/linkwarden-1.0.0-1.spk",
+   "shots": [
+    {
+     "title": "Users",
+     "src": "https://raw.githubusercontent.com/tombruton87/linkwarden-dsm/v1.0.0/docs/screenshots/users.png",
+     "w": 1100,
+     "h": 860
+    },
+    {
+     "title": "Archive",
+     "src": "https://raw.githubusercontent.com/tombruton87/linkwarden-dsm/v1.0.0/docs/screenshots/archive.png",
+     "w": 1100,
+     "h": 860
+    },
+    {
+     "title": "Overview",
+     "src": "https://raw.githubusercontent.com/tombruton87/linkwarden-dsm/v1.0.0/docs/screenshots/overview.png",
+     "w": 1100,
+     "h": 860
+    }
+   ]
+  },
+  {
+   "package": "memos",
+   "dname": "Memos",
+   "icon": "icons/memos-256.png",
+   "repo": "tombruton87/memos-dsm",
+   "link": "https://github.com/tombruton87/memos-dsm/releases/download/v1.0.0/memos-1.0.0-1.spk",
+   "shots": [
+    {
+     "title": "Users",
+     "src": "https://raw.githubusercontent.com/tombruton87/memos-dsm/v1.0.0/docs/screenshots/users.png",
+     "w": 1100,
+     "h": 860
+    },
+    {
+     "title": "Attachments",
+     "src": "https://raw.githubusercontent.com/tombruton87/memos-dsm/v1.0.0/docs/screenshots/attachments.png",
+     "w": 1100,
+     "h": 860
+    },
+    {
+     "title": "Phones",
+     "src": "https://raw.githubusercontent.com/tombruton87/memos-dsm/v1.0.0/docs/screenshots/phones.png",
+     "w": 1100,
+     "h": 860
+    },
+    {
+     "title": "Overview",
+     "src": "https://raw.githubusercontent.com/tombruton87/memos-dsm/v1.0.0/docs/screenshots/overview.png",
+     "w": 1100,
+     "h": 860
     }
    ]
   },
@@ -305,6 +524,45 @@
    ]
   },
   {
+   "package": "paperless",
+   "dname": "Paperless-ngx",
+   "icon": "icons/paperless-256.png",
+   "repo": "tombruton87/paperless-ngx-dsm",
+   "link": "https://github.com/tombruton87/paperless-ngx-dsm/releases/download/v1.0.0/paperless-1.0.0-1.spk",
+   "shots": [
+    {
+     "title": "Inbox",
+     "src": "https://raw.githubusercontent.com/tombruton87/paperless-ngx-dsm/v1.0.0/docs/screenshots/inbox.png",
+     "w": 1100,
+     "h": 1000
+    },
+    {
+     "title": "OCR languages",
+     "src": "https://raw.githubusercontent.com/tombruton87/paperless-ngx-dsm/v1.0.0/docs/screenshots/ocr.png",
+     "w": 1100,
+     "h": 1000
+    },
+    {
+     "title": "Users",
+     "src": "https://raw.githubusercontent.com/tombruton87/paperless-ngx-dsm/v1.0.0/docs/screenshots/users.png",
+     "w": 1100,
+     "h": 1000
+    },
+    {
+     "title": "Backups",
+     "src": "https://raw.githubusercontent.com/tombruton87/paperless-ngx-dsm/v1.0.0/docs/screenshots/backups.png",
+     "w": 1100,
+     "h": 1000
+    },
+    {
+     "title": "Maintenance",
+     "src": "https://raw.githubusercontent.com/tombruton87/paperless-ngx-dsm/v1.0.0/docs/screenshots/maintenance.png",
+     "w": 1100,
+     "h": 1000
+    }
+   ]
+  },
+  {
    "package": "pihole",
    "dname": "Pi-hole",
    "icon": "icons/pihole-256.png",
@@ -328,6 +586,39 @@
      "src": "https://raw.githubusercontent.com/tombruton87/pihole-dsm/v1.0.0/docs/screenshots/setup.png",
      "title": "Setup",
      "w": 1100
+    }
+   ]
+  },
+  {
+   "package": "snipeit",
+   "dname": "Snipe-IT",
+   "icon": "icons/snipeit-256.png",
+   "repo": "tombruton87/snipe-it-dsm",
+   "link": "https://github.com/tombruton87/snipe-it-dsm/releases/download/v1.0.0/snipeit-1.0.0-1.spk",
+   "shots": [
+    {
+     "title": "Assets",
+     "src": "https://raw.githubusercontent.com/tombruton87/snipe-it-dsm/v1.0.0/docs/screenshots/assets.png",
+     "w": 1100,
+     "h": 760
+    },
+    {
+     "title": "Sign-in",
+     "src": "https://raw.githubusercontent.com/tombruton87/snipe-it-dsm/v1.0.0/docs/screenshots/signin.png",
+     "w": 1100,
+     "h": 1080
+    },
+    {
+     "title": "Users",
+     "src": "https://raw.githubusercontent.com/tombruton87/snipe-it-dsm/v1.0.0/docs/screenshots/users.png",
+     "w": 1100,
+     "h": 760
+    },
+    {
+     "title": "Mail",
+     "src": "https://raw.githubusercontent.com/tombruton87/snipe-it-dsm/v1.0.0/docs/screenshots/mail.png",
+     "w": 1100,
+     "h": 860
     }
    ]
   },
@@ -382,6 +673,72 @@
      "src": "https://raw.githubusercontent.com/tombruton87/stirling-pdf-dsm/v1.0.0/docs/screenshots/users.png",
      "title": "Users",
      "w": 1100
+    }
+   ]
+  },
+  {
+   "package": "technitium",
+   "dname": "Technitium DNS Server",
+   "icon": "icons/technitium-256.png",
+   "repo": "tombruton87/technitium-dsm",
+   "link": "https://github.com/tombruton87/technitium-dsm/releases/download/v1.0.0/technitium-1.0.0-1.spk",
+   "shots": [
+    {
+     "title": "Blocking",
+     "src": "https://raw.githubusercontent.com/tombruton87/technitium-dsm/v1.0.0/docs/screenshots/blocking.png",
+     "w": 1100,
+     "h": 980
+    },
+    {
+     "title": "Zones",
+     "src": "https://raw.githubusercontent.com/tombruton87/technitium-dsm/v1.0.0/docs/screenshots/zones.png",
+     "w": 1100,
+     "h": 980
+    },
+    {
+     "title": "Resolvers",
+     "src": "https://raw.githubusercontent.com/tombruton87/technitium-dsm/v1.0.0/docs/screenshots/resolvers.png",
+     "w": 1100,
+     "h": 980
+    },
+    {
+     "title": "Setup",
+     "src": "https://raw.githubusercontent.com/tombruton87/technitium-dsm/v1.0.0/docs/screenshots/setup.png",
+     "w": 1100,
+     "h": 980
+    }
+   ]
+  },
+  {
+   "package": "unifi",
+   "dname": "UniFi Network",
+   "icon": "icons/unifi-256.png",
+   "repo": "tombruton87/unifi-dsm",
+   "link": "https://github.com/tombruton87/unifi-dsm/releases/download/v1.0.0/unifi-1.0.0-1.spk",
+   "shots": [
+    {
+     "title": "Devices",
+     "src": "https://raw.githubusercontent.com/tombruton87/unifi-dsm/v1.0.0/docs/screenshots/devices.png",
+     "w": 1100,
+     "h": 760
+    },
+    {
+     "title": "Adopt",
+     "src": "https://raw.githubusercontent.com/tombruton87/unifi-dsm/v1.0.0/docs/screenshots/adopt.png",
+     "w": 1100,
+     "h": 760
+    },
+    {
+     "title": "Backups",
+     "src": "https://raw.githubusercontent.com/tombruton87/unifi-dsm/v1.0.0/docs/screenshots/backups.png",
+     "w": 1100,
+     "h": 760
+    },
+    {
+     "title": "Memory",
+     "src": "https://raw.githubusercontent.com/tombruton87/unifi-dsm/v1.0.0/docs/screenshots/memory.png",
+     "w": 1100,
+     "h": 760
     }
    ]
   },
