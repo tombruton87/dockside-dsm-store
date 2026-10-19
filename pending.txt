@@ -2,3 +2,4 @@
 # folders here. publish.sh moves each line to repos.txt when it releases it.
 tombruton87/gitea-dsm
 tombruton87/jellyfin-dsm
+tombruton87/syncthing-dsm
