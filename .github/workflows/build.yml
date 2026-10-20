@@ -37,6 +37,7 @@ jobs:
           if git diff --cached --quiet; then echo "changed=false" >> "$GITHUB_OUTPUT"; exit 0; fi
           git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
             commit -q -m "Package source: $(jq -r 'to_entries | map("\(.key) \(.value.tag)") | join(", ")' site/meta.json)"
+          git pull -q --rebase origin main   # another run may have pushed first
           git push -q
           echo "changed=true" >> "$GITHUB_OUTPUT"
 
