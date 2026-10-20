@@ -25,3 +25,6 @@ tombruton87/linkwarden-dsm
 tombruton87/lanspeed-dsm
 tombruton87/unifi-dsm
 tombruton87/technitium-dsm
+tombruton87/jellyfin-dsm
+tombruton87/syncthing-dsm
+tombruton87/metube-dsm

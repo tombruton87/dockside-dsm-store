@@ -1,6 +1,3 @@
 # Packages built but not released yet: build.py --preview shows them from their
 # folders here. publish.sh moves each line to repos.txt when it releases it.
 tombruton87/gitea-dsm
-tombruton87/jellyfin-dsm
-tombruton87/syncthing-dsm
-tombruton87/metube-dsm
