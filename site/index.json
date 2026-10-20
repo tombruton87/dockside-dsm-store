@@ -302,10 +302,10 @@
   },
   {
    "package": "jellyfin",
-   "version": "1.0.0-1",
+   "version": "1.1.0-1",
    "dname": "Jellyfin",
-   "desc": "Jellyfin, your own media server, in Container Manager — films, TV shows, music and home videos from your shared folders, streamed to phones, TVs and browsers, with hardware transcoding on Intel Synology models. A DSM window adds libraries from shared folders, what's playing now, a real transcoding test, users with library access and parental limits, phone and TV setup, health checks, backups and updates.",
-   "link": "https://github.com/tombruton87/jellyfin-dsm/releases/download/v1.0.0/jellyfin-1.0.0-1.spk",
+   "desc": "Jellyfin, your own media server, in Container Manager — films, TV shows, music and home videos from your shared folders, streamed to phones, TVs and browsers, with hardware transcoding on Intel Synology models. A DSM window adds libraries from shared folders, what's playing now, a real transcoding test, users with library access and parental limits, phone and TV setup, health checks, backups and updates. Optional extras, each switched on in the window: Jellystat (watch statistics), Wizarr (invites for family and friends), ErsatzTV (live TV channels from your library), and the Intro Skipper and OpenSubtitles plugins.",
+   "link": "https://github.com/tombruton87/jellyfin-dsm/releases/download/v1.1.0/jellyfin-1.1.0-1.spk",
    "thumbnail": [
     "https://tombruton87.github.io/dockside-dsm-store/icons/jellyfin-64.png",
     "https://tombruton87.github.io/dockside-dsm-store/icons/jellyfin-256.png"
@@ -321,14 +321,14 @@
    "deppkgs": "ContainerManager>=20.10.23-1432",
    "download_count": 0,
    "recent_download_count": 0,
-   "changelog": "First release. Jellyfin 12.2 in Container Manager:<br>• films, TV shows, music and home videos from your shared folders, mounted read-only;<br>• Jellyfin's startup wizard is completed at the first start: metadata for the country of your time zone, your administrator with the password shown once;<br>• the window works through an API key of the package's own, which it puts back by itself if it's removed in Jellyfin;<br>• hardware transcoding on Intel models with `/dev/dri`: the device is passed in with its group, and a quick real test at the first start picks Quick Sync or VA-API.<br><br>The DSM window adds:<br>• <b>Libraries:</b> counts, hours, size and last scan per library; scan one or all; add a library from a shared folder (missing folders are refused, never created); remove a library (its files stay); folders that go away show as waiting; recently added, with posters.<br>• <b>Now playing:</b> who, what, where, how far; direct play or transcoding and why; transcodes on the graphics; stop a playback or send a message.<br>• <b>Transcoding:</b> the graphics and what they decode and encode; Quick Sync, VA-API or processor; tone mapping; a real transcoding test with the speeds of the graphics and the processor; the transcode cache, with Clean.<br>• <b>Users:</b> add people (password shown once), library access, age limits, administrator on or off, turn off, new password, remove.<br>• <b>Phones &amp; TVs:</b> a QR code, Jellyfin's apps and well-known players, and how to watch away from home.<br>• <b>Health:</b> titles Jellyfin couldn't match, scheduled jobs, recent errors, sizes; DSM notifications when a library scan fails or the transcode cache grows past 10 GB.<br>• <b>Site address:</b> client discovery (7359/udp) and DLNA (1900/udp), off by default.<br><br>Also included: consistent backups (Jellyfin stopped for the copy, the cache left out), restore, updates to newer Jellyfin releases after a backup with only the old image removed, and removal.",
+   "changelog": "Optional extras, each off until it's switched on in the new <b>Extras</b> tab, connected to Jellyfin by the package with an API key of its own, watched, backed up with Jellyfin and updated from the Updates tab:<br>• <b>Jellystat</b> (port 3005) — watch statistics, with the Postgres it needs. The window shows the most watched films and shows, who watched this week and plays per day; the Overview shows plays this week. Its sign-in password is shown once and kept for Show password.<br>• <b>Wizarr</b> (port 5690) — invites for family and friends: make one (which libraries, when the link stops working, once or unlimited, when the account ends), copy its link, revoke it, and see who joined. Its admin password is shown once and kept for Show password. An address of its own for invite links (e.g. behind DSM's reverse proxy). The Users tab points to it while it's on.<br>• <b>ErsatzTV</b> (port 8409) — live TV channels from your library, added to Jellyfin's Live TV as a tuner with its guide; on the graphics like Jellyfin; the window lists its channels and refreshes Jellyfin's guide.<br>• <b>Plugins:</b> Intro Skipper (from its own repository) and OpenSubtitles (account kept only in the plugin's settings, with a Test that signs in). Jellyfin restarts by itself after installing or removing one.<br><br>Each extra's port is in DSM's firewall list only while it's on. Backups include Jellystat's database (pg_dump), Wizarr's and ErsatzTV's data, and a restore puts them back. Remove everything removes the extras' containers, volumes and images too.<br><br>Also:<br>• Now playing keeps showing a transcode after Jellyfin has finished converting the file ahead of playback (fast graphics finish a short file in seconds, and Jellyfin then stops reporting it).<br>• A request whose message ended in an optional part no longer shows as failed when it worked (e.g. adding a library inside a folder already mounted).",
    "maintainer": "jellyfin-dsm",
    "maintainer_url": "https://github.com/tombruton87/jellyfin-dsm",
    "distributor": "Tom Bruton",
    "distributor_url": "https://github.com/tombruton87",
    "support_url": "https://github.com/tombruton87/jellyfin-dsm/issues",
-   "md5": "ad6465f27604c94f70652c7d5bfa4d36",
-   "size": 174080
+   "md5": "69d378c04088f5630a5e37eef06272fe",
+   "size": 204800
   },
   {
    "package": "lanspeed",

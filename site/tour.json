@@ -354,49 +354,67 @@
    "dname": "Jellyfin",
    "icon": "icons/jellyfin-256.png",
    "repo": "tombruton87/jellyfin-dsm",
-   "link": "https://github.com/tombruton87/jellyfin-dsm/releases/download/v1.0.0/jellyfin-1.0.0-1.spk",
+   "link": "https://github.com/tombruton87/jellyfin-dsm/releases/download/v1.1.0/jellyfin-1.1.0-1.spk",
    "shots": [
     {
-     "h": 1000,
-     "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.0.0/docs/screenshots/libraries.png",
      "title": "Libraries",
-     "w": 1100
+     "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.1.0/docs/screenshots/libraries.png",
+     "w": 1100,
+     "h": 1000
     },
     {
-     "h": 860,
-     "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.0.0/docs/screenshots/playing.png",
      "title": "Now playing",
-     "w": 1100
+     "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.1.0/docs/screenshots/playing.png",
+     "w": 1100,
+     "h": 860
     },
     {
-     "h": 1170,
-     "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.0.0/docs/screenshots/transcoding.png",
      "title": "Transcoding",
-     "w": 1100
+     "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.1.0/docs/screenshots/transcoding.png",
+     "w": 1100,
+     "h": 1170
     },
     {
-     "h": 860,
-     "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.0.0/docs/screenshots/users.png",
      "title": "Users",
-     "w": 1100
+     "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.1.0/docs/screenshots/users.png",
+     "w": 1100,
+     "h": 860
     },
     {
-     "h": 860,
-     "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.0.0/docs/screenshots/phones.png",
      "title": "Phones & TVs",
-     "w": 1100
+     "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.1.0/docs/screenshots/phones.png",
+     "w": 1100,
+     "h": 860
     },
     {
-     "h": 1000,
-     "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.0.0/docs/screenshots/health.png",
      "title": "Health",
-     "w": 1100
+     "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.1.0/docs/screenshots/health.png",
+     "w": 1100,
+     "h": 1000
     },
     {
-     "h": 860,
-     "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.0.0/docs/screenshots/overview.png",
      "title": "Overview",
-     "w": 1100
+     "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.1.0/docs/screenshots/overview.png",
+     "w": 1100,
+     "h": 860
+    },
+    {
+     "title": "Extras: Jellystat",
+     "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.1.0/docs/screenshots/extras-stats.png",
+     "w": 1100,
+     "h": 1000
+    },
+    {
+     "title": "Extras: Wizarr invites",
+     "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.1.0/docs/screenshots/extras-invites.png",
+     "w": 1100,
+     "h": 1240
+    },
+    {
+     "title": "Extras: ErsatzTV and plugins",
+     "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.1.0/docs/screenshots/extras-tv.png",
+     "w": 1100,
+     "h": 1440
     }
    ]
   },

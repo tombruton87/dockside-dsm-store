@@ -538,16 +538,16 @@
   "upgrade_wizard": false
  },
  "tombruton87/jellyfin-dsm": {
-  "asset_id": 658746002,
+  "asset_id": 660068707,
   "info": {
    "arch": "noarch",
    "beta": "yes",
-   "checksum": "a66d1a95ea47ead5a849c3a2f7a69e9b",
-   "description": "Jellyfin, your own media server, in Container Manager \u2014 films, TV shows, music and home videos from your shared folders, streamed to phones, TVs and browsers, with hardware transcoding on Intel Synology models. A DSM window adds libraries from shared folders, what's playing now, a real transcoding test, users with library access and parental limits, phone and TV setup, health checks, backups and updates.",
+   "checksum": "9820afa4e0ce2eec5e07ea8a57f51153",
+   "description": "Jellyfin, your own media server, in Container Manager \u2014 films, TV shows, music and home videos from your shared folders, streamed to phones, TVs and browsers, with hardware transcoding on Intel Synology models. A DSM window adds libraries from shared folders, what's playing now, a real transcoding test, users with library access and parental limits, phone and TV setup, health checks, backups and updates. Optional extras, each switched on in the window: Jellystat (watch statistics), Wizarr (invites for family and friends), ErsatzTV (live TV channels from your library), and the Intro Skipper and OpenSubtitles plugins.",
    "displayname": "Jellyfin",
    "dsmappname": "Jellyfin.AppInstance",
    "dsmuidir": "ui",
-   "extractsize": "332",
+   "extractsize": "420",
    "install_dep_packages": "ContainerManager>=20.10.23-1432",
    "maintainer": "jellyfin-dsm",
    "maintainer_url": "https://github.com/tombruton87/jellyfin-dsm",
@@ -555,56 +555,74 @@
    "package": "jellyfin",
    "support_url": "https://github.com/tombruton87/jellyfin-dsm/issues",
    "thirdparty": "yes",
-   "version": "1.0.0-1"
+   "version": "1.1.0-1"
   },
   "install_wizard": true,
-  "md5": "ad6465f27604c94f70652c7d5bfa4d36",
+  "md5": "69d378c04088f5630a5e37eef06272fe",
   "shots": [
    {
     "h": 1000,
-    "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.0.0/docs/screenshots/libraries.png",
+    "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.1.0/docs/screenshots/libraries.png",
     "title": "Libraries",
     "w": 1100
    },
    {
     "h": 860,
-    "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.0.0/docs/screenshots/playing.png",
+    "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.1.0/docs/screenshots/playing.png",
     "title": "Now playing",
     "w": 1100
    },
    {
     "h": 1170,
-    "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.0.0/docs/screenshots/transcoding.png",
+    "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.1.0/docs/screenshots/transcoding.png",
     "title": "Transcoding",
     "w": 1100
    },
    {
     "h": 860,
-    "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.0.0/docs/screenshots/users.png",
+    "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.1.0/docs/screenshots/users.png",
     "title": "Users",
     "w": 1100
    },
    {
     "h": 860,
-    "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.0.0/docs/screenshots/phones.png",
+    "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.1.0/docs/screenshots/phones.png",
     "title": "Phones & TVs",
     "w": 1100
    },
    {
     "h": 1000,
-    "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.0.0/docs/screenshots/health.png",
+    "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.1.0/docs/screenshots/health.png",
     "title": "Health",
     "w": 1100
    },
    {
     "h": 860,
-    "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.0.0/docs/screenshots/overview.png",
+    "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.1.0/docs/screenshots/overview.png",
     "title": "Overview",
+    "w": 1100
+   },
+   {
+    "h": 1000,
+    "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.1.0/docs/screenshots/extras-stats.png",
+    "title": "Extras: Jellystat",
+    "w": 1100
+   },
+   {
+    "h": 1240,
+    "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.1.0/docs/screenshots/extras-invites.png",
+    "title": "Extras: Wizarr invites",
+    "w": 1100
+   },
+   {
+    "h": 1440,
+    "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.1.0/docs/screenshots/extras-tv.png",
+    "title": "Extras: ErsatzTV and plugins",
     "w": 1100
    }
   ],
-  "shots_tag": "v1.0.0",
-  "size": 174080,
+  "shots_tag": "v1.1.0",
+  "size": 204800,
   "upgrade_wizard": false
  },
  "tombruton87/lanspeed-dsm": {
