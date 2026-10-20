@@ -49,6 +49,11 @@
   "repo": "tombruton87/invoiceninja-dsm",
   "tag": "v1.0.0"
  },
+ "jellyfin": {
+  "os_min_ver": "7.2.1-69057",
+  "repo": "tombruton87/jellyfin-dsm",
+  "tag": "v1.0.0"
+ },
  "lanspeed": {
   "os_min_ver": "7.2.1-69057",
   "repo": "tombruton87/lanspeed-dsm",
@@ -62,6 +67,11 @@
  "memos": {
   "os_min_ver": "7.2.1-69057",
   "repo": "tombruton87/memos-dsm",
+  "tag": "v1.0.0"
+ },
+ "metube": {
+  "os_min_ver": "7.2.1-69057",
+  "repo": "tombruton87/metube-dsm",
   "tag": "v1.0.0"
  },
  "n8n": {
@@ -102,6 +112,11 @@
  "stirlingpdf": {
   "os_min_ver": "7.2.1-69057",
   "repo": "tombruton87/stirling-pdf-dsm",
+  "tag": "v1.0.0"
+ },
+ "syncthing": {
+  "os_min_ver": "7.2.1-69057",
+  "repo": "tombruton87/syncthing-dsm",
   "tag": "v1.0.0"
  },
  "technitium": {

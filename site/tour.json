@@ -350,6 +350,57 @@
    ]
   },
   {
+   "package": "jellyfin",
+   "dname": "Jellyfin",
+   "icon": "icons/jellyfin-256.png",
+   "repo": "tombruton87/jellyfin-dsm",
+   "link": "https://github.com/tombruton87/jellyfin-dsm/releases/download/v1.0.0/jellyfin-1.0.0-1.spk",
+   "shots": [
+    {
+     "title": "Libraries",
+     "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.0.0/docs/screenshots/libraries.png",
+     "w": 1100,
+     "h": 1000
+    },
+    {
+     "title": "Now playing",
+     "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.0.0/docs/screenshots/playing.png",
+     "w": 1100,
+     "h": 860
+    },
+    {
+     "title": "Transcoding",
+     "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.0.0/docs/screenshots/transcoding.png",
+     "w": 1100,
+     "h": 1170
+    },
+    {
+     "title": "Users",
+     "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.0.0/docs/screenshots/users.png",
+     "w": 1100,
+     "h": 860
+    },
+    {
+     "title": "Phones & TVs",
+     "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.0.0/docs/screenshots/phones.png",
+     "w": 1100,
+     "h": 860
+    },
+    {
+     "title": "Health",
+     "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.0.0/docs/screenshots/health.png",
+     "w": 1100,
+     "h": 1000
+    },
+    {
+     "title": "Overview",
+     "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.0.0/docs/screenshots/overview.png",
+     "w": 1100,
+     "h": 860
+    }
+   ]
+  },
+  {
    "package": "lanspeed",
    "dname": "LAN Speed",
    "icon": "icons/lanspeed-256.png",
@@ -439,6 +490,51 @@
      "src": "https://raw.githubusercontent.com/tombruton87/memos-dsm/v1.0.0/docs/screenshots/overview.png",
      "title": "Overview",
      "w": 1100
+    }
+   ]
+  },
+  {
+   "package": "metube",
+   "dname": "MeTube",
+   "icon": "icons/metube-256.png",
+   "repo": "tombruton87/metube-dsm",
+   "link": "https://github.com/tombruton87/metube-dsm/releases/download/v1.0.0/metube-1.0.0-1.spk",
+   "shots": [
+    {
+     "title": "Downloads",
+     "src": "https://raw.githubusercontent.com/tombruton87/metube-dsm/v1.0.0/docs/screenshots/downloads.png",
+     "w": 1100,
+     "h": 900
+    },
+    {
+     "title": "Add",
+     "src": "https://raw.githubusercontent.com/tombruton87/metube-dsm/v1.0.0/docs/screenshots/add.png",
+     "w": 1100,
+     "h": 900
+    },
+    {
+     "title": "Library",
+     "src": "https://raw.githubusercontent.com/tombruton87/metube-dsm/v1.0.0/docs/screenshots/library.png",
+     "w": 1100,
+     "h": 900
+    },
+    {
+     "title": "Defaults",
+     "src": "https://raw.githubusercontent.com/tombruton87/metube-dsm/v1.0.0/docs/screenshots/defaults.png",
+     "w": 1100,
+     "h": 900
+    },
+    {
+     "title": "Share to MeTube",
+     "src": "https://raw.githubusercontent.com/tombruton87/metube-dsm/v1.0.0/docs/screenshots/share.png",
+     "w": 1100,
+     "h": 900
+    },
+    {
+     "title": "yt-dlp",
+     "src": "https://raw.githubusercontent.com/tombruton87/metube-dsm/v1.0.0/docs/screenshots/ytdlp.png",
+     "w": 1100,
+     "h": 900
     }
    ]
   },
@@ -673,6 +769,51 @@
      "src": "https://raw.githubusercontent.com/tombruton87/stirling-pdf-dsm/v1.0.0/docs/screenshots/users.png",
      "title": "Users",
      "w": 1100
+    }
+   ]
+  },
+  {
+   "package": "syncthing",
+   "dname": "Syncthing",
+   "icon": "icons/syncthing-256.png",
+   "repo": "tombruton87/syncthing-dsm",
+   "link": "https://github.com/tombruton87/syncthing-dsm/releases/download/v1.0.0/syncthing-1.0.0-1.spk",
+   "shots": [
+    {
+     "title": "Devices",
+     "src": "https://raw.githubusercontent.com/tombruton87/syncthing-dsm/v1.0.0/docs/screenshots/devices.png",
+     "w": 1100,
+     "h": 1000
+    },
+    {
+     "title": "Folders",
+     "src": "https://raw.githubusercontent.com/tombruton87/syncthing-dsm/v1.0.0/docs/screenshots/folders.png",
+     "w": 1100,
+     "h": 1600
+    },
+    {
+     "title": "Conflicts",
+     "src": "https://raw.githubusercontent.com/tombruton87/syncthing-dsm/v1.0.0/docs/screenshots/conflicts.png",
+     "w": 1100,
+     "h": 600
+    },
+    {
+     "title": "Activity",
+     "src": "https://raw.githubusercontent.com/tombruton87/syncthing-dsm/v1.0.0/docs/screenshots/activity.png",
+     "w": 1100,
+     "h": 640
+    },
+    {
+     "title": "Privacy & network",
+     "src": "https://raw.githubusercontent.com/tombruton87/syncthing-dsm/v1.0.0/docs/screenshots/privacy.png",
+     "w": 1100,
+     "h": 1000
+    },
+    {
+     "title": "Overview",
+     "src": "https://raw.githubusercontent.com/tombruton87/syncthing-dsm/v1.0.0/docs/screenshots/overview.png",
+     "w": 1100,
+     "h": 640
     }
    ]
   },

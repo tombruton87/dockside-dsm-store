@@ -537,6 +537,76 @@
   "size": 122880,
   "upgrade_wizard": false
  },
+ "tombruton87/jellyfin-dsm": {
+  "asset_id": 658746002,
+  "info": {
+   "arch": "noarch",
+   "beta": "yes",
+   "checksum": "a66d1a95ea47ead5a849c3a2f7a69e9b",
+   "description": "Jellyfin, your own media server, in Container Manager \u2014 films, TV shows, music and home videos from your shared folders, streamed to phones, TVs and browsers, with hardware transcoding on Intel Synology models. A DSM window adds libraries from shared folders, what's playing now, a real transcoding test, users with library access and parental limits, phone and TV setup, health checks, backups and updates.",
+   "displayname": "Jellyfin",
+   "dsmappname": "Jellyfin.AppInstance",
+   "dsmuidir": "ui",
+   "extractsize": "332",
+   "install_dep_packages": "ContainerManager>=20.10.23-1432",
+   "maintainer": "jellyfin-dsm",
+   "maintainer_url": "https://github.com/tombruton87/jellyfin-dsm",
+   "os_min_ver": "7.2.1-69057",
+   "package": "jellyfin",
+   "support_url": "https://github.com/tombruton87/jellyfin-dsm/issues",
+   "thirdparty": "yes",
+   "version": "1.0.0-1"
+  },
+  "install_wizard": true,
+  "md5": "ad6465f27604c94f70652c7d5bfa4d36",
+  "shots": [
+   {
+    "h": 1000,
+    "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.0.0/docs/screenshots/libraries.png",
+    "title": "Libraries",
+    "w": 1100
+   },
+   {
+    "h": 860,
+    "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.0.0/docs/screenshots/playing.png",
+    "title": "Now playing",
+    "w": 1100
+   },
+   {
+    "h": 1170,
+    "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.0.0/docs/screenshots/transcoding.png",
+    "title": "Transcoding",
+    "w": 1100
+   },
+   {
+    "h": 860,
+    "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.0.0/docs/screenshots/users.png",
+    "title": "Users",
+    "w": 1100
+   },
+   {
+    "h": 860,
+    "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.0.0/docs/screenshots/phones.png",
+    "title": "Phones & TVs",
+    "w": 1100
+   },
+   {
+    "h": 1000,
+    "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.0.0/docs/screenshots/health.png",
+    "title": "Health",
+    "w": 1100
+   },
+   {
+    "h": 860,
+    "src": "https://raw.githubusercontent.com/tombruton87/jellyfin-dsm/v1.0.0/docs/screenshots/overview.png",
+    "title": "Overview",
+    "w": 1100
+   }
+  ],
+  "shots_tag": "v1.0.0",
+  "size": 174080,
+  "upgrade_wizard": false
+ },
  "tombruton87/lanspeed-dsm": {
   "asset_id": 638657075,
   "info": {
@@ -685,6 +755,70 @@
   ],
   "shots_tag": "v1.0.0",
   "size": 174080,
+  "upgrade_wizard": false
+ },
+ "tombruton87/metube-dsm": {
+  "asset_id": 658747306,
+  "info": {
+   "arch": "noarch",
+   "beta": "yes",
+   "checksum": "bc5405ed3719b1019dedcd9afb41e8cd",
+   "description": "MeTube, the web front end for yt-dlp, in Container Manager: download video or audio from YouTube and many other sites straight into a shared folder on this Synology. A DSM window adds links (several at once), follows the queue with progress, speed and time left, retries failed downloads, keeps the download folder tidy, sets quality, file names and subtitles, shows how to send links from a phone or browser, and keeps yt-dlp current.",
+   "displayname": "MeTube",
+   "dsmappname": "MeTube.AppInstance",
+   "dsmuidir": "ui",
+   "extractsize": "292",
+   "install_dep_packages": "ContainerManager>=20.10.23-1432",
+   "maintainer": "metube-dsm",
+   "maintainer_url": "https://github.com/tombruton87/metube-dsm",
+   "os_min_ver": "7.2.1-69057",
+   "package": "metube",
+   "support_url": "https://github.com/tombruton87/metube-dsm/issues",
+   "thirdparty": "yes",
+   "version": "1.0.0-1"
+  },
+  "install_wizard": true,
+  "md5": "d32f6d9503e7524582715a4b943d999a",
+  "shots": [
+   {
+    "h": 900,
+    "src": "https://raw.githubusercontent.com/tombruton87/metube-dsm/v1.0.0/docs/screenshots/downloads.png",
+    "title": "Downloads",
+    "w": 1100
+   },
+   {
+    "h": 900,
+    "src": "https://raw.githubusercontent.com/tombruton87/metube-dsm/v1.0.0/docs/screenshots/add.png",
+    "title": "Add",
+    "w": 1100
+   },
+   {
+    "h": 900,
+    "src": "https://raw.githubusercontent.com/tombruton87/metube-dsm/v1.0.0/docs/screenshots/library.png",
+    "title": "Library",
+    "w": 1100
+   },
+   {
+    "h": 900,
+    "src": "https://raw.githubusercontent.com/tombruton87/metube-dsm/v1.0.0/docs/screenshots/defaults.png",
+    "title": "Defaults",
+    "w": 1100
+   },
+   {
+    "h": 900,
+    "src": "https://raw.githubusercontent.com/tombruton87/metube-dsm/v1.0.0/docs/screenshots/share.png",
+    "title": "Share to MeTube",
+    "w": 1100
+   },
+   {
+    "h": 900,
+    "src": "https://raw.githubusercontent.com/tombruton87/metube-dsm/v1.0.0/docs/screenshots/ytdlp.png",
+    "title": "yt-dlp",
+    "w": 1100
+   }
+  ],
+  "shots_tag": "v1.0.0",
+  "size": 133120,
   "upgrade_wizard": false
  },
  "tombruton87/n8n-dsm": {
@@ -1071,6 +1205,70 @@
   ],
   "shots_tag": "v1.0.0",
   "size": 112640,
+  "upgrade_wizard": false
+ },
+ "tombruton87/syncthing-dsm": {
+  "asset_id": 658746653,
+  "info": {
+   "arch": "noarch",
+   "beta": "yes",
+   "checksum": "36e1606b7faa8088c10fcef0845ab978",
+   "description": "Syncthing in Container Manager: keeps folders in step between this Synology, your computers and your phone, directly and privately, with no cloud in between. A DSM window pairs devices (with a QR code for the phone app), syncs your shared folders, shows what changed and from where, sorts out conflicting copies, keeps old versions, and can keep everything on your own network. Backups, updates and the password are handled too.",
+   "displayname": "Syncthing",
+   "dsmappname": "Syncthing.AppInstance",
+   "dsmuidir": "ui",
+   "extractsize": "332",
+   "install_dep_packages": "ContainerManager>=20.10.23-1432",
+   "maintainer": "syncthing-dsm",
+   "maintainer_url": "https://github.com/tombruton87/syncthing-dsm",
+   "os_min_ver": "7.2.1-69057",
+   "package": "syncthing",
+   "support_url": "https://github.com/tombruton87/syncthing-dsm/issues",
+   "thirdparty": "yes",
+   "version": "1.0.0-1"
+  },
+  "install_wizard": true,
+  "md5": "6b9e4bb9fe6b2682ed8569ec1183df6a",
+  "shots": [
+   {
+    "h": 1000,
+    "src": "https://raw.githubusercontent.com/tombruton87/syncthing-dsm/v1.0.0/docs/screenshots/devices.png",
+    "title": "Devices",
+    "w": 1100
+   },
+   {
+    "h": 1600,
+    "src": "https://raw.githubusercontent.com/tombruton87/syncthing-dsm/v1.0.0/docs/screenshots/folders.png",
+    "title": "Folders",
+    "w": 1100
+   },
+   {
+    "h": 600,
+    "src": "https://raw.githubusercontent.com/tombruton87/syncthing-dsm/v1.0.0/docs/screenshots/conflicts.png",
+    "title": "Conflicts",
+    "w": 1100
+   },
+   {
+    "h": 640,
+    "src": "https://raw.githubusercontent.com/tombruton87/syncthing-dsm/v1.0.0/docs/screenshots/activity.png",
+    "title": "Activity",
+    "w": 1100
+   },
+   {
+    "h": 1000,
+    "src": "https://raw.githubusercontent.com/tombruton87/syncthing-dsm/v1.0.0/docs/screenshots/privacy.png",
+    "title": "Privacy & network",
+    "w": 1100
+   },
+   {
+    "h": 640,
+    "src": "https://raw.githubusercontent.com/tombruton87/syncthing-dsm/v1.0.0/docs/screenshots/overview.png",
+    "title": "Overview",
+    "w": 1100
+   }
+  ],
+  "shots_tag": "v1.0.0",
+  "size": 163840,
   "upgrade_wizard": false
  },
  "tombruton87/technitium-dsm": {

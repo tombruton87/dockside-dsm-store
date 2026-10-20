@@ -301,6 +301,36 @@
    "size": 122880
   },
   {
+   "package": "jellyfin",
+   "version": "1.0.0-1",
+   "dname": "Jellyfin",
+   "desc": "Jellyfin, your own media server, in Container Manager — films, TV shows, music and home videos from your shared folders, streamed to phones, TVs and browsers, with hardware transcoding on Intel Synology models. A DSM window adds libraries from shared folders, what's playing now, a real transcoding test, users with library access and parental limits, phone and TV setup, health checks, backups and updates.",
+   "link": "https://github.com/tombruton87/jellyfin-dsm/releases/download/v1.0.0/jellyfin-1.0.0-1.spk",
+   "thumbnail": [
+    "https://tombruton87.github.io/dockside-dsm-store/icons/jellyfin-64.png",
+    "https://tombruton87.github.io/dockside-dsm-store/icons/jellyfin-256.png"
+   ],
+   "thumbnail_retina": [
+    "https://tombruton87.github.io/dockside-dsm-store/icons/jellyfin-256.png",
+    "https://tombruton87.github.io/dockside-dsm-store/icons/jellyfin-256.png"
+   ],
+   "snapshot": [],
+   "qinst": false,
+   "qupgrade": true,
+   "qstart": false,
+   "deppkgs": "ContainerManager>=20.10.23-1432",
+   "download_count": 0,
+   "recent_download_count": 0,
+   "changelog": "First release. Jellyfin 12.2 in Container Manager:<br>• films, TV shows, music and home videos from your shared folders, mounted read-only;<br>• Jellyfin's startup wizard is completed at the first start: metadata for the country of your time zone, your administrator with the password shown once;<br>• the window works through an API key of the package's own, which it puts back by itself if it's removed in Jellyfin;<br>• hardware transcoding on Intel models with `/dev/dri`: the device is passed in with its group, and a quick real test at the first start picks Quick Sync or VA-API.<br><br>The DSM window adds:<br>• <b>Libraries:</b> counts, hours, size and last scan per library; scan one or all; add a library from a shared folder (missing folders are refused, never created); remove a library (its files stay); folders that go away show as waiting; recently added, with posters.<br>• <b>Now playing:</b> who, what, where, how far; direct play or transcoding and why; transcodes on the graphics; stop a playback or send a message.<br>• <b>Transcoding:</b> the graphics and what they decode and encode; Quick Sync, VA-API or processor; tone mapping; a real transcoding test with the speeds of the graphics and the processor; the transcode cache, with Clean.<br>• <b>Users:</b> add people (password shown once), library access, age limits, administrator on or off, turn off, new password, remove.<br>• <b>Phones &amp; TVs:</b> a QR code, Jellyfin's apps and well-known players, and how to watch away from home.<br>• <b>Health:</b> titles Jellyfin couldn't match, scheduled jobs, recent errors, sizes; DSM notifications when a library scan fails or the transcode cache grows past 10 GB.<br>• <b>Site address:</b> client discovery (7359/udp) and DLNA (1900/udp), off by default.<br><br>Also included: consistent backups (Jellyfin stopped for the copy, the cache left out), restore, updates to newer Jellyfin releases after a backup with only the old image removed, and removal.",
+   "maintainer": "jellyfin-dsm",
+   "maintainer_url": "https://github.com/tombruton87/jellyfin-dsm",
+   "distributor": "Tom Bruton",
+   "distributor_url": "https://github.com/tombruton87",
+   "support_url": "https://github.com/tombruton87/jellyfin-dsm/issues",
+   "md5": "ad6465f27604c94f70652c7d5bfa4d36",
+   "size": 174080
+  },
+  {
    "package": "lanspeed",
    "version": "1.0.0-1",
    "dname": "LAN Speed",
@@ -389,6 +419,36 @@
    "support_url": "https://github.com/tombruton87/memos-dsm/issues",
    "md5": "0c8fd62a27b1cd5cef467591f1a20e51",
    "size": 174080
+  },
+  {
+   "package": "metube",
+   "version": "1.0.0-1",
+   "dname": "MeTube",
+   "desc": "MeTube, the web front end for yt-dlp, in Container Manager: download video or audio from YouTube and many other sites straight into a shared folder on this Synology. A DSM window adds links (several at once), follows the queue with progress, speed and time left, retries failed downloads, keeps the download folder tidy, sets quality, file names and subtitles, shows how to send links from a phone or browser, and keeps yt-dlp current.",
+   "link": "https://github.com/tombruton87/metube-dsm/releases/download/v1.0.0/metube-1.0.0-1.spk",
+   "thumbnail": [
+    "https://tombruton87.github.io/dockside-dsm-store/icons/metube-64.png",
+    "https://tombruton87.github.io/dockside-dsm-store/icons/metube-256.png"
+   ],
+   "thumbnail_retina": [
+    "https://tombruton87.github.io/dockside-dsm-store/icons/metube-256.png",
+    "https://tombruton87.github.io/dockside-dsm-store/icons/metube-256.png"
+   ],
+   "snapshot": [],
+   "qinst": false,
+   "qupgrade": true,
+   "qstart": false,
+   "deppkgs": "ContainerManager>=20.10.23-1432",
+   "download_count": 0,
+   "recent_download_count": 0,
+   "changelog": "• MeTube 2026.10.19 (from ghcr.io, pinned) in Container Manager, running as the package's own user, so downloads belong to it.<br>• The install wizard suggests a free port and the download folder: a folder in a shared folder (`/volume1/Downloads/MeTube` when there's a `Downloads` share). The package makes that folder when it may write in the shared folder, never the shared folder itself, and shows DSM's permission steps when it can't write there.<br>• <b>Downloads:</b> the queue live, with progress, speed and time left; finished downloads with size, folder and date; failed ones with the reason and Retry; stop, remove, delete the file too, clear finished or failed.<br>• <b>Add:</b> up to 20 links at once, video (quality, MP4 or best available) or audio only (MP3, M4A, Opus), a subfolder, just the video or the whole playlist up to a limit — checked in the CGI and again in the setup container.<br>• <b>Library:</b> the download folder's files with size and date, total size, free space, delete selected; an optional daily \"keep only the last N days\" clean-up.<br>• <b>Defaults:</b> what to download, safe file name presets, subtitles (files or inside the video, up to five languages), cover art and metadata, downloads at once, links on the own network, the download folder, DSM notifications.<br>• <b>Share to MeTube:</b> QR codes, a share page MeTube serves, a bookmarklet, an iPhone Shortcut and Android steps with this NAS's address.<br>• <b>yt-dlp:</b> its version and age, the newest releases, and an update to the newest MeTube release (a backup first, only the old image removed); a DSM notification when downloads fail the way an outdated yt-dlp makes them.<br>• DSM notifications for failed downloads and, if you like, finished ones.<br>• Backups of MeTube's state (queue, history, subscriptions, cookies) with restore; the downloaded media stays in your shared folder.",
+   "maintainer": "metube-dsm",
+   "maintainer_url": "https://github.com/tombruton87/metube-dsm",
+   "distributor": "Tom Bruton",
+   "distributor_url": "https://github.com/tombruton87",
+   "support_url": "https://github.com/tombruton87/metube-dsm/issues",
+   "md5": "d32f6d9503e7524582715a4b943d999a",
+   "size": 133120
   },
   {
    "package": "n8n",
@@ -629,6 +689,36 @@
    "support_url": "https://github.com/tombruton87/stirling-pdf-dsm/issues",
    "md5": "9ae17b30bb48263f3595404af51f27b2",
    "size": 112640
+  },
+  {
+   "package": "syncthing",
+   "version": "1.0.0-1",
+   "dname": "Syncthing",
+   "desc": "Syncthing in Container Manager: keeps folders in step between this Synology, your computers and your phone, directly and privately, with no cloud in between. A DSM window pairs devices (with a QR code for the phone app), syncs your shared folders, shows what changed and from where, sorts out conflicting copies, keeps old versions, and can keep everything on your own network. Backups, updates and the password are handled too.",
+   "link": "https://github.com/tombruton87/syncthing-dsm/releases/download/v1.0.0/syncthing-1.0.0-1.spk",
+   "thumbnail": [
+    "https://tombruton87.github.io/dockside-dsm-store/icons/syncthing-64.png",
+    "https://tombruton87.github.io/dockside-dsm-store/icons/syncthing-256.png"
+   ],
+   "thumbnail_retina": [
+    "https://tombruton87.github.io/dockside-dsm-store/icons/syncthing-256.png",
+    "https://tombruton87.github.io/dockside-dsm-store/icons/syncthing-256.png"
+   ],
+   "snapshot": [],
+   "qinst": false,
+   "qupgrade": true,
+   "qstart": false,
+   "deppkgs": "ContainerManager>=20.10.23-1432",
+   "download_count": 0,
+   "recent_download_count": 0,
+   "changelog": "• Syncthing 2.1.6 in Container Manager, running as the package's own user, on the NAS's own network so local discovery works (or Docker's network, from the Site address tab).<br>• The install wizard suggests free web and sync ports, warns when local discovery's port is taken, and asks whether Syncthing may reach the internet or stays on your network.<br>• <b>Devices:</b> this Synology's ID with a QR code and Copy; devices asking to connect (accept with a name, or ignore); paired devices with connection, address, rates and how far they're in sync; add by ID, pause, rename, remove.<br>• <b>Folders:</b> sync shared folders (each mounted at its own path, never created), with a write test as the package's user and the exact steps when it lacks permission; type, devices, versioning and ignore patterns (DSM's pre-filled); rescan, pause, override, revert, stop syncing; folders offered by other devices accepted into a shared folder or declined.<br>• <b>Conflicts:</b> every conflicting copy, by file, with keep this version or keep the original.<br>• <b>Activity:</b> recent file changes, here or on which device.<br>• <b>Privacy &amp; network:</b> local network only or anywhere, bandwidth limits, the sync port, listener and discovery status, Show password and New password for Syncthing's web interface.<br>• DSM notifications for a device asking to pair, a folder out of sync for over 30 minutes, and new conflicts.<br>• Backups keep this Synology's device identity; updates back up first and remove only the old Syncthing image.",
+   "maintainer": "syncthing-dsm",
+   "maintainer_url": "https://github.com/tombruton87/syncthing-dsm",
+   "distributor": "Tom Bruton",
+   "distributor_url": "https://github.com/tombruton87",
+   "support_url": "https://github.com/tombruton87/syncthing-dsm/issues",
+   "md5": "6b9e4bb9fe6b2682ed8569ec1183df6a",
+   "size": 163840
   },
   {
    "package": "technitium",
